@@ -1,53 +1,64 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Styles/main.css">
 </head>
 
-<body style="margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
+<body class="main-body" style="margin-left: 0px;margin-right: 0px;margin-top: 0px;margin-bottom: 0px;">
 
+    <!-- nav -->
+    <nav class="top-navigation">
+        <a class="logo-bg" href="index.html" style="margin-left: 10px; margin-right: 10px; text-decoration: none;color: black; display: flex; align-items: center;">
+            <p class="logo">Brooklyn, NY</p>
+        </a>
+        <a class="logo-bg" href="donate.html" style="margin-left: 10px; margin-right: 10px; text-decoration: none;color: black; display: flex; align-items: center;">
+            <p class="logo">Donate</p>
+        </a>
+        <!-- Countdown to event -->
+        <div id="countdown" style="bottom: -103%;position: absolute;right: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 10px; border-radius: 5px; font-family: Arial, sans-serif;">
+            <h1 style="margin: 0; font-size: 16px;">Countdown to Event:</h1>
+            <p id="time" style="margin: 0; font-size: 14px;">Loading...</p>
+        </div>
+    </nav>
 
-    <header id="b_header" role="banner" style="box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);z-index: 10;position: relative;">
+    <header id="b_header" role="banner" style="display: flex;align-items: center;height: 100vh;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);z-index: 10;position: relative;">
+        <img class="banner-img" src="Images/JDP_Logo.png" alt="Banner Image" style="width: 100%; height: auto;">
+        
+        <script>
+            // Set the date of the event (e.g., July 6, 2026)
+            const eventDate = new Date("July 6, 2026 00:00:00").getTime();
 
-        <nav>
-            <div class="nav-container">
-                <h1 class="logo"><a href="index.html">KantinNY</a></h1>
-                <ul class="nav-menu">
-                    <li>
-                        <div class="search-container">
-                            <input type="text" placeholder="Search..." class="search-input">
-                            <button class="search-button">
-                                <img src="Images/search.svg" alt="Search" width="28">
-                            </button>
-                        </div>
-                    </li>
-                    <li><a href="../login.html">Login</a></li>
-                </ul>
-            </div>
-        </nav>
+            // Update the countdown every second
+            const countdownFunction = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the result in the element with id="time"
+                document.getElementById("time").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+                // If the countdown is over, display some text
+                if (distance < 0) {
+                    clearInterval(countdownFunction);
+                    document.getElementById("time").innerHTML = "The event has started!";
+                }
+            }, 1000);
+        </script>
+        
     </header>
-    <main style="margin-left: 8px;margin-right: 8px;height: 100vh;">
-        <nav>
-            <div class="nav-container" style="justify-content: center;">
-                <ul class="nav-menu">
-                    <li><a href="../login.html">Home</a></li>
-                    <li><a href="../login.html">Shop</a></li>
-                    <li><a href="../login.html">Contact & FAQ</a></li>
-                    <li><a href="../login.html">Request Form</a></li>
-                    <li><a href="../login.html">About Us</a></li>
-                </ul>
-            </div>
-        </nav>
-        <p>Welcome to KantinNY, your go-to place for delicious food and great company!</p>
+    <main class="main-content" style="height: 100vh;">
+        <div class="text-left">
+            <h1 style="font-size: 24px; margin-top: 20px;">Welcome to the JDP Event Page</h1>
+            <p style="font-size: 16px; margin-top: 10px;">Join us for an unforgettable experience in Brooklyn, NY. Stay tuned for more details about the event, including speakers, schedule, and activities.</p>
+            <p style="font-size: 16px; margin-top: 10px;">Don't forget to check out our <a href="donate.html" style="color: blue; text-decoration: underline;">donation page</a> to support our cause!</p>
+        </div>
     </main>
-    <footer>
-
-        <nav>
-            <div class="nav-container">
-                <p>2025 KantinNY. All rights reserved.</p>
-            </div>
-        </nav>
-    </footer>
 
 </body>
 

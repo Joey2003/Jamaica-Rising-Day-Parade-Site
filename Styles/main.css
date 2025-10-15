@@ -1,0 +1,80 @@
+.logo {
+
+    font-family: 'Arial Black', sans-serif;
+    font-size: 24px;
+    color: #000000;
+    margin: 0;
+}
+
+.logo-bg {
+    background-color: #FFD700;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.top-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 10px 0px;
+    position: fixed;
+    z-index: 77;
+    width: 100%;
+}
+
+@media (max-width: 799px) {
+  .top-navigation {
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    z-index: 77;
+    width: 100%;
+  }
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  background: #eee;    
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+nav a p {
+  margin: 0;            
+  white-space: nowrap;  
+}
+
+.banner-img {
+
+    width: 25%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    position: fixed;
+}
+
+.main-content {
+    position: fixed;
+    align-content: center;
+    width: 60%;
+    top: 0;
+}
+
+.main-body {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+@media (max-width: 799px) {
+
+}
