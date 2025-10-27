@@ -19,7 +19,8 @@ const scroller = (() => {
             ScrollSmoother.create({
                 content: contentSelector,
                 wrapper: wrapperSelector,
-                smooth: 2,
+                smooth: 0.5,
+                smoothTouch: 0.1,
                 effects: false,
                 normalizeScroll: true,
                 preventDefault: true,

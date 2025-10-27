@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JRDP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --dark-color-h: 0;
+      --dark-color-s: 0%;
+      --dark-color-l: 0%;
+      --light-color-h: 0.0;
+      --light-color-s: 0.0%;
+      --light-color-l: 10.0%;
+
+      --dark-color: hsl(var(--dark-color-h), var(--dark-color-s), var(--dark-color-l));
+      --dark-color-lighter: hsl(var(--dark-color-h), var(--dark-color-s), calc(var(--dark-color-l) + 10%));
+      --dark-color-darker: hsl(var(--dark-color-h), var(--dark-color-s), calc(var(--dark-color-l) - 10%));
+      --dark-color-translucent: hsla(var(--dark-color-h), var(--dark-color-s), var(--dark-color-l), 0.75);
+      --dark-color-darker-translucent: hsla(var(--dark-color-h), var(--dark-color-s), calc(var(--dark-color-l) - 10%), 0.75);
+
+      --light-color: hsl(var(--light-color-h), var(--light-color-s), var(--light-color-l));
+      --light-color-lighter: hsl(var(--light-color-h), var(--light-color-s), calc(var(--light-color-l) + 10%));
+      --light-color-darker: hsl(var(--light-color-h), var(--light-color-s), calc(var(--light-color-l) - 10%));
+      --light-color-translucent: hsla(var(--light-color-h), var(--light-color-s), var(--light-color-l), 0.75);
+
+      --color-bg: var(--dark-color);
+      --color-text: var(--light-color);
+      --color-muted: color-mix(in oklab, var(--color-text) 50%, var(--color-bg) 50%);
+      --color-accent: color-mix(in oklab, var(--color-text) 80%, var(--color-bg) 20%);
+      --color-border: color-mix(in oklab, var(--color-text) 30%, var(--color-bg) 70%);
+      --resources-bg-color: var(--dark-color-darker-translucent);
+      --resources-active-color: color-mix(in srgb, var(--light-color) 75%, transparent);
+      --resources-color: var(--color-text);
+
+      --ts-h6: clamp(12px, 1.0753vw + 8.9892px, 20px);
+      --ts-h5: clamp(14.4px, 1.2903vw + 10.7871px, 24px);
+      --ts-h4: clamp(17.28px, 1.5484vw + 12.9445px, 28.8px);
+      --ts-h3: clamp(20.736px, 1.8581vw + 15.5334px, 34.56px);
+      --ts-h2: clamp(24.8832px, 2.2297vw + 18.6401px, 41.472px);
+      --ts-h1: clamp(29.8598px, 2.6756vw + 22.3681px, 49.7664px);
+    }
+
+    html {
+      overflow-y: scroll;
+      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      width: 100%;
+      color: var(--color-text);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 29px;
+      line-height: 1.5;
+      overflow: hidden;
+      background-color: #f2f2f2;
+    }
+
+    h1 {
+      font-size: 5rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Poppins', sans-serif;
+      text-transform: uppercase;
+      margin: 0;
+      font-weight: 701;
+      letter-spacing: 0;
+      line-height: 100%;
+      font-optical-sizing: auto;
+      font-kerning: normal;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      width: fit-content;
+      margin: 0;
+    }
+
+    p {
+      line-height: normal;
+    }
+
+    h2 {
+      font-size: var(--ts-h2);
+      color: var(--color-accent);
+    }
+
+    h3 {
+      font-size: var(--ts-h3);
+      color: var(--color-accent);
+    }
+
+    header {
+      position: relative;
+      inset-inline: 0;
+      top: 0;
+      min-height: 100vh;
+      width: 100vw;
+      z-index: 98;
+      display: grid;
+      align-items: center;
+      justify-items: start;
+      color: #f2f2f2;
+      background-image: url('Images/main-banner-image.png');
+      background-position-x: center;
+      background-position-y: 80%;
+    }
+
+    .header-contents {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin: 0 100px;
+      top: -20px;
+      width: 50%;
+      position: relative;
+      font-size: 29px;
+      line-height: normal;
+    }
+
+    .header-stack {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+    }
+
+    .header-text {
+      position: relative;
+      margin: 10px 0;
+      margin-left: 50px;
+      border-left-width: 1.5px;
+      border-left-style: solid;
+      padding: 0 30px;
+      padding-right: 0px;
+    }
+
+    .header-button-frame {
+      position: relative;
+      margin: 10px 0;
+    }
+
+    footer {
+      position: relative;
+      inset-inline: 0;
+      bottom: 0;
+      z-index: 99;
+      width: auto;
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    main {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      padding: 0 100px;
+    }
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 1683px;
+      align-items: start;
+      gap: 2rem;
+      padding: 45px 140px;
+      text-align: left;
+      background-image: url('Images/combine-bg.png');
+      background-size: cover;
+      background-position-x: center;
+      background-position-y: 70%;
+      justify-content: center;
+    }
+
+    .first-img {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      background-image: url('Images/paradepic1.jpg');
+      background-size: cover;
+      background-position-x: center;
+      background-position-y: 70%;
+      border-radius: 10px;
+      box-shadow: #00000032 0px 4px 6px -1px, #0000004c 0px 2px 4px -1px;
+    }
+
+    .details {
+      display: flex;
+      justify-content: end;
+      width: 100%;
+      background-color: #03762d;
+    }
+
+    .gallery {
+      position: relative;
+      --gap: 5px;
+      /* space between cards */
+      display: flex;
+      grid-template-columns: 1fr 1fr;
+      /* 1-up on mobile */
+      gap: var(--gap);
+      margin: 40px auto;
+      width: 100vw;
+      /* center within page */
+      padding: 0 20px;
+      margin: 40px 0px 40px;
+      height: fit-content;
+      background-color: #518137;
+      justify-content: start;
+      border-top-width: 2px;
+      border-top-style: solid;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      border-color: black;
+      box-shadow: #00000032 0px 4px 6px -1px, #0000004c 0px 2px 4px -1px;
+      align-items: center;
+      overflow-x: scroll;
+    }
+
+    .card {
+      position: relative;
+      background: #fff0;
+      /* the green from your design */
+      border-radius: 20px;
+      /* padding: 18px; */
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      height: 39vh;
+      width: fit-content;
+      align-items: center;
+      color: #fff;
+      margin-top: 40px;
+    }
+
+    .card img {
+      width: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-bottom: 5px solid #000;
+      border-left: 5px solid #000;
+      flex-grow: 1;
+      /* make image take up available space */
+      margin-top: 10px;
+      border-radius: 360px;
+      image-rendering: optimizespeed;
+    }
+
+    .overlay-heading {
+      position: relative;
+      top: 70px;
+      font-size: var(--ts-h1);
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      z-index: 99;
+      margin: 0;
+    }
+
+    .agenda {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .frame {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+    }
+
+    .gallery-frame {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .agenda-item {
+      display: flex;
+      flex-direction: row;
+      gap: 100px;
+      margin-bottom: 15px;
+      border-top-width: 2px;
+      border-top-style: solid;
+    }
+
+    .about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100vw;
+      text-align: center;
+    }
+
+    .role {
+      text-transform: uppercase;
+    }
+
+    .last-img {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 907 / 424;
+      background-image: url('Images/donation-banner.png');
+      background-size: cover;
+      background-position-x: center;
+      background-position-y: 50.0%;
+    }
+
+    .contact-form {
+      padding: 0 500px;
+    }
+
+    .indent {
+      margin-left: 2.5rem;
+    }
+
+    /* ====== CONTACT SECTION ====== */
+    :root {
+      --ink: #1d1d1d;
+      /* body text */
+      --ink-soft: #4a4a4a;
+      /* helper text */
+      --headline: #0f0f0f;
+      /* headings */
+      --accent: #2b8f57;
+      /* button green */
+      --accent-dk: #207749;
+      --stroke: rgba(0, 0, 0, .25);
+    }
+
+    .contact-us {
+      width: 100vw;
+      padding: 40px 0;
+      color: white;
+      background-color: #151716;
+      border: 2px solid rgba(0, 0, 0, 0.51);
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .06);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    /* Columns */
+    .contact-us .donate,
+    .contact-us .contact-form {
+      background: transparent;
+    }
+
+    /* Headings block */
+    .contact-us .heading h2 {
+      margin: 0 0 12px;
+      font-size: clamp(26px, 2.6vw, 34px);
+      line-height: 1.1;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: .02em;
+      color: white;
+    }
+
+    .contact-us .heading p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.6;
+      color: white;
+      text-align: left;
+    }
+
+    /* simple first-line “indent” helper used in your HTML */
+    .indent {
+      display: inline-block;
+      width: 1.25em;
+    }
+
+    /* Left column — donate */
+    .button-section {
+      margin-top: 24px;
+      display: grid;
+      place-items: center;
+      row-gap: 10px;
+    }
+
+    .header-button-frame .button {
+      padding-left: 18%;
+      padding-right: 18%;
+    }
+
+    .button {
+      background-color: #009B3A;
+      border: 2px solid rgba(0, 0, 0, .35);
+      border-radius: 8px;
+      padding: 14px 20px;
+      box-shadow: 0 2px 0 rgba(0, 0, 0, .25);
+      cursor: pointer;
+      transition: transform .05s ease, background .15s ease;
+      width: fit-content;
+    }
+
+    .founder-info .button {
+      background-color: white;
+      color: #151716;
+      padding-left: 5%;
+      padding-right: 5%;
+      scale: 0.65;
+      transform-origin: left;
+    }
+
+    .button:active {
+      transform: translateY(1px);
+    }
+
+    .button:hover {
+      background: var(--accent-dk);
+    }
+
+    .founder-info .button:hover {
+      background-color: rgba(255, 255, 255, 0.82);
+    }
+
+    .button p {
+      margin: 0;
+      font-weight: 700;
+      text-transform: none;
+      color: #fff;
+      letter-spacing: .02em;
+    }
+
+    .button-caption {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.2;
+      color: var(--ink-soft);
+      text-align: center;
+    }
+
+    .button-caption img {
+      height: 14px;
+      width: auto;
+      vertical-align: text-bottom;
+      margin-left: 4px;
+    }
+
+    /* Right column — contact form look */
+    .contact-form .name,
+    .contact-form .email,
+    .contact-form .email-body {
+      margin-top: 18px;
+    }
+
+    .input-prompt {
+      margin: 0 0 6px;
+      font-size: 14px;
+      color: white;
+    }
+
+    /* The comp shows simple grey boxes — your HTML uses <div class="input">.
+   We style them to look like fields. */
+    .input {
+      background: rgba(255, 255, 255, 0.421);
+      border: 2px solid var(--stroke);
+      border-radius: 4px;
+      height: 40px;
+      cursor: text;
+      /* single-line */
+    }
+
+    .time {
+      font-weight: bold;
+      font-size: 18px;
+      color: rgba(0, 0, 0, 0.835);
+      width: fit-content;
+    }
+
+    .founder-card {
+      display: flex;
+      flex-direction: row;
+      place-content: center;
+      position: relative;
+      width: 100vw;
+      justify-content: space-between;
+      background-color: #151716;
+      border-right-width: 30px;
+      border-right-style: solid;
+      border-right-color: #fed100;
+    }
+
+    .founder-background {
+      display: grid;
+      place-items: center;
+      width: fit-content;
+      width: 660px;
+      background-color: #01762c;
+    }
+
+    .founder-picture {
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .founder-info {
+      display: flex;
+      flex-direction: column;
+      color: white;
+      padding: 100px;
+      padding-right: 50px;
+      right: 50px;
+      position: relative;
+    }
+
+    .founder-info-body {
+      margin: 20px 0;
+    }
+
+    .name {
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .email-body .input {
+      /* message box is taller */
+      height: 170px;
+    }
+
+    /* Make the fake inputs look clickable on hover/focus (optional) */
+    .input:hover {
+      border-color: rgba(0, 0, 0, .45);
+    }
+
+    .input:focus-within {
+      outline: 2px solid rgba(0, 0, 0, .35);
+      outline-offset: 1px;
+    }
+
+    /* Spacing harmony between the two columns */
+    .donate .heading,
+    .contact-form .heading {
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav {
+      justify-content: space-between;
+      display: flex;
+      padding-right: 20px;
+      padding-left: 50px;
+      background-color: #000000bd;
+      color: #fff;
+      position: relative;
+      line-height: 4rem;
+      z-index: 99;
+      bottom: -64px;
+      right: 0;
+      margin-top: -64px;
+    }
+
+    .nav span {
+      margin: 0 15px;
+      cursor: pointer;
+    }
+
+    .map {
+      border: 10px solid rgb(255, 255, 255);
+      border-radius: 5px;
+    }
+
+    .map-container {
+      width: fit-content;
+      margin-bottom: 80px;
+    }
+
+    .scrolling-banner {
+      width: 100vw;
+      background-color: #0f0f0f;
+    }
+
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 960px) {
+      .contact-us {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 28px;
+      }
+
+      .button-section {
+        row-gap: 8px;
+      }
+
+      .gallery {
+        flex-direction: column;
+        justify-items: center;
+      }
+
+      .agenda-item {
+        flex-direction: column;
+        gap: 0px;
+      }
+
+      .frame {
+        width: 100%;
+      }
+
+      .card {
+        height: 90vh;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .contact-us {
+        padding: 20px;
+      }
+
+      .contact-us .heading h2 {
+        font-size: 24px;
+      }
+
+      .input {
+        height: 38px;
+      }
+
+      .email-body .input {
+        height: 140px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="Styles/countStyle.css">
+</head>
+
+<body>
+  <div class="nav">
+    <div class="button"></div>
+    <div>
+      <span>About</span> <span>Founders</span> <span>Agenda</span> <span class="last-nav">Contact
+        Us</span>
+    </div>
+  </div>
+  <header>
+    <div class="header-contents">
+      <div class="header-stack">
+        <img src="Images/banner-title.png" alt="banner title" style="height: auto; margin: 10px 0;margin-right: 300px;">
+        <p class="header-text">We invite you to an enchanting parade, where passion,<br> creativity, and community come
+          together to shake the<br>
+          city
+          in a breathtaking celebratrion of culture and tradition.</p>
+        <div class="header-button-frame">
+          <div class="button">
+            <img src="Images/play-icon.png" alt="play icon">
+          </div>
+        </div>
+      </div>
+
+
+      <img src="Images/banner-date.png" alt="banner date" style="height: auto; margin: 10px 0; margin-right: 300px;">
+    </div>
+  </header>
+  <main class="orange">
+    <div class="countdown-container">
+      <div class="countdown" id="countdown">
+        <p class="countdown-label">Parade Countdown</p>
+        <ul>
+          <li><span id="days"></span>
+            <div>days</div>
+          </li>
+          <li><span class="colon">:</span></li>
+          <li><span id="hours"></span>
+            <div>Hours</div>
+          </li>
+          <li><span class="colon">:</span></li>
+          <li><span id="minutes"></span>
+            <div>Minutes</div>
+          </li>
+          <li><span class="colon">:</span></li>
+          <li><span id="seconds"></span>
+            <div>Seconds</div>
+          </li>
+        </ul>
+      </div>
+      <div id="content" class="emoji">
+        <span>🥳</span>
+        <span>🎉</span>
+      </div>
+    </div>
+    <!-- Intro -->
+    <div class="intro">
+      <div class="map-container">
+        <iframe class="map" width="820px" height="337px" frameborder="0" referrerpolicy="no-referrer-when-downgrade"
+          src="map.html" allowfullscreen>
+        </iframe>
+        <!-- <h1>About<br>the parade</h1> -->
+      </div>
+      <!-- <p>We invite you to an enchanting parade, where passion,<br>
+        creativity, and community come together to shake the<br>
+        city in a breathtaking celebratrion of culture and tradition.</p> -->
+    </div>
+
+    <div class="scrolling-banner">
+      <div id="scroll-wrapper" style="transform: translateX(-355.25px);">
+        <span class="scroll-text">
+          <span style="color: white; font-family: monospace;">
+            Java <span class="bullet">•</span> The <span class="bullet">•</span> quick <span class="bullet">•</span> brown
+            <span class="bullet">•</span> fox <span class="bullet">•</span> hops <span class="bullet">•</span>
+            over <span class="bullet">•</span> the <span class="bullet">•</span> fence <span class="bullet">•</span>
+          </span>
+        <!-- </span> <span class="scroll-text">
+          <span style="color: white; font-family: monospace;">
+            Java <span class="bullet">•</span> Python <span class="bullet">•</span> C <span class="bullet">•</span> C#
+            <span class="bullet">•</span> C++ <span class="bullet">•</span> JavaScript <span class="bullet">•</span>
+            HTML <span class="bullet">•</span> Scala <span class="bullet">•</span> PHP <span class="bullet">•</span>
+            VHDL <span class="bullet">•</span> MIPS <span class="bullet">•</span>
+          </span>
+        </span> -->
+      </div>
+    </div>
+
+    <!-- Details -->
+    <div class="founder-card" id="founder-1">
+      <div class="founder-background">
+        <div class="founder-picture" style="
+      background-image: url('Images/dr-bill.png');
+      background-position-x: center;
+      background-position-y: 53.5%;
+      width: 407px;
+      height: 535px;"></div>
+      </div>
+      <div class="founder-info">
+        <p class="role">Founder</p>
+        <h3 class="name">Dr. Bill Tinglin</h3>
+        <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
+          humanitarian<br>and author whose
+          deep commitment to
+          cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
+          years
+          of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
+          his role
+          as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
+          mobilising<br>
+          global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
+          celebrate heritage,<br>unity and achievement.</p>
+        <div class="button">
+          <h3>Learn More</h3>
+        </div>
+      </div>
+    </div>
+    <div class="founder-card" id="founder-2" 
+    >
+      <div class="founder-background">
+        <div class="founder-picture" style="
+      background-image: url('https://placehold.co/407');
+      background-position-x: center;
+      background-position-y: 53.5%;
+      width: 407px;
+      height: 535px;"></div>
+      </div>
+      <div class="founder-info">
+        <p class="role">Founder</p>
+        <h3 class="name">Founder Name</h3>
+        <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
+          humanitarian<br>and author whose
+          deep commitment to
+          cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
+          years
+          of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
+          his role
+          as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
+          mobilising<br>
+          global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
+          celebrate heritage,<br>unity and achievement.</p>
+        <div class="button">
+          <h3>Learn More</h3>
+        </div>
+      </div>
+    </div>
+    <div class="founder-card" id="founder-3"  style="display: none;">
+      <div class="founder-background">
+        <div class="founder-picture" style="
+      background-image: url('https://placehold.co/407');
+      background-position-x: center;
+      background-position-y: 53.5%;
+      width: 407px;
+      height: 535px;"></div>
+      </div>
+      <div class="founder-info">
+        <p class="role">Founder</p>
+        <h3 class="name">Dr. Bill Tinglin</h3>
+        <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
+          humanitarian<br>and author whose
+          deep commitment to
+          cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
+          years
+          of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
+          his role
+          as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
+          mobilising<br>
+          global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
+          celebrate heritage,<br>unity and achievement.</p>
+        <div class="button">
+          <h3>Learn More</h3>
+        </div>
+      </div>
+    </div>
+    <div class="founder-card" id="founder-4"  style="display: none;">
+      <div class="founder-background">
+        <div class="founder-picture" style="
+      background-image: url('https://placehold.co/407');
+      background-position-x: center;
+      background-position-y: 53.5%;
+      width: 407px;
+      height: 535px;"></div>
+      </div>
+      <div class="founder-info">
+        <p class="role">Founder</p>
+        <h3 class="name">Dr. Bill Tinglin</h3>
+        <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
+          humanitarian<br>and author whose
+          deep commitment to
+          cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
+          years
+          of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
+          his role
+          as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
+          mobilising<br>
+          global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
+          celebrate heritage,<br>unity and achievement.</p>
+        <div class="button">
+          <h3>Learn More</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agenda
+    <div class="agenda">
+      <div class="frame">
+        <div class="title">
+          <h3 class="star">★</h3>
+          <h2>Event Agenda</h2>
+        </div>
+        <section class="agenda-item">
+          <p class="time">5:30 PM</p>
+          <div class="frame">
+            <p>Arrival</p>
+            <p>We invite you to an enchanting parade, where passion, creativity, and community come together to shake
+              the city
+              in a breathtaking celebratrion of culture and tradition.</p>
+          </div>
+        </section>
+        <section class="agenda-item">
+          <p class="time">7:00 PM</p>
+          <div class="frame">
+            <p>Something</p>
+            <p>We invite you to an enchanting parade, where passion, creativity, and community come together to shake
+              the city
+              in a breathtaking celebratrion of culture and tradition.</p>
+          </div>
+        </section>
+        <section class="agenda-item">
+          <p class="time">7:30 PM</p>
+          <div class="frame">
+            <p>Another Thing</p>
+            <p>We invite you to an enchanting parade, where passion, creativity, and community come together to shake
+              the city
+              in a breathtaking celebratrion of culture and tradition.</p>
+          </div>
+        </section>
+        <section class="agenda-item">
+          <p class="time">8:30 PM</p>
+          <div class="frame">
+            <p>Wrap Up</p>
+            <p>We invite you to an enchanting parade, where passion, creativity, and community come together to shake
+              the city
+              in a breathtaking celebratrion of culture and tradition.</p>
+          </div>
+        </section>
+      </div>
+    </div> -->
+
+    <!-- About -->
+    <div class="about">
+      <!-- Image -->
+      <div class="last-img"></div>
+
+
+    </div>
+
+    <!-- Contact Us -->
+    <div class="contact-us">
+      <div class="contact-form">
+        <div class="heading">
+          <h2>Get in touch</h2>
+          <p>We’d love to hear from you. Whether you have questions about the Jamaica Day
+            Parade, vendor opportunities, volunteering, or accessibility, please reach out — our team will respond as
+            soon as possible.
+          </p>
+        </div>
+        <div class="name">
+          <p class="input-prompt">Name or Company</p>
+          <div class="input"></div>
+        </div>
+        <div class="email">
+          <p class="input-prompt">Email Address</p>
+          <div class="input"></div>
+        </div>
+        <div class="email-body">
+          <p class="input-prompt">Please enter the details of your request.</p>
+          <div class="input"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="header-overlay">
+    <div>
+
+    </div>
+  </div>
+  <footer>
+    <div class="footer-content-left">
+      <p>© 2025 Jamaica Rising Day Parade. All rights reserved.</p>
+    </div>
+    <div class="footer-content-right">
+      <p>Facebook | Instagram | Twitter</p>
+    </div>
+  </footer>
+
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const wrapper = document.getElementById("scroll-wrapper");
+    let pos = 0;
+    const speed = .25;
+
+    function animate() {
+      pos -= speed;
+      if (Math.abs(pos) >= wrapper.scrollWidth / 2) {
+        pos = 0;
+      }
+      wrapper.style.transform = `translateX(${pos}px)`;
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  });
+</script>
+
+<!-- Countdown script -->
+<script>
+  (function () {
+    const second = 1000,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
+
+    let today = new Date(),
+      dd = String(today.getDate()).padStart(2, "0"),
+      mm = String(today.getMonth() + 1).padStart(2, "0"),
+      yyyy = today.getFullYear(),
+      nextYear = yyyy + 1,
+      dayMonth = "08/06/",
+      birthday = dayMonth + yyyy;
+
+    today = mm + "/" + dd + "/" + yyyy;
+    if (today > birthday) {
+      birthday = dayMonth + nextYear;
+    }
+    //end
+
+    const countDown = new Date(birthday).getTime(),
+      x = setInterval(function () {
+
+        const now = new Date().getTime(),
+          distance = countDown - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (day)),
+          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        if (distance < 0) {
+          document.getElementById("headline").innerText = "It's my birthday!";
+          document.getElementById("countdown").style.display = "none";
+          document.getElementById("content").style.display = "block";
+          clearInterval(x);
+        }
+        //seconds
+      }, 0)
+  }());
+</script>
+
+</html>

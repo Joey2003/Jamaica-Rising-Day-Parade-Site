@@ -1,0 +1,87 @@
+/* general styling */
+:root {
+  --smaller: .1;
+}
+
+
+.countdown-container {
+  color: #fff;
+  text-align: center;
+  width: 100vw;
+  background-color: black;
+  padding: 45px 0;
+}
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  
+}
+
+.countdown-label {
+  width: 100%;
+  padding: 0;
+  color: #fff;
+}
+
+li {
+  display: inline-grid;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: .1em;
+  text-transform: uppercase;
+  justify-items: center;
+}
+
+.colon {
+  top: -5px;
+  position: relative;
+}
+
+li span {
+  display: block;
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+
+li div {
+  padding: 0 5px;
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+  color: black;
+  border-radius: 3px;
+}
+
+.emoji {
+  display: none;
+  padding: 1rem;
+}
+
+.emoji span {
+  font-size: 4rem;
+  padding: 0 .5rem;
+}
+
+ul {
+  margin: 0;
+  margin-top: -25px;
+  padding: 0;
+}
+
+/* @media all and (max-width: 768px) {
+  h1 {
+    font-size: calc(1.5rem * var(--smaller));
+  }
+  
+  li {
+    font-size: calc(1.125rem * var(--smaller));
+  }
+  
+  li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+} */

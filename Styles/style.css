@@ -1,3 +1,6 @@
+/* ================================
+   0) DESIGN TOKENS
+   ================================ */
 :root {
   --dark-color-h: 0;
   --dark-color-s: 0%;
@@ -5,78 +8,27 @@
   --light-color-h: 19.2;
   --light-color-s: 30.86%;
   --light-color-l: 84.12%;
-  --dark-color: hsl(
-    var(--dark-color-h),
-    var(--dark-color-s),
-    var(--dark-color-l)
-  );
-  --dark-color-lighter: hsl(
-    var(--dark-color-h),
-    var(--dark-color-s),
-    calc(var(--dark-color-l) + 10%)
-  );
-  --dark-color-darker: hsl(
-    var(--dark-color-h),
-    var(--dark-color-s),
-    calc(var(--dark-color-l) - 10%)
-  );
-  --dark-color-translucent: hsla(
-    var(--dark-color-h),
-    var(--dark-color-s),
-    var(--dark-color-l),
-    0.75
-  );
-  --dark-color-darker-translucent: hsla(
-    var(--dark-color-h),
-    var(--dark-color-s),
-    calc(var(--dark-color-l) - 10%),
-    0.75
-  );
-  --light-color: hsl(
-    var(--light-color-h),
-    var(--light-color-s),
-    var(--light-color-l)
-  );
-  --light-color-lighter: hsl(
-    var(--light-color-h),
-    var(--light-color-s),
-    calc(var(--light-color-l) + 10%)
-  );
-  --light-color-darker: hsl(
-    var(--light-color-h),
-    var(--light-color-s),
-    calc(var(--light-color-l) - 10%)
-  );
-  --light-color-translucent: hsla(
-    var(--light-color-h),
-    var(--light-color-s),
-    var(--light-color-l),
-    0.75
-  );
+
+  --dark-color: hsl(var(--dark-color-h), var(--dark-color-s), var(--dark-color-l));
+  --dark-color-lighter: hsl(var(--dark-color-h), var(--dark-color-s), calc(var(--dark-color-l) + 10%));
+  --dark-color-darker: hsl(var(--dark-color-h), var(--dark-color-s), calc(var(--dark-color-l) - 10%));
+  --dark-color-translucent: hsla(var(--dark-color-h), var(--dark-color-s), var(--dark-color-l), 0.75);
+  --dark-color-darker-translucent: hsla(var(--dark-color-h), var(--dark-color-s), calc(var(--dark-color-l) - 10%), 0.75);
+
+  --light-color: hsl(var(--light-color-h), var(--light-color-s), var(--light-color-l));
+  --light-color-lighter: hsl(var(--light-color-h), var(--light-color-s), calc(var(--light-color-l) + 10%));
+  --light-color-darker: hsl(var(--light-color-h), var(--light-color-s), calc(var(--light-color-l) - 10%));
+  --light-color-translucent: hsla(var(--light-color-h), var(--light-color-s), var(--light-color-l), 0.75);
+
   --color-bg: var(--dark-color);
   --color-text: var(--light-color);
-  --color-muted: color-mix(
-    in oklab,
-    var(--color-text) 50%,
-    var(--color-bg) 50%
-  );
-  --color-accent: color-mix(
-    in oklab,
-    var(--color-text) 80%,
-    var(--color-bg) 20%
-  );
-  --color-border: color-mix(
-    in oklab,
-    var(--color-text) 30%,
-    var(--color-bg) 70%
-  );
+  --color-muted: color-mix(in oklab, var(--color-text) 50%, var(--color-bg) 50%);
+  --color-accent: color-mix(in oklab, var(--color-text) 80%, var(--color-bg) 20%);
+  --color-border: color-mix(in oklab, var(--color-text) 30%, var(--color-bg) 70%);
   --resources-bg-color: var(--dark-color-darker-translucent);
-  --resources-active-color: color-mix(
-    in srgb,
-    var(--light-color) 75%,
-    transparent
-  );
+  --resources-active-color: color-mix(in srgb, var(--light-color) 75%, transparent);
   --resources-color: var(--color-text);
+
   --ts-h6: clamp(12px, 1.0753vw + 8.9892px, 20px);
   --ts-h5: clamp(14.4px, 1.2903vw + 10.7871px, 24px);
   --ts-h4: clamp(17.28px, 1.5484vw + 12.9445px, 28.8px);
@@ -85,17 +37,11 @@
   --ts-h1: clamp(29.8598px, 2.6756vw + 22.3681px, 49.7664px);
 }
 
-*,
-::after,
-::before {
-  border-style: solid;
-  border-width: 0;
-  box-sizing: border-box;
-}
-
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+/* ================================
+   1) RESET / BASE
+   ================================ */
+*, ::before, ::after { box-sizing: border-box; border: 0 solid; }
+* { -webkit-tap-highlight-color: transparent; }
 
 html {
   overflow-y: scroll;
@@ -105,591 +51,218 @@ html {
 }
 
 body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
-    Arial, sans-serif;
+  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
   line-height: 1.5;
-  margin: 0;
-  min-height: 100vh;
-  width: 100%;
 }
 
-.viewport-wrapper {
-  height: auto;
-  overflow: visible;
-  position: relative;
-}
+h1, h2, h3 { margin: 0; font-weight: 400; letter-spacing: 0.025em; }
+h2 { font-size: var(--ts-h2); color: var(--color-accent); }
+h3 { font-size: var(--ts-h3); color: var(--color-accent); }
 
-.content-scroll {
-  display: block;
-  width: 100%;
-}
+code { background: var(--dark-color-darker-translucent); border-radius: .1875rem; padding: .125rem .25rem; }
+pre code { display: block; white-space: pre; overflow-x: auto; padding: 1rem; }
+
+/* ================================
+   2) SCROLLER WRAPPERS (Smoother)
+   ================================ */
+.viewport-wrapper { position: relative; height: auto; overflow: visible; }
+.content-scroll { display: block; width: 100%; }
 
 body:not(.normalize-scroll) .viewport-wrapper {
-  bottom: 0;
-  height: 100%;
-  left: 0;
-  overflow: hidden;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
+  position: fixed; inset: 0; width: 100%; height: 100%; overflow: hidden;
 }
+body:not(.normalize-scroll) .content-scroll .sv-wrapper { perspective: 2000px; }
+body:not(.normalize-scroll) .content-scroll .pin-spacer { transform-style: preserve-3d; }
 
-body:not(.normalize-scroll) .content-scroll {
-  overflow: visible;
-}
-
-body:not(.normalize-scroll) .content-scroll .sv-wrapper {
-  perspective: 2000px;
-}
-
-body:not(.normalize-scroll) .content-scroll .pin-spacer {
-  transform-style: preserve-3d;
-}
-
-h2 {
-  font-size: var(--ts-h2);
-}
-
-h2,
-h3 {
-  color: var(--color-accent);
-  font-weight: 400;
-  letter-spacing: 0.025em;
-  line-height: 1.3;
-  margin-bottom: 0.65rem;
-  margin-top: 0;
-}
-
-h3 {
-  font-size: var(--ts-h3);
-}
-
-ul {
-  padding-left: 1.2rem;
-}
-
-li {
-  margin-bottom: 0.5em;
-}
-
-code {
-  background: var(--dark-color-darker-translucent);
-  border-radius: 0.1875rem;
-  padding: 0.125rem 0.25rem;
-  white-space: normal;
-  word-break: break-word;
-}
-
-pre code {
-  overflow-x: auto;
-  padding: 1rem;
-  white-space: pre;
-  word-break: normal;
-}
-
-main,
-pre code {
-  display: block;
-}
-
-main {
-  margin: 0;
-  position: relative;
-}
-
-
-
-section:is(.intro, .indicator) {
-  margin: 4rem auto;
-  max-width: 56.25rem;
-  width: calc(100% - 2rem);
-}
-
-section.intro a,
-section.intro a:visited {
-  color: var(--color-text);
-}
-
-section.intro a:active {
-  color: var(--color-accent);
-}
-
-section.intro a:focus-visible {
-  color: var(--color-accent);
-  outline: none;
-}
-
-section.indicator {
-  text-align: center;
-}
-
-section.indicator h3 {
-  font-size: var(--ts-h5);
-  font-weight: 400;
-  margin: 0;
-}
-
-section:has(.sv-wrapper) {
-  background: var(--dark-color-darker);
-  padding: 0rem 0;
-}
-
-.sv-wrapper {
-  display: block;
-  margin-inline: auto;
-  max-width: 100%;
-  position: relative;
-  width: 100%;
-}
-
-.sv-pin-container {
-  aspect-ratio: 16/9;
-  border-radius: 1.5vh;
-  display: grid;
-  max-height: 100lvh;
-  overflow: hidden;
-}
-
-.sv-pin-container,
-.sv-video {
-  position: relative;
-  width: 100%;
-}
-
-.sv-video {
-  -o-object-fit: cover;
-  object-fit: cover;
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-.sv-cue,
-.sv-video {
-  display: block;
-  grid-area: 1/-1;
-  height: 100%;
-}
-
-.sv-cue,
-.sv-cue-content {
-  position: relative;
-  width: 100%;
-}
-
-.sv-cue-content {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  opacity: 0;
-  padding: 1rem;
-  pointer-events: none;
-  text-align: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-.sv-cue-content h2 {
-  margin-bottom: 0.25em;
-}
-
-.sv-cue-content p {
-  margin-top: -0.5em;
-}
-
-.sv-preloader {
-  background: #000;
-  grid-area: 1/-1;
-  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.sv-overlay-track,
-.sv-preloader {
-  display: block;
-  pointer-events: none;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-.sv-overlay-track {
-  height: var(--track-height, 100lvh);
-  margin-top: var(--track-offset-y, -100lvh);
-  width: 100%;
-}
-
-.sv-overlay-markers {
-  inset: 0;
-  pointer-events: none;
-  position: absolute;
-}
-
-.sv-overlay-second-marker {
-  border-top: thin dashed var(--light-color);
-  color: var(--light-color);
-  font-size: 0.625rem;
-  left: 0;
-  padding-right: 0.25rem;
-  position: absolute;
-  text-align: right;
-  width: 100%;
-}
-
-.sv-overlay-cue-marker {
-  align-items: center;
-  display: flex;
-  height: 0.0625rem;
-  left: 0;
-  position: absolute;
-  width: 100%;
-}
-
-.sv-overlay-cue-marker.start {
-  background-color: #2ecc71;
-}
-
-.sv-overlay-cue-marker.end {
-  background-color: #e74c3c;
-}
-
-.sv-overlay-cue-label {
-  background: var(--light-color);
-  border-radius: 0.1875rem;
-  color: var(--dark-color-darker);
-  font-size: 0.625rem;
-  margin-left: 0.25rem;
-  padding: 0.125rem 0.25rem;
-}
+/* ================================
+   3) VIDEO SCRUB SECTION
+   ================================ */
+section:has(.sv-wrapper) { background: var(--dark-color-darker); }
 
-.spacer {
-  display: block;
-  height: 100lvh;
-  position: relative;
-}
-
-.resources-layer {
-  bottom: 0;
-  display: block;
-  position: fixed;
-  right: 0;
-  z-index: 1000;
-}
-
-.resources {
-  background: var(--resources-bg-color);
-  display: grid;
-  font-size: 0.6875rem;
-  font-weight: 300;
-  grid-auto-flow: column;
-  line-height: 1.3;
-  padding: 0.5rem;
-  pointer-events: auto;
-}
-
-.resources a {
-  align-content: center;
-  display: grid;
-  justify-content: center;
-  padding: 0 0.5rem;
-  place-content: center;
-  transition: color 0.2s ease-in-out;
-}
-
-.resources a,
-.resources a:visited {
-  color: var(--resources-color);
-}
-
-.resources a:active,
-.resources a:focus-visible {
-  color: var(--resources-active-color);
-}
-
-.resources a:focus-visible {
-  outline: none;
-}
-
-.resources a:not(:first-child) {
-  border-inline-start: thin solid currentColor;
-}
-
-@media (max-width: 51.29875em) {
-  .sv-pin-container {
-    aspect-ratio: 4/3;
-    border-radius: 2vh;
-  }
-}
-
-@media (max-width: 36.04875em) {
-  .sv-pin-container {
-    aspect-ratio: 1/1;
-  }
-}
-
-@media (hover: hover) and (pointer: fine) {
-  section.intro a:active:not(:hover),
-  section.intro a:hover {
-    color: var(--color-accent);
-  }
-
-  .resources a:active:not(:hover),
-  .resources a:hover {
-    color: var(--resources-active-color);
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* zoom elements */
-
-
-
-
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-}
-
-body {
-  background: #121212;
-  color: #fafafa;
-  font-family: 'Monoton', cursive;
-  margin: 0 0 -100px 0;
-  margin: 0;
-  padding: 0;
-}
-@media (max-width: 767px) {
-  body {
-    padding: 0 20px;
-  }
-}
-
-header {
-  height: 100vh;
-  display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  opacity: 0;
-}
-@media (max-width: 767px) {
-  header {
-    opacity: 1;
-  }
-}
-header.showing {
-  opacity: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-@media (max-width: 767px) {
-  header.showing {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes nameEnter {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  15% {
-    -webkit-transform: scale(0.92);
-            transform: scale(0.92);
-  }
-  25% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  90% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes nameEnter {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  15% {
-    -webkit-transform: scale(0.92);
-            transform: scale(0.92);
-  }
-  25% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  90% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-h1 {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 300;
-  text-align: center;
-}
-
-
-@media (max-width: 767px) {
-  h1 {
-    font-size: 1.8rem;
-    line-height: 1.2;
-    -webkit-animation-name: nameEnter;
-            animation-name: nameEnter;
-    -webkit-animation-duration: 2s;
-            animation-duration: 2s;
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation-delay: .5s;
-            animation-delay: .5s;
-  }
-}
-h1 span.title {
-  display: block;
-}
-@media (max-width: 767px) {
-  h1 span.title {
-    margin-top: 30px;
-  }
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  width: 100%;
-}
-@media (max-width: 767px) {
-  ul {
-    min-height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
-li {
-  font-size: .6rem;
-  min-height: 100vh;
-  width: 100%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-@media (max-width: 767px) {
-  li {
-    font-size: 1.8rem;
-    min-height: initial;
-    margin: 20px 0;
-    line-height: 1.2;
-    
-  }
-}
-li a {
-  opacity: 0;
-  color: #fafafa;
-  pointer-events: none;
-  text-decoration: none;
-}
-@media (max-width: 767px) {
-  li a {
-    opacity: 1;
-    pointer-events: auto;
-    display: block;
-    text-align: center;
-  }
-}
-li.showing a {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-a.email-showing {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-@media (max-width: 767px) {
-  #four a span {
-    text-align: center;
-    display: block;
-    width: 100%;
-  }
-}
-
-section.stack {
-  display: grid;
-}
+/* Stacking: list overlays the video */
+section.stack { display: grid; }
 section.stack > * { grid-area: 1 / 1; }
 #video_01 { z-index: 1; }
-section.stack > ul { z-index: 2; position: relative; }
+section.stack > ul { z-index: 2; position: relative; overflow: hidden; }
 
-/* smoother zoom visuals */
-#one, #two, #three, #four {
-  transform-origin: 50% 50%;
-  will-change: transform;
+/* Scrub wrapper */
+.sv-wrapper { position: relative; display: block; width: 100%; margin-inline: auto; }
+
+/* MOBILE-FIRST: fill viewport and crop */
+.sv-pin-container {
+  /* cancel aspect-ratio defaults on mobile; fill the visible viewport */
+  aspect-ratio: auto;
+  width: 100vw;
+  height: 100svh;                  /* dynamic viewport height (stable under URL bars) */
+  max-height: 100svh;
+  display: grid;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+/* Video fills and crops */
+.sv-video {
+  grid-area: 1/-1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                /* key: crop to fill */
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+  position: relative;
+}
+
+/* Overlay track for scrub distance (kept as-is) */
+.sv-overlay-track,
+.sv-preloader {
+  position: relative;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+.sv-preloader { background: #000; grid-area: 1/-1; transition: opacity .35s cubic-bezier(0.4,0,0.2,1); }
+.sv-overlay-track { height: var(--track-height, 100lvh); margin-top: var(--track-offset-y, -100lvh); width: 100%; }
+.sv-overlay-markers { position: absolute; inset: 0; pointer-events: none; }
+
+/* (Optional) remove markers styling in production */
+/* .sv-overlay-second-marker, .sv-overlay-cue-marker { display: none !important; } */
+
+/* ================================
+   4) LIST OVERLAY (ZOOM TARGETS)
+   ================================ */
+ul { list-style: none; padding: 0; margin: 0; width: 100%; overflow: hidden; }
+li {
+  /* mobile: simple stacked list */
+  display: flex; align-items: center; justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+li a {
+  color: #fafafa; text-decoration: none;
+  display: flex; align-items: center; gap: .5rem;
+  margin-bottom: 10px;
+  opacity: 1; pointer-events: auto;            /* mobile: visible by default */
+}
+
+/* Mobile tweaks for the email line */
+#four a span { display: inline; }
+
+/* ================================
+   5) HEADER / FOOTER (optional)
+   ================================ */
+header {
+  position: fixed; inset-inline: 0; top: 0;
+  height: 10svh; width: 100vw; z-index: 98;
+  display: grid; place-items: center;
+  background-image: radial-gradient(circle at center, #fff, #d5d22fb2, #1988256b);
+  border-bottom: 5px solid #494949; color: #000;
+}
+footer {
+  position: fixed; inset-inline: 0; bottom: 0; z-index: 99;
+  width: 100vw; background: #000; color: #fff;
+  display: grid; place-items: center;
+}
+
+/* ================================
+   6) INTERACTIONS / RESOURCES
+   ================================ */
+.resources-layer { position: fixed; right: 0; bottom: 0; z-index: 1000; }
+.resources {
+  background: var(--resources-bg-color);
+  display: grid; grid-auto-flow: column; gap: 0;
+  font-size: .6875rem; font-weight: 300; line-height: 1.3;
+  padding: .5rem; pointer-events: auto;
+}
+.resources a { color: var(--resources-color); display: grid; place-content: center; padding: 0 .5rem; transition: color .2s; }
+.resources a:not(:first-child) { border-inline-start: thin solid currentColor; }
+
+/* Hover-only devices */
+@media (hover:hover) and (pointer:fine) {
+  .resources a:hover, .resources a:active:not(:hover) { color: var(--resources-active-color); }
+}
+
+/* ================================
+   7) DESKTOP-UP ENHANCEMENTS
+   ================================ */
+@media (min-width: 768px) {
+  /* Reintroduce rounded corners/aspect for big screens */
+  .sv-pin-container {
+    border-radius: 1.5vh;
+    aspect-ratio: 16/9;
+    height: auto;                   /* desktop: aspect controls height */
+    max-height: 100lvh;
+  }
+
+  /* Center each list item full-viewport to make start:"top top" clean */
+  #one, #two, #three, #four {
+    min-height: 100vh;
+    display: grid; place-items: center;
+    transform-origin: 50% 50%;
+    will-change: transform;
+    contain: layout paint;
+  }
+
+  /* Desktop: hide links until their li gets .showing (GSAP toggles this) */
+  li a { opacity: 0; pointer-events: none; }
+  li.showing a { opacity: 1; pointer-events: auto; }
+
+  /* Email “line break” on small screens becomes centered block on desktop if desired */
+  #four a span { display: inline; text-align: center; width: auto; }
+}
+
+/* ================================
+   8) OPTIONAL TYPO ANIMATION (mobile)
+   ================================ */
+@keyframes nameEnter {
+  0% { transform: scale(1); }
+  15% { transform: scale(0.92); }
+  25% { transform: scale(1.2); }
+  90%, 100% { transform: scale(1); }
+}
+@media (max-width: 767px) {
+  h1 { font-size: 1.8rem; line-height: 1.2; animation: nameEnter 2s .5s forwards; }
+}
+
+/* ================================
+   9) MISC / UTILITIES
+   ================================ */
+.spacer { height: 100lvh; }
+section.intro a, section.intro a:visited { color: var(--color-text); }
+section.intro a:focus-visible { color: var(--color-accent); outline: none; }
+section.indicator { text-align: center; }
+section.indicator h3 { font-size: var(--ts-h5); font-weight: 400; }
+
+/* Mobile: make the overlay list fill the viewport and space items */
+@media (max-width: 767px) {
+  section.stack > ul {
+    min-height: 100svh;            /* fill the visible viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;  /* spread items vertically */
+    align-items: center;
+    gap: 1.5rem;                    /* extra breathing room between items */
+    padding-block: 2rem;            /* avoid edge hugging; tweak as desired */
+    padding-inline: 1rem;
+  }
+
+  /* Make sure list items don’t fight the layout */
+  section.stack > ul li {
+    min-height: auto;               /* override any 100vh from desktop */
+    margin: 0;                      /* rely on gap for spacing */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  section.stack > ul li a {
+    opacity: 1;                     /* visible on mobile */
+    pointer-events: auto;
+    display: inline-flex;
+    text-align: center;
+  }
 }
