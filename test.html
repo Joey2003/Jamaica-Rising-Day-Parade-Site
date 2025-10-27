@@ -74,7 +74,6 @@
       text-transform: uppercase;
       margin: 0;
       font-weight: 701;
-      letter-spacing: 0;
       line-height: 100%;
       font-optical-sizing: auto;
       font-kerning: normal;
@@ -123,11 +122,12 @@
       display: flex;
       flex-direction: column;
       margin: 0 100px;
-      top: -20px;
       width: 50%;
       position: relative;
       font-size: 29px;
       line-height: normal;
+      gap: 40px;
+      margin-top: 50px;
     }
 
     .header-stack {
@@ -135,11 +135,11 @@
       display: flex;
       flex-direction: column;
       width: fit-content;
+      gap: 40px;
     }
 
     .header-text {
       position: relative;
-      margin: 10px 0;
       margin-left: 50px;
       border-left-width: 1.5px;
       border-left-style: solid;
@@ -180,12 +180,12 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: 1683px;
+      /* height: 1683px; */
       align-items: start;
       gap: 2rem;
       padding: 45px 140px;
       text-align: left;
-      background-image: url('Images/combine-bg.png');
+      /* background-image: url('Images/combine-bg.png'); */
       background-size: cover;
       background-position-x: center;
       background-position-y: 70%;
@@ -524,6 +524,19 @@
       background-color: #01762c;
     }
 
+    .planned-date {
+      flex-direction: row;
+      display: flex;
+      gap: 15px;
+      scale: 1.21;
+      transform-origin: left;
+      margin: 10px 0;
+    }
+
+    .planned-date > * {
+      color: white;
+    }
+
     .founder-picture {
       background-size: cover;
       background-repeat: no-repeat;
@@ -598,14 +611,48 @@
 
     .map-container {
       width: fit-content;
-      margin-bottom: 80px;
+      /* margin-bottom: 80px; */
     }
 
     .scrolling-banner {
       width: 100vw;
-      background-color: #0f0f0f;
+      background-color: #000000;
     }
 
+    .mission-section {
+      width: 100vw;
+      height: 483px;
+      background-image: url('Images/mission-statement-banner.png');
+      background-size: cover;
+      background-position-x: center;
+      background-position-y: 50.0%;
+    }
+
+    .jamaican-flag {
+      position: relative;
+      width: 100vw;
+      height: fit-content;
+      /* or whatever size you need */
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    .jamaican-flag>* {
+      grid-area: 1 / 1;
+    }
+
+    .jamaican-flag video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* ensures the video covers fully like a background */
+      position: absolute;
+      /* optional for fine control */
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
 
     /* ====== RESPONSIVE ====== */
     @media (max-width: 960px) {
@@ -683,58 +730,70 @@
       </div>
 
 
-      <img src="Images/banner-date.png" alt="banner date" style="height: auto; margin: 10px 0; margin-right: 300px;">
+      <span class="planned-date">
+        <h3>Planned Date</h3>
+        <p>August 6, 2026</p>
+      </span>
     </div>
   </header>
   <main class="orange">
-    <div class="countdown-container">
-      <div class="countdown" id="countdown">
-        <p class="countdown-label">Parade Countdown</p>
-        <ul>
-          <li><span id="days"></span>
-            <div>days</div>
-          </li>
-          <li><span class="colon">:</span></li>
-          <li><span id="hours"></span>
-            <div>Hours</div>
-          </li>
-          <li><span class="colon">:</span></li>
-          <li><span id="minutes"></span>
-            <div>Minutes</div>
-          </li>
-          <li><span class="colon">:</span></li>
-          <li><span id="seconds"></span>
-            <div>Seconds</div>
-          </li>
-        </ul>
-      </div>
-      <div id="content" class="emoji">
-        <span>🥳</span>
-        <span>🎉</span>
+    <div style="display: grid; place-items: center;">
+      <div class="jamaican-flag">
+        <video autoplay muted loop playsinline disablepictureinpicture>
+          <source src="Images/jamaican-flag-bg.mp4" type="video/mp4" />
+        </video>
+        <div class="countdown-container">
+          <div class="countdown" id="countdown">
+            <p class="countdown-label">Parade Countdown</p>
+            <ul>
+              <li><span id="days"></span>
+                <div>days</div>
+              </li>
+              <li><span class="colon">:</span></li>
+              <li><span id="hours"></span>
+                <div>Hours</div>
+              </li>
+              <li><span class="colon">:</span></li>
+              <li><span id="minutes"></span>
+                <div>Minutes</div>
+              </li>
+              <li><span class="colon">:</span></li>
+              <li><span id="seconds"></span>
+                <div>Seconds</div>
+              </li>
+            </ul>
+          </div>
+          <div id="content" class="emoji">
+            <span>🥳</span>
+            <span>🎉</span>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="mission-section"></div>
     <!-- Intro -->
     <div class="intro">
       <div class="map-container">
         <iframe class="map" width="820px" height="337px" frameborder="0" referrerpolicy="no-referrer-when-downgrade"
           src="map.html" allowfullscreen>
         </iframe>
-        <!-- <h1>About<br>the parade</h1> -->
+        <h1>About<br>the parade</h1>
       </div>
-      <!-- <p>We invite you to an enchanting parade, where passion,<br>
+      <p>We invite you to an enchanting parade, where passion,<br>
         creativity, and community come together to shake the<br>
-        city in a breathtaking celebratrion of culture and tradition.</p> -->
+        city in a breathtaking celebratrion of culture and tradition.</p>
     </div>
 
     <div class="scrolling-banner">
       <div id="scroll-wrapper" style="transform: translateX(-355.25px);">
         <span class="scroll-text">
           <span style="color: white; font-family: monospace;">
-            Java <span class="bullet">•</span> The <span class="bullet">•</span> quick <span class="bullet">•</span> brown
+            Java <span class="bullet">•</span> The <span class="bullet">•</span> quick <span class="bullet">•</span>
+            brown
             <span class="bullet">•</span> fox <span class="bullet">•</span> hops <span class="bullet">•</span>
             over <span class="bullet">•</span> the <span class="bullet">•</span> fence <span class="bullet">•</span>
           </span>
-        <!-- </span> <span class="scroll-text">
+          <!-- </span> <span class="scroll-text">
           <span style="color: white; font-family: monospace;">
             Java <span class="bullet">•</span> Python <span class="bullet">•</span> C <span class="bullet">•</span> C#
             <span class="bullet">•</span> C++ <span class="bullet">•</span> JavaScript <span class="bullet">•</span>
@@ -774,8 +833,7 @@
         </div>
       </div>
     </div>
-    <div class="founder-card" id="founder-2" 
-    >
+    <div class="founder-card" id="founder-2">
       <div class="founder-background">
         <div class="founder-picture" style="
       background-image: url('https://placehold.co/407');
@@ -803,7 +861,7 @@
         </div>
       </div>
     </div>
-    <div class="founder-card" id="founder-3"  style="display: none;">
+    <div class="founder-card" id="founder-3" style="display: none;">
       <div class="founder-background">
         <div class="founder-picture" style="
       background-image: url('https://placehold.co/407');
@@ -831,7 +889,7 @@
         </div>
       </div>
     </div>
-    <div class="founder-card" id="founder-4"  style="display: none;">
+    <div class="founder-card" id="founder-4" style="display: none;">
       <div class="founder-background">
         <div class="founder-picture" style="
       background-image: url('https://placehold.co/407');
