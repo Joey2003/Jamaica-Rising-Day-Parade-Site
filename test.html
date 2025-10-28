@@ -12,7 +12,7 @@
       --dark-color-h: 0;
       --dark-color-s: 0%;
       --dark-color-l: 0%;
-       --light-color-h: 0.0;
+      --light-color-h: 0.0;
       --light-color-s: 0.0%;
       --light-color-l: 10.0%;
 
@@ -44,12 +44,15 @@
       --ts-h1: clamp(29.8598px, 2.6756vw + 22.3681px, 49.7664px);
 
     }
-    .main-banner-logo{
+
+    .main-banner-logo {
       width: 500px;
     }
-    .cd-margin{
+
+    .cd-margin {
       margin-bottom: -20px;
     }
+
     html {
       overflow-y: scroll;
       -webkit-text-size-adjust: 100%;
@@ -510,7 +513,7 @@
       width: fit-content;
     }
 
-    .founder-card {
+    .bill-card {
       display: flex;
       flex-direction: row;
       place-content: center;
@@ -523,25 +526,29 @@
       border-right-color: #fed100;
     }
 
-    .founder-background {
-      display: grid;
-      place-items: center;
-      width: fit-content;
-      width: 660px;
+    .bill-card * {
+      color: white;
+    }
+
+    .founder-info .button h3 {
+      color: black;
+    }
+
+    .founder-card {
+      width: 100vw;
       background-color: #01762c;
     }
 
-    .planned-date {
-      flex-direction: row;
-      display: flex;
-      gap: 15px;
-      scale: 1.;
-      transform-origin: left;
-      margin: 10px 0;
+    .founder-card * {
+      color: white;
     }
 
-    .planned-date > * {
-      color: white;
+    .founder-background {
+      display: flex;
+      place-content: center;
+      gap: 34px;
+      padding: calc(137.5px / 2) 100px;
+      position: relative;
     }
 
     .founder-picture {
@@ -552,7 +559,6 @@
     .founder-info {
       display: flex;
       flex-direction: column;
-      color: white;
       padding: 100px;
       padding-right: 50px;
       right: 50px;
@@ -564,9 +570,23 @@
     }
 
     .name {
-      color: white;
       margin-bottom: 30px;
     }
+
+    .planned-date {
+      flex-direction: row;
+      display: flex;
+      gap: 15px;
+      scale: 1.;
+      transform-origin: left;
+      margin: 10px 0;
+    }
+
+    .planned-date>* {
+      color: white;
+    }
+
+
 
     .email-body .input {
       /* message box is taller */
@@ -661,6 +681,25 @@
       z-index: 0;
     }
 
+    .dropdown-prompt {
+      --line-banner-height: 50px;
+      height: var(--line-banner-height);
+      margin-top: calc(var(--line-banner-height) * -1);
+      position: relative;
+      place-items: center;
+      display: grid;
+      box-shadow: inset 0 -75px 30px -25px rgb(0, 0, 0);
+      padding-top: var(--line-banner-height);
+    }
+
+    .dropdown-button {
+      width: fit-content;
+      height: fit-content;
+      cursor: pointer;
+      place-content: center;
+      display: grid;
+    }
+
     /* ====== RESPONSIVE ====== */
     @media (max-width: 960px) {
       .contact-us {
@@ -724,7 +763,8 @@
   <header>
     <div class="header-contents">
       <div class="header-stack">
-        <img src="Images/banner-title.png" class="main-banner-logo"alt="banner title" style="height: auto; margin: 10px 0;margin-right: 300px;">
+        <img src="Images/banner-title.png" class="main-banner-logo" alt="banner title"
+          style="height: auto; margin: 10px 0;margin-right: 300px;">
         <p class="header-text">We invite you to an enchanting parade, where passion,<br> creativity, and community come
           together to shake the<br>
           city
@@ -753,7 +793,7 @@
           <div class="countdown" id="countdown">
             <p class="countdown-label">Parade Countdown</p>
             <ul>
-              <li ><span id="days" class="cd-margin"></span>
+              <li><span id="days" class="cd-margin"></span>
                 <div>days</div>
               </li>
               <li><span class="colon">:</span></li>
@@ -765,7 +805,7 @@
                 <div>Minutes</div>
               </li>
               <li><span class="colon">:</span></li>
-              <li><span id="seconds"class="cd-margin"></span>
+              <li><span id="seconds" class="cd-margin"></span>
                 <div>Seconds</div>
               </li>
             </ul>
@@ -811,119 +851,141 @@
       </div>
     </div>
 
+
     <!-- Details -->
-    <div class="founder-card" id="founder-1">
-      <div class="founder-background">
-        <div class="founder-picture" style="
-      background-image: url('Images/dr-bill.png');
-      background-position-x: center;
-      background-position-y: 53.5%;
-      width: 407px;
-      height: 535px;"></div>
-      </div>
-      <div class="founder-info">
-        <p class="role">Founder</p>
-        <h3 class="name">Dr. Bill Tinglin</h3>
-        <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
-          humanitarian<br>and author whose
-          deep commitment to
-          cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
-          years
-          of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
-          his role
-          as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
-          mobilising<br>
-          global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
-          celebrate heritage,<br>unity and achievement.</p>
-        <div class="button">
-          <h3>Learn More</h3>
-        </div>
-      </div>
-    </div>
-    <div class="founder-card" id="founder-2">
-      <div class="founder-background">
-        <div class="founder-picture" style="
+
+    <!-- 
+      <div class="founder-card" id="founder-2">
+        <div class="founder-background">
+          <div class="founder-picture" style="
       background-image: url('https://placehold.co/407');
       background-position-x: center;
       background-position-y: 53.5%;
       width: 407px;
       height: 535px;"></div>
-      </div>
-      <div class="founder-info">
-        <p class="role">Founder</p>
-        <h3 class="name">Founder Name</h3>
-        <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
-          humanitarian<br>and author whose
-          deep commitment to
-          cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
-          years
-          of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
-          his role
-          as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
-          mobilising<br>
-          global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
-          celebrate heritage,<br>unity and achievement.</p>
-        <div class="button">
-          <h3>Learn More</h3>
+        </div>
+        <div class="founder-info">
+          <p class="role">Founder</p>
+          <h3 class="name">Founder Name</h3>
+          <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
+            humanitarian<br>and author whose
+            deep commitment to
+            cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
+            years
+            of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
+            his role
+            as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
+            mobilising<br>
+            global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
+            celebrate heritage,<br>unity and achievement.</p>
+          <div class="button">
+            <h3>Learn More</h3>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="founder-card" id="founder-3" style="display: none;">
-      <div class="founder-background">
-        <div class="founder-picture" style="
+      <div class="founder-card" id="founder-3" style="display: none;">
+        <div class="founder-background">
+          <div class="founder-picture" style="
       background-image: url('https://placehold.co/407');
       background-position-x: center;
       background-position-y: 53.5%;
       width: 407px;
       height: 535px;"></div>
-      </div>
-      <div class="founder-info">
-        <p class="role">Founder</p>
-        <h3 class="name">Dr. Bill Tinglin</h3>
-        <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
-          humanitarian<br>and author whose
-          deep commitment to
-          cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
-          years
-          of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
-          his role
-          as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
-          mobilising<br>
-          global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
-          celebrate heritage,<br>unity and achievement.</p>
-        <div class="button">
-          <h3>Learn More</h3>
+        </div>
+        <div class="founder-info">
+          <p class="role">Founder</p>
+          <h3 class="name">Dr. Bill Tinglin</h3>
+          <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
+            humanitarian<br>and author whose
+            deep commitment to
+            cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
+            years
+            of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
+            his role
+            as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
+            mobilising<br>
+            global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
+            celebrate heritage,<br>unity and achievement.</p>
+          <div class="button">
+            <h3>Learn More</h3>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="founder-card" id="founder-4" style="display: none;">
-      <div class="founder-background">
-        <div class="founder-picture" style="
+      <div class="founder-card" id="founder-4" style="display: none;">
+        <div class="founder-background">
+          <div class="founder-picture" style="
       background-image: url('https://placehold.co/407');
       background-position-x: center;
       background-position-y: 53.5%;
       width: 407px;
       height: 535px;"></div>
+        </div>
+        <div class="founder-info">
+          <p class="role">Founder</p>
+          <h3 class="name">Dr. Bill Tinglin</h3>
+          <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
+            humanitarian<br>and author whose
+            deep commitment to
+            cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
+            years
+            of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
+            his role
+            as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
+            mobilising<br>
+            global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
+            celebrate heritage,<br>unity and achievement.</p>
+          <div class="button">
+            <h3>Learn More</h3>
+          </div>
+        </div>
+      </div> -->
+
+    <div class="founder-card">
+      <div class="founder-background">
+        <div class="founder-picture" style="
+            background-image: url('Images/dr-bill.png');
+            background-position-x: center;
+            background-position-y: 53.5%;
+            width: 300px;
+            height: 400px;">
+        </div>
+        <div class="founder-picture" style="
+            background-image: url('https://placehold.co/400');
+            background-position-x: center;
+            background-position-y: 53.5%;
+            width: 300px;
+            height: 400px;">
+        </div>
+        <div class="founder-picture" style="
+            background-image: url('https://placehold.co/400');
+            background-position-x: center;
+            background-position-y: 53.5%;
+            width: 300px;
+            height: 400px;">
+        </div>
+        <div class="founder-picture" style="
+            background-image: url('https://placehold.co/400');
+            background-position-x: center;
+            background-position-y: 53.5%;
+            width: 300px;
+            height: 400px;">
+        </div>
+        <div class="founder-picture" style="
+            background-image: url('https://placehold.co/400');
+            background-position-x: center;
+            background-position-y: 53.5%;
+            width: 300px;
+            height: 400px;">
+        </div>
       </div>
-      <div class="founder-info">
-        <p class="role">Founder</p>
-        <h3 class="name">Dr. Bill Tinglin</h3>
-        <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
-          humanitarian<br>and author whose
-          deep commitment to
-          cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
-          years
-          of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
-          his role
-          as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
-          mobilising<br>
-          global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
-          celebrate heritage,<br>unity and achievement.</p>
-        <div class="button">
-          <h3>Learn More</h3>
+      <div class="dropdown-prompt">
+        <div href="" class="dropdown-button">
+          <img src="Images/click-here.png" alt="">
+          <!-- <h3>Meet the Founders</h3> -->
         </div>
       </div>
     </div>
+
 
     <!-- Agenda
     <div class="agenda">
