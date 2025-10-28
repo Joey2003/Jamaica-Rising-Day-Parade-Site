@@ -551,12 +551,19 @@
       color: white;
     }
 
-    .founder-background {
+    .founder-page {
       display: flex;
       place-content: center;
       gap: 34px;
-      padding: calc(137.5px / 2) 100px;
+      padding: calc(137.5px / 2) 0;
       position: relative;
+      width: 100vw;
+    }
+
+    .founder-book {
+      display: flex;
+      align-content: start;
+      width: fit-content;
     }
 
     .founder-picture {
@@ -671,6 +678,7 @@
       overflow: hidden;
       display: grid;
       place-items: center;
+      background-color: black;
     }
 
     .jamaican-flag>* {
@@ -692,7 +700,7 @@
     .dropdown-prompt {
       --line-banner-height: 50px;
       height: var(--line-banner-height);
-      margin-top: calc(var(--line-banner-height) * -1);
+      margin-top: calc(var(--line-banner-height) * -2);
       position: relative;
       place-items: center;
       display: grid;
@@ -794,9 +802,9 @@
   <main class="orange">
     <div style="display: grid; place-items: center;">
       <div class="jamaican-flag">
-        <video autoplay muted loop playsinline disablepictureinpicture>
+        <!-- <video autoplay muted loop playsinline disablepictureinpicture>
           <source src="Images/jamaican-flag-bg.mp4" type="video/mp4" />
-        </video>
+        </video> -->
         <div class="countdown-container">
           <div class="countdown" id="countdown">
             <p class="countdown-label">Parade Countdown</p>
@@ -864,7 +872,7 @@
 
     <!-- 
       <div class="founder-card" id="founder-2">
-        <div class="founder-background">
+        <div class="founder-page">
           <div class="founder-picture" style="
       background-image: url('https://placehold.co/407');
       background-position-x: center;
@@ -892,7 +900,7 @@
         </div>
       </div>
       <div class="founder-card" id="founder-3" style="display: none;">
-        <div class="founder-background">
+        <div class="founder-page">
           <div class="founder-picture" style="
       background-image: url('https://placehold.co/407');
       background-position-x: center;
@@ -920,7 +928,7 @@
         </div>
       </div>
       <div class="founder-card" id="founder-4" style="display: none;">
-        <div class="founder-background">
+        <div class="founder-page">
           <div class="founder-picture" style="
       background-image: url('https://placehold.co/407');
       background-position-x: center;
@@ -948,76 +956,93 @@
         </div>
       </div> -->
 
-    <div class="bill-card" id="founder-1">
-      <div class="bill-background">
-        <div class="founder-picture" style="
+    <div>
+      <div class="bill-card" id="founder-1">
+        <div class="bill-background">
+          <div class="founder-picture" style="
             background-image: url('Images/dr-bill.png');
             background-position-x: center;
             background-position-y: 53.5%;
             width: 407px;
             height: 535px;"></div>
+        </div>
+        <div class="founder-info">
+          <p class="role">Founder</p>
+          <h3 class="name">Dr. Bill Tinglin</h3>
+          <p class="founder-info-body">Dr. Bill Tinglin is a Jamaican-American educator,
+            humanitarian<br>and author whose
+            deep commitment to
+            cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
+            years
+            of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
+            his role
+            as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
+            mobilising<br>
+            global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
+            celebrate heritage,<br>unity and achievement.</p>
+          <div class="button">
+            <h3>Learn More</h3>
+          </div>
+        </div>
       </div>
-      <div class="founder-info">
-        <p class="role">Founder</p>
-        <h3 class="name">Dr. Bill Tinglin</h3>
-        <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
-          humanitarian<br>and author whose
-          deep commitment to
-          cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
-          years
-          of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
-          his role
-          as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
-          mobilising<br>
-          global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
-          celebrate heritage,<br>unity and achievement.</p>
-        <div class="button">
-          <h3>Learn More</h3>
+      <div class="dropdown-prompt" id="open-dropdown" style="display: grid;">
+        <div class="dropdown-button" id="open-dropdown-button">
+          <img src="Images/click-here.png" alt="">
+          <!-- <h3>Meet the Founders</h3> -->
         </div>
       </div>
     </div>
 
-    <div class="founder-card">
-      <div class="founder-background">
-        <div class="founder-picture" style="
+    <div class="founder-card" id="founder-grid" style="display: none;">
+      <div class="founder-book">
+        <div class="founder-page">
+          <div class="founder-picture" style="
             background-image: url('Images/dr-bill.png');
             background-position-x: center;
             background-position-y: 53.5%;
-            width: 300px;
-            height: 400px;">
-        </div>
-        <div class="founder-picture" style="
+            width: 242px;
+            height: 343px;">
+          </div>
+          <div class="founder-picture" style="
             background-image: url('https://placehold.co/400');
             background-position-x: center;
             background-position-y: 53.5%;
-            width: 300px;
-            height: 400px;">
-        </div>
-        <div class="founder-picture" style="
+            width: 242px;
+            height: 343px;">
+          </div>
+          <div class="founder-picture" style="
             background-image: url('https://placehold.co/400');
             background-position-x: center;
             background-position-y: 53.5%;
-            width: 300px;
-            height: 400px;">
-        </div>
-        <div class="founder-picture" style="
+            width: 242px;
+            height: 343px;">
+          </div>
+          <div class="founder-picture" style="
             background-image: url('https://placehold.co/400');
             background-position-x: center;
             background-position-y: 53.5%;
-            width: 300px;
-            height: 400px;">
-        </div>
-        <div class="founder-picture" style="
+            width: 242px;
+            height: 343px;">
+          </div>
+          <div class="founder-picture" style="
             background-image: url('https://placehold.co/400');
             background-position-x: center;
             background-position-y: 53.5%;
-            width: 300px;
-            height: 400px;">
+            width: 242px;
+            height: 343px;">
+          </div>
+          <div class="founder-picture" style="
+            background-image: url('https://placehold.co/400');
+            background-position-x: center;
+            background-position-y: 53.5%;
+            width: 242px;
+            height: 343px;">
+          </div>
         </div>
       </div>
-      <div class="dropdown-prompt">
-        <div href="" class="dropdown-button">
-          <img src="Images/click-here.png" alt="">
+      <div class="dropdown-prompt" id="collapse-dropdown">
+        <div class="dropdown-button" id="collapse-dropdown-button">
+          <img src="Images/collapse.png" alt="">
           <!-- <h3>Meet the Founders</h3> -->
         </div>
       </div>
@@ -1181,6 +1206,16 @@
         //seconds
       }, 0)
   }());
+</script>
+<script>
+  document.getElementById("open-dropdown-button").addEventListener("click", function () {
+    document.getElementById("founder-grid").style.display = "block";
+    document.getElementById("open-dropdown").style.display = "none";
+  });
+  document.getElementById("collapse-dropdown-button").addEventListener("click", function () {
+    document.getElementById("founder-grid").style.display = "none";
+    document.getElementById("open-dropdown").style.display = "grid";
+  });
 </script>
 
 </html>
