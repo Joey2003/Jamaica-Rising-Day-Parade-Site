@@ -47,6 +47,9 @@
     .main-banner-logo{
       width: 500px;
     }
+    .cd-margin{
+      margin-bottom: -20px;
+    }
     html {
       overflow-y: scroll;
       -webkit-text-size-adjust: 100%;
@@ -59,7 +62,7 @@
       min-height: 100vh;
       width: 100%;
       color: var(--color-text);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', sans-serif, Bebas Neue;
       font-size: 29px;
       line-height: 1.5;
       overflow: hidden;
@@ -749,19 +752,19 @@
           <div class="countdown" id="countdown">
             <p class="countdown-label">Parade Countdown</p>
             <ul>
-              <li><span id="days"></span>
+              <li ><span id="days" class="cd-margin"></span>
                 <div>days</div>
               </li>
               <li><span class="colon">:</span></li>
-              <li><span id="hours"></span>
+              <li><span id="hours" class="cd-margin"></span>
                 <div>Hours</div>
               </li>
               <li><span class="colon">:</span></li>
-              <li><span id="minutes"></span>
+              <li><span id="minutes" class="cd-margin"></span>
                 <div>Minutes</div>
               </li>
               <li><span class="colon">:</span></li>
-              <li><span id="seconds"></span>
+              <li><span id="seconds"class="cd-margin"></span>
                 <div>Seconds</div>
               </li>
             </ul>
