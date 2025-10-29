@@ -46,7 +46,9 @@
     }
 
     .main-banner-logo {
-      width: 400px;
+      height: auto;
+      margin: 10px 0;
+      margin-right: 300px;
     }
 
     .cd-margin {
@@ -131,13 +133,13 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      margin: 0 100px;
+      margin: 70px 100px;
       width: 50%;
       position: relative;
       font-size: 29px;
       line-height: normal;
-      gap: 40px;
-      margin-top: 50px;
+      /* gap: 40px; */
+
     }
 
     .header-stack {
@@ -518,7 +520,7 @@
       flex-direction: row;
       place-content: center;
       position: relative;
-      width: 100vw;
+      width: 100%;
       justify-content: space-between;
       background-color: #151716;
       border-right-width: 30px;
@@ -745,11 +747,25 @@
       .card {
         height: 90vh;
       }
+
+      .header-contents {
+        width: auto;
+        margin: 0px 50px;
+      }
+
+      .header-text {
+        margin-left: 0px;
+      }
     }
 
     @media (max-width: 520px) {
       .contact-us {
         padding: 20px;
+      }
+
+      .main-banner-logo {
+        width: 55%;
+        margin-right: 0px;
       }
 
       .contact-us .heading h2 {
@@ -762,6 +778,26 @@
 
       .email-body .input {
         height: 140px;
+      }
+
+      .header-stack {
+        align-items: center;
+      }
+
+      .planned-date {
+        flex-direction: row;
+        display: flex;
+        gap: 15px;
+        scale: 1;
+        transform-origin: left;
+        margin: 9px 0;
+        place-items: center;
+        text-align: center;
+      }
+
+      .header-contents {
+        width: auto;
+        margin: 75px 50px;
       }
     }
   </style>
@@ -779,10 +815,9 @@
   <header>
     <div class="header-contents">
       <div class="header-stack">
-        <img src="Images/banner-title.png" class="main-banner-logo" alt="banner title"
-          style="height: auto; margin: 10px 0;margin-right: 300px;">
-        <p class="header-text">We invite you to an enchanting parade, where passion,<br> creativity, and community come
-          together to shake the<br>
+        <img src="Images/banner-title.png" class="main-banner-logo" alt="banner title" style="">
+        <p class="header-text">We invite you to an enchanting parade, where passion, creativity, and community come
+          together to shake the
           city
           in a breathtaking celebratrion of culture and tradition.</p>
         <div class="header-button-frame">
@@ -797,6 +832,14 @@
         <h3>Planned Date</h3>
         <p>August 6, 2026</p>
       </span>
+    </div>
+    <div style="width: 100%;position: absolute;bottom: 0px;">
+      <div class="dropdown-prompt" style="display: grid;">
+        <div class="dropdown-button" style="cursor: unset;">
+          <img src="Images/learn-more.png" alt="" draggable="false">
+          <!-- <h3>Meet the Founders</h3> -->
+        </div>
+      </div>
     </div>
   </header>
   <main class="orange">
@@ -956,7 +999,7 @@
         </div>
       </div> -->
 
-    <div>
+    <div style="width: 100vw;">
       <div class="bill-card" id="founder-1">
         <div class="bill-background">
           <div class="founder-picture" style="
@@ -987,7 +1030,7 @@
       </div>
       <div class="dropdown-prompt" id="open-dropdown" style="display: grid;">
         <div class="dropdown-button" id="open-dropdown-button">
-          <img src="Images/click-here.png" alt="">
+          <img src="Images/click-here.png" alt="" draggable="false">
           <!-- <h3>Meet the Founders</h3> -->
         </div>
       </div>
@@ -1042,7 +1085,7 @@
       </div>
       <div class="dropdown-prompt" id="collapse-dropdown">
         <div class="dropdown-button" id="collapse-dropdown-button">
-          <img src="Images/collapse.png" alt="">
+          <img src="Images/collapse.png" alt="" draggable="false">
           <!-- <h3>Meet the Founders</h3> -->
         </div>
       </div>
