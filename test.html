@@ -172,6 +172,32 @@
       padding-right: 0px;
     }
 
+    .mission-section p {
+      padding-left: 10px;
+      color: white;
+    }
+
+    .mission-section h3 {
+      padding-left: 10px;
+      color: white;
+      font-style: oblique;
+    }
+
+    .mission-section div {
+      position: relative;
+      margin: 100px;
+      border-left-width: 1.5px;
+      border-left-style: solid;
+      padding: 0 30px;
+      padding-right: 0px;
+      height: fit-content;
+      margin-right: 50%;
+    }
+
+    /* .header-text {
+      
+    } */
+
     .header-button-frame {
       position: relative;
       margin: 10px 0;
@@ -533,7 +559,7 @@
       flex-direction: row;
       place-content: center;
       position: relative;
-      width: 100%;
+      width: 100vw;
       justify-content: space-between;
       background-color: #151716;
       border-right-width: 30px;
@@ -547,6 +573,7 @@
       width: fit-content;
       width: 660px;
       background-image: url('Images/green-background.png');
+      padding: 0 50px;
     }
 
     .bill-card * {
@@ -559,7 +586,12 @@
 
     .founder-card {
       width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      box-sizing: border-box;
+      /* safe if you add borders/padding */
       background-color: white;
+      overflow: hidden;
     }
 
     .founder-card * {
@@ -569,21 +601,26 @@
     .founder-page {
       display: flex;
       place-content: center;
-      gap: 34px;
+      gap: 1.82vw;
       padding: calc(137.5px / 2) 0;
       position: relative;
-      width: 100vw;
+      width: 100%;
+      flex: 0 0 100%;
+      transform: translateX(calc(var(--index) * -100%));
+      transition: transform 0.3s ease;
     }
 
     .founder-book {
       display: flex;
       align-content: start;
-      width: fit-content;
+      width: 100%;
     }
 
     .founder-picture {
       background-size: cover;
       background-repeat: no-repeat;
+      height: 17vw;
+      width: 13vw;
     }
 
     .founder-info {
@@ -595,8 +632,38 @@
       position: relative;
     }
 
+    .founder-card-name {
+      position: relative;
+      top: -0.85vw;
+      color: black;
+      width: fit-content;
+      text-align: center;
+      font-size: 1.5vw;
+      line-height: 0px;
+    }
+
     .founder-info-body {
       margin: 20px 0;
+    }
+
+
+    .founder-bio {
+      --pad: .75vw;
+
+      position: relative;
+
+      height: calc(100% - calc(var(--pad)) * 2);
+      width: calc(100% - calc(var(--pad)) * 2);
+      padding: var(--pad);
+      font-size: 1vw;
+
+      background-color: #000000b0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .founder-bio:hover {
+      opacity: 1;
     }
 
     .name {
@@ -721,6 +788,8 @@
       display: grid;
       box-shadow: inset 0 -55px 30px -10px rgb(0, 0, 0);
       padding-top: var(--line-banner-height);
+      width: 110%;
+      left: -5%;
     }
 
     .dropdown-button {
@@ -729,6 +798,23 @@
       cursor: pointer;
       place-content: center;
       display: grid;
+    }
+
+
+    .founder-card>img {
+      margin-top: 20vh;
+    }
+
+    .donate-button {
+      background-color: #0000;
+      border: 0px;
+      cursor: pointer;
+    }
+
+    .last-img .donate-button {
+      right: 18.5%;
+      position: relative;
+      top: 72%;
     }
 
     /* ====== RESPONSIVE ====== */
@@ -792,6 +878,42 @@
         justify-content: center;
         display: grid;
       }
+
+      .bill-background {
+        width: 100%;
+      }
+
+      .bill-card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .founder-info {
+        padding: 50px;
+        padding-bottom: 100px;
+        right: unset;
+      }
+
+      .founder-page {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        place-items: center;
+      }
+
+      .founder-page>div {
+        margin: 0 0px 120px;
+        transform-origin: top;
+        scale: 1.5;
+      }
+
+      .founder-card>img {
+        margin-top: 30vh;
+      }
+
+      .founder-page {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     @media (max-width: 520px) {
@@ -835,6 +957,18 @@
         width: auto;
         margin: 75px 50px;
       }
+
+      .founder-page>div {
+        transform-origin: top;
+        scale: 2;
+      }
+
+      .intro {
+        padding: 45px 140px;
+        text-align: center;
+        justify-items: center;
+        display: grid;
+      }
     }
   </style>
   <link rel="stylesheet" href="Styles/countStyle.css">
@@ -851,15 +985,15 @@
   <header>
     <div class="header-contents">
       <div class="header-stack">
-        <img src="Images/banner-title.png" class="main-banner-logo" alt="banner title" style="">
+        <img src="Images/banner-title.png" class="main-banner-logo" alt="banner title">
         <p class="header-text">We invite you to an enchanting parade, where passion, creativity, and community come
           together to shake the
           city
           in a breathtaking celebratrion of culture and tradition.</p>
         <div class="header-button-frame">
-          <div class="button">
-            <img src="Images/play-icon.png" alt="play icon">
-          </div>
+          <button class="donate-button">
+            <img src="Images/donation-banner-button.png" alt="play icon">
+          </button>
         </div>
       </div>
 
@@ -912,7 +1046,18 @@
         </div>
       </div>
     </div>
-    <div class="mission-section"></div>
+    <div class="mission-section">
+      <div>
+        <h3>Mission Statement</h3>
+        <p>
+          To establish the Jamaica Rising Parade as an annual, internationally recognized cultural celebration that
+          honors
+          Jamaica's rich history, amplifies its artistic and civic contributions, unites the diaspora, fosters youth
+          engagement, and educates the broader public through vibrant expressions of music, dance, food, fashion, and
+          national pride.
+        </p>
+      </div>
+    </div>
     <!-- Intro -->
     <div class="intro">
       <div class="map-container">
@@ -938,9 +1083,11 @@
           -->
           <span style="color: white;" class="sbtext">
 
-            <strong><b> CELEBRATING ROOTS, RHYTHM AND RESILIENCE
-                <span style="width:150px;display:inline-block"></span>
-                JAMAICA'S FIRST PARADE IN THE UNITED STATES </strong></spanb>
+            <strong>
+              CELEBRATING ROOTS, RHYTHM AND RESILIENCE
+              <span style="width:150px;display:inline-block"></span>
+              JAMAICA'S FIRST PARADE IN THE UNITED STATES
+            </strong>
             <div style="margin-top: 15px;"></div>
           </span>
           <!-- </span> <span class="scroll-text">
@@ -1043,7 +1190,7 @@
         </div>
       </div> -->
 
-    <div style="width: 100vw;">
+    <div style="overflow: hidden;">
       <div class="bill-card" id="founder-1">
         <div class="bill-background">
           <div class="founder-picture" style="
@@ -1057,16 +1204,16 @@
           <p class="role">Founder</p>
           <h3 class="name">Dr. Bill Tinglin</h3>
           <p class="founder-info-body">Dr. Bill Tinglin is a Jamaican-American educator,
-            humanitarian<br>and author whose
+            humanitarian and author whose
             deep commitment to
-            cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
+            cultural pride and community service has shaped his work. His Jamaican upbringing, combined with his
             years
-            of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
+            of international advocacy for education, tolerance and diaspora engagement, laid the foundation for
             his role
-            as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
-            mobilising<br>
-            global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
-            celebrate heritage,<br>unity and achievement.</p>
+            as Chairperson of the Jamaica Rising Day Parade. In that capacity, he leverages his experience in
+            mobilising
+            global audiences and uplifting Jamaican identity—bringing together the diaspora in New York City to
+            celebrate heritage, unity and achievement.</p>
           <div class="button">
             <h3>Learn More</h3>
           </div>
@@ -1081,51 +1228,160 @@
     </div>
 
     <div class="founder-card" id="founder-grid" style="display: none;">
-      <div class="founder-book">
+      <img src="Images/left-chevron.png" alt="left arrow" id="left-arrow"
+        style="position: absolute; left: 1.646%; cursor: pointer; z-index: 99; width: 40px; height: auto; display: none;">
+      <img src="Images/right-chevron.png" alt="right arrow" id="right-arrow"
+        style="position: absolute; right: 1.646%; cursor: pointer; z-index: 99; width: 40px; height: auto;">
+      <div class="founder-book" id="founder-book" style="--index: 0">
         <div class="founder-page">
-          <div class="founder-picture" style="
+          <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Founder Name</p>
+            <div class="founder-picture" style="
             background-image: url('Images/dr-bill.png');
             background-position-x: center;
-            background-position-y: 53.5%;
-            width: 242px;
-            height: 343px;">
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
+                deep
+                commitment to cultural pride and community service has shaped his work.</p>
+            </div>
           </div>
-          <div class="founder-picture" style="
-            background-image: url('https://placehold.co/400');
+          <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Founder Name</p>
+            <div class="founder-picture" style="
+            background-image: url('Images/dr-bill.png');
             background-position-x: center;
-            background-position-y: 53.5%;
-            width: 242px;
-            height: 343px;">
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
+                deep
+                commitment to cultural pride and community service has shaped his work.</p>
+            </div>
           </div>
-          <div class="founder-picture" style="
-            background-image: url('https://placehold.co/400');
+          <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Founder Name</p>
+            <div class="founder-picture" style="
+            background-image: url('Images/dr-bill.png');
             background-position-x: center;
-            background-position-y: 53.5%;
-            width: 242px;
-            height: 343px;">
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
+                deep
+                commitment to cultural pride and community service has shaped his work.</p>
+            </div>
           </div>
-          <div class="founder-picture" style="
-            background-image: url('https://placehold.co/400');
+          <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Founder Name</p>
+            <div class="founder-picture" style="
+            background-image: url('Images/dr-bill.png');
             background-position-x: center;
-            background-position-y: 53.5%;
-            width: 242px;
-            height: 343px;">
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
+                deep
+                commitment to cultural pride and community service has shaped his work.</p>
+            </div>
           </div>
-          <div class="founder-picture" style="
-            background-image: url('https://placehold.co/400');
+          <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Founder Name</p>
+            <div class="founder-picture" style="
+            background-image: url('Images/dr-bill.png');
             background-position-x: center;
-            background-position-y: 53.5%;
-            width: 242px;
-            height: 343px;">
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
+                deep
+                commitment to cultural pride and community service has shaped his work.</p>
+            </div>
           </div>
-          <div class="founder-picture" style="
-            background-image: url('https://placehold.co/400');
+          <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Founder Name</p>
+            <div class="founder-picture" style="
+            background-image: url('Images/dr-bill.png');
             background-position-x: center;
-            background-position-y: 53.5%;
-            width: 242px;
-            height: 343px;">
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
+                deep
+                commitment to cultural pride and community service has shaped his work.</p>
+            </div>
           </div>
         </div>
+        <div class="founder-page">
+          <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Founder Name</p>
+            <div class="founder-picture" style="
+            background-image: url('Images/dr-bill.png');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
+                deep
+                commitment to cultural pride and community service has shaped his work.</p>
+            </div>
+          </div>
+          <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Founder Name</p>
+            <div class="founder-picture" style="
+            background-image: url('Images/dr-bill.png');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
+                deep
+                commitment to cultural pride and community service has shaped his work.</p>
+            </div>
+          </div>
+          <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Founder Name</p>
+            <div class="founder-picture" style="
+            background-image: url('Images/dr-bill.png');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
+                deep
+                commitment to cultural pride and community service has shaped his work.</p>
+            </div>
+          </div>
+          <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Founder Name</p>
+            <div class="founder-picture" style="
+            background-image: url('Images/dr-bill.png');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
+                deep
+                commitment to cultural pride and community service has shaped his work.</p>
+            </div>
+          </div>
+          <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Founder Name</p>
+            <div class="founder-picture" style="
+            background-image: url('Images/dr-bill.png');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
+                deep
+                commitment to cultural pride and community service has shaped his work.</p>
+            </div>
+          </div>
+          <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Founder Name</p>
+            <div class="founder-picture" style="
+            background-image: url('Images/dr-bill.png');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
+                deep
+                commitment to cultural pride and community service has shaped his work.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
       <div class="dropdown-prompt" id="collapse-dropdown">
         <div class="dropdown-button" id="collapse-dropdown-button">
@@ -1185,7 +1441,11 @@
     <!-- About -->
     <div class="about">
       <!-- Image -->
-      <div class="last-img"></div>
+      <div class="last-img">
+        <button class="donate-button">
+          <img src="Images/donation-banner-button.png" alt="play icon">
+        </button>
+      </div>
 
 
     </div>
@@ -1303,6 +1563,37 @@
     document.getElementById("founder-grid").style.display = "none";
     document.getElementById("open-dropdown").style.display = "grid";
   });
+</script>
+<script>
+  const founderBook = document.getElementById("founder-book");
+  const leftArrow = document.getElementById("left-arrow");
+  const rightArrow = document.getElementById("right-arrow");
+  let index = 0;
+  const totalPages = founderBook.children.length;
+
+  function updateArrows() {
+    leftArrow.style.display = index === 0 ? "none" : "block";
+    rightArrow.style.display = index === totalPages - 1 ? "none" : "block";
+  }
+
+  leftArrow.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      founderBook.style.setProperty("--index", index);
+      updateArrows();
+    }
+  });
+
+  rightArrow.addEventListener("click", () => {
+    if (index < totalPages - 1) {
+      index++;
+      founderBook.style.setProperty("--index", index);
+      updateArrows();
+    }
+  });
+
+  // Initialize arrow visibility
+  updateArrows();
 </script>
 
 </html>
