@@ -7,9 +7,11 @@
   <title>JRDP</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400&display=swap"
     rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --dark-color-h: 0;
@@ -76,12 +78,13 @@
       overflow: hidden;
       background-color: #f2f2f2;
     }
+
     .sbtext {
       .poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+      }
     }
 
     h1 {
@@ -156,7 +159,7 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      width: fit-content;
+      width: 100%;
       gap: 20px;
     }
 
@@ -604,7 +607,7 @@
       flex-direction: row;
       display: flex;
       gap: 15px;
-      scale: 1.;
+      scale: 1;
       transform-origin: left;
       margin: 10px 0;
     }
@@ -736,6 +739,15 @@
         padding: 28px;
       }
 
+      .map-container {
+        display: grid;
+        justify-items: center;
+      }
+
+      .map {
+        width: 100%;
+      }
+
       .button-section {
         row-gap: 8px;
       }
@@ -758,13 +770,27 @@
         height: 90vh;
       }
 
+      .planned-date {
+        justify-content: center;
+      }
+
       .header-contents {
-        width: auto;
-        margin: 0px 50px;
+        width: 100vw;
+        margin: 60px 0px;
       }
 
       .header-text {
         margin-left: 0px;
+      }
+
+      .main-banner-logo {
+        height: auto;
+        margin: 0 0;
+      }
+
+      .header-button-frame {
+        justify-content: center;
+        display: grid;
       }
     }
 
@@ -895,8 +921,8 @@
         </iframe>
         <h1>About<br>the parade</h1>
       </div>
-      <p>We invite you to an enchanting parade, where passion,<br>
-        creativity, and community come together to shake the<br>
+      <p>We invite you to an enchanting parade, where passion,
+        creativity, and community come together to shake the
         city in a breathtaking celebratrion of culture and tradition.</p>
     </div>
 
@@ -911,11 +937,11 @@
             over <span class="bullet">•</span> the <span class="bullet">•</span> fence <span class="bullet">•</span>
           -->
           <span style="color: white;" class="sbtext">
-            
-           <strong><b> CELEBRATING ROOTS, RHYTHM AND RESILIENCE 
-            <span style="width:150px;display:inline-block"></span>
-            JAMAICA'S FIRST PARADE IN THE UNITED STATES </strong></spanb>
-        <div style="margin-top: 15px;"></div>
+
+            <strong><b> CELEBRATING ROOTS, RHYTHM AND RESILIENCE
+                <span style="width:150px;display:inline-block"></span>
+                JAMAICA'S FIRST PARADE IN THE UNITED STATES </strong></spanb>
+            <div style="margin-top: 15px;"></div>
           </span>
           <!-- </span> <span class="scroll-text">
           <span style="color: white; font-family: monospace;">
@@ -1103,7 +1129,7 @@
       </div>
       <div class="dropdown-prompt" id="collapse-dropdown">
         <div class="dropdown-button" id="collapse-dropdown-button">
-          <img src="Images/collapse.png" alt="" draggable="false">
+          <img src="Images/ch-collapse.png" alt="" draggable="false">
           <!-- <h3>Meet the Founders</h3> -->
         </div>
       </div>
