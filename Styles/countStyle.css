@@ -51,10 +51,11 @@ li span {
 }
 
 li div {
-  padding: 5px;
+  padding: 2px;
   width: 100%;
   font-size: 1.25rem;
   font-weight: bold;
+  font-family: "Monsteratt", sans-serif;
   text-align: center;
   background-color: white;
   color: black;

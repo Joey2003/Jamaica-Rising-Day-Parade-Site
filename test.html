@@ -7,6 +7,9 @@
   <title>JRDP</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400&display=swap"
     rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <style>
     :root {
       --dark-color-h: 0;
@@ -70,6 +73,13 @@
       line-height: 1.5;
       overflow: hidden;
       background-color: #f2f2f2;
+    }
+    .sbtext {
+      .poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
     }
 
     h1 {
@@ -343,7 +353,7 @@
       position: relative;
       width: 100%;
       aspect-ratio: 907 / 424;
-      background-image: url('Images/donation-banner.png');
+      background-image: url('Images/donation-banner-bg-bg.png');
       background-size: cover;
       background-position-x: center;
       background-position-y: 50.0%;
@@ -704,7 +714,7 @@
       position: relative;
       place-items: center;
       display: grid;
-      box-shadow: inset 0 -75px 30px -25px rgb(0, 0, 0);
+      box-shadow: inset 0 -55px 30px -10px rgb(0, 0, 0);
       padding-top: var(--line-banner-height);
     }
 
@@ -849,12 +859,20 @@
 
     <div class="scrolling-banner">
       <div id="scroll-wrapper" style="transform: translateX(-355.25px);">
+        <div style="margin-top: 15px;"></div>
         <span class="scroll-text">
-          <span style="color: white; font-family: monospace;">
-            Java <span class="bullet">•</span> The <span class="bullet">•</span> quick <span class="bullet">•</span>
+          <!--background-image: url('Images/scrolling-text.png');
+          <span class="bullet">•</span> The <span class="bullet">•</span> quick <span class="bullet">•</span>
             brown
             <span class="bullet">•</span> fox <span class="bullet">•</span> hops <span class="bullet">•</span>
             over <span class="bullet">•</span> the <span class="bullet">•</span> fence <span class="bullet">•</span>
+          -->
+          <span style="color: white;" class="sbtext">
+            
+           <strong><b> CELEBRATING ROOTS, RHYTHM AND RESILIENCE 
+            <span style="width:150px;display:inline-block"></span>
+            JAMAICA'S FIRST PARADE IN THE UNITED STATES </strong></spanb>
+        <div style="margin-top: 15px;"></div>
           </span>
           <!-- </span> <span class="scroll-text">
           <span style="color: white; font-family: monospace;">
@@ -862,7 +880,7 @@
             <span class="bullet">•</span> C++ <span class="bullet">•</span> JavaScript <span class="bullet">•</span>
             HTML <span class="bullet">•</span> Scala <span class="bullet">•</span> PHP <span class="bullet">•</span>
             VHDL <span class="bullet">•</span> MIPS <span class="bullet">•</span>
-          </span>
+          </span>  background-image: url('Images/scrolling-text.png');
         </span> -->
       </div>
     </div>
@@ -1042,7 +1060,7 @@
       </div>
       <div class="dropdown-prompt" id="collapse-dropdown">
         <div class="dropdown-button" id="collapse-dropdown-button">
-          <img src="Images/collapse.png" alt="">
+          <img src="Images/ch-collapse.png" alt="">
           <!-- <h3>Meet the Founders</h3> -->
         </div>
       </div>
@@ -1148,7 +1166,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     const wrapper = document.getElementById("scroll-wrapper");
     let pos = 0;
-    const speed = .25;
+    const speed = .375;
 
     function animate() {
       pos -= speed;
