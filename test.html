@@ -172,27 +172,7 @@
       padding-right: 0px;
     }
 
-    .mission-section p {
-      padding-left: 10px;
-      color: white;
-    }
 
-    .mission-section h3 {
-      padding-left: 10px;
-      color: white;
-      font-style: oblique;
-    }
-
-    .mission-section div {
-      position: relative;
-      margin: 100px;
-      border-left-width: 1.5px;
-      border-left-style: solid;
-      padding: 0 30px;
-      padding-right: 0px;
-      height: fit-content;
-      margin-right: 50%;
-    }
 
     /* .header-text {
       
@@ -752,6 +732,29 @@
       background-position-y: 50.0%;
     }
 
+    .mission-section p {
+      padding-left: 10px;
+      color: white;
+    }
+
+    .mission-section h3 {
+      padding-left: 10px;
+      color: white;
+      font-style: oblique;
+    }
+
+    .mission-section div {
+      position: relative;
+      margin: 100px;
+      border-left-width: 1.5px;
+      border-left-style: solid;
+      border-color: white;
+      padding: 0 30px;
+      padding-right: 0px;
+      height: fit-content;
+      margin-right: 50%;
+    }
+
     .jamaican-flag {
       position: relative;
       width: 100vw;
@@ -812,9 +815,10 @@
     }
 
     .last-img .donate-button {
-      right: 18.5%;
+      right: 18.5vw;
       position: relative;
-      top: 72%;
+      top: 33vw;
+      width: 25vw;
     }
 
     /* ====== RESPONSIVE ====== */
@@ -991,8 +995,9 @@
           city
           in a breathtaking celebratrion of culture and tradition.</p>
         <div class="header-button-frame">
-          <button class="donate-button">
-            <img src="Images/donation-banner-button.png" alt="play icon">
+          <button class="donate-button" href="https://donorbox.org/founding-partner-launch" type="button"
+            onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')">
+            <img src="Images/donation-banner-button.png" alt="Donate button">
           </button>
         </div>
       </div>
@@ -1214,9 +1219,9 @@
             mobilising
             global audiences and uplifting Jamaican identity—bringing together the diaspora in New York City to
             celebrate heritage, unity and achievement.</p>
-          <div class="button">
+          <a class="button" href="https://billtingling.com/" target="_blank" rel="noopener noreferrer">
             <h3>Learn More</h3>
-          </div>
+          </a>
         </div>
       </div>
       <div class="dropdown-prompt" id="open-dropdown" style="display: grid;">
@@ -1442,8 +1447,9 @@
     <div class="about">
       <!-- Image -->
       <div class="last-img">
-        <button class="donate-button">
-          <img src="Images/donation-banner-button.png" alt="play icon">
+        <button class="donate-button" type="button"
+          onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')">
+          <img src="Images/donation-banner-button.png" style="width: 100%;" alt="Donate button">
         </button>
       </div>
 
