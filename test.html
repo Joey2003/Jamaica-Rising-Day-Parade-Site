@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JRDP</title>
+  <title>Jamaica Rising Day Parade Association</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400&display=swap"
     rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,11 +80,9 @@
     }
 
     .sbtext {
-      .poppins-extrabold {
-        font-family: "Poppins", sans-serif;
-        font-weight: 800;
-        font-style: normal;
-      }
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+      font-style: normal;
     }
 
     h1 {
@@ -181,6 +179,9 @@
     .header-button-frame {
       position: relative;
       margin: 10px 0;
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
     }
 
     footer {
@@ -191,10 +192,7 @@
       width: auto;
       background: #000;
       color: #fff;
-      display: flex;
       justify-content: space-between;
-      padding-left: 20px;
-      padding-right: 20px;
     }
 
     main {
@@ -208,6 +206,7 @@
     }
 
     .intro {
+      position: relative;
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -221,6 +220,7 @@
       background-position-x: center;
       background-position-y: 70%;
       justify-content: center;
+      color: white;
     }
 
     .first-img {
@@ -371,7 +371,19 @@
     }
 
     .contact-form {
-      padding: 0 500px;
+      width: 38.5%;
+      margin-left: 1%;
+    }
+
+    .contact-form .button {
+      background-color: white;
+      color: #151716;
+      padding-left: 3%;
+      padding-right: 3%;
+      scale: 0.65;
+      transform-origin: left;
+      display: block;
+      margin-top: 18px;
     }
 
     .indent {
@@ -393,15 +405,15 @@
     }
 
     .contact-us {
-      width: 100vw;
-      padding: 40px 0;
+      width: 100%;
+      padding: 40px 16%;
       color: white;
       background-color: #151716;
       border: 2px solid rgba(0, 0, 0, 0.51);
       box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .06);
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 48px;
+      display: flex;
+      justify-content: start;
+      gap: 4%;
     }
 
     /* Columns */
@@ -416,7 +428,7 @@
       font-size: clamp(26px, 2.6vw, 34px);
       line-height: 1.1;
       text-transform: uppercase;
-      text-align: center;
+      text-align: start;
       letter-spacing: .02em;
       color: white;
     }
@@ -476,10 +488,6 @@
       background: var(--accent-dk);
     }
 
-    .founder-info .button:hover {
-      background-color: rgba(255, 255, 255, 0.82);
-    }
-
     .button p {
       margin: 0;
       font-weight: 700;
@@ -506,9 +514,7 @@
     /* Right column — contact form look */
     .contact-form .name,
     .contact-form .email,
-    .contact-form .email-body {
-      margin-top: 18px;
-    }
+    .contact-form .email-body {}
 
     .input-prompt {
       margin: 0 0 6px;
@@ -626,7 +632,6 @@
       margin: 20px 0;
     }
 
-
     .founder-bio {
       --pad: .75vw;
 
@@ -646,9 +651,7 @@
       opacity: 1;
     }
 
-    .name {
-      margin-bottom: 30px;
-    }
+    .name {}
 
     .planned-date {
       flex-direction: row;
@@ -663,8 +666,6 @@
       color: white;
     }
 
-
-
     .email-body .input {
       /* message box is taller */
       height: 170px;
@@ -676,7 +677,7 @@
     }
 
     .input:focus-within {
-      outline: 2px solid rgba(0, 0, 0, .35);
+      outline: 2px solid white;
       outline-offset: 1px;
     }
 
@@ -724,8 +725,10 @@
     }
 
     .mission-section {
+      display: grid;
+      place-items: center;
       width: 100vw;
-      height: 483px;
+      height: 24.66vw;
       background-image: url('Images/ms-banner.png');
       background-size: cover;
       background-position-x: center;
@@ -735,12 +738,14 @@
     .mission-section p {
       padding-left: 10px;
       color: white;
+      font-size: 1.55vw;
     }
 
     .mission-section h3 {
       padding-left: 10px;
       color: white;
       font-style: oblique;
+      font-size: 1.85vw;
     }
 
     .mission-section div {
@@ -814,19 +819,164 @@
       cursor: pointer;
     }
 
+
+
+    .donate-note {
+      display: flex;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-top: 1%;
+      text-align: center;
+      margin-left: 5%;
+      align-items: center;
+      gap: 0.25vw;
+      width: fit-content;
+    }
+
+    .donate-note a {
+      width: fit-content;
+    }
+
     .last-img .donate-button {
-      right: 18.5vw;
+      right: 19%;
       position: relative;
-      top: 33vw;
-      width: 25vw;
+      top: 70%;
+      width: 25%;
+    }
+
+    .last-img .donate-note {
+      left: 22vw;
+      position: relative;
+      top: 31.85vw;
+      font-size: 0.8vw;
+    }
+
+    .scrollCon {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: #1110;
+      color: #fff;
+      font-family: monospace;
+      padding: 10px 0;
+      position: relative;
+      -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    }
+
+    .route-video-wrapper {
+      position: absolute;
+      overflow: hidden;
+      width: 100vw;
+      height: 146vw;
+      margin-left: -100px;
+      z-index: -1;
+    }
+
+    .route-video {
+      position: relative;
+      width: 100%;
+      z-index: -1;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.7);
+    }
+
+    .intro p {
+      padding-right: 41%;
+    }
+
+    .mission-section {
+      min-height: 396.517px;
+    }
+
+    /* Make inputs/textarea inherit your .input box styling */
+    .contact-form input.input,
+    .contact-form textarea.input {
+      all: unset;
+      /* remove browser defaults */
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      background-color: white;
+      border-radius: 6px;
+      color: black;
+      padding: 4px 10px;
+      font-size: 18px;
+      line-height: 104%;
+      resize: both;
+    }
+
+    /* Ensure the submit button looks like your old anchor button */
+    .contact-form button.button {
+      /* strip native button look */
+      display: inline-block;
+      /* anchors are inline-block by default in many designs */
+      cursor: pointer;
+      margin-top: 14px;
+    }
+
+    /* Keep focus visible (tweak to match your design) */
+    .contact-form input.input:focus,
+    .contact-form textarea.input:focus,
+    .contact-form button.button:focus {
+      outline: 2px solid white;
+      outline-offset: 2px;
     }
 
     /* ====== RESPONSIVE ====== */
     @media (max-width: 960px) {
+
+      .route-video-wrapper {
+        height: 284vh;
+        margin-left: -100px;
+      }
+
+      .last-img .donate-button {
+        right: -1%;
+        position: relative;
+        top: 70%;
+        width: 25%;
+      }
+
+      .last-img .donate-note {
+        left: 41vw;
+        position: relative;
+        top: 30.75vw;
+        font-size: 1vw;
+      }
+
+      .last-img {
+        scale: 2;
+        transform-origin: top;
+        background-size: contain;
+        background-position-x: 4208%;
+      }
+
+      .mission-section {
+        background-position-x: 28%;
+        min-height: 466px;
+      }
+
+      .mission-section div {
+        margin-right: 100px;
+      }
+
+      .mission-section p {
+        font-size: 3vw;
+      }
+
+      .mission-section h3 {
+        font-size: 3.5vw;
+      }
+
       .contact-us {
-        grid-template-columns: 1fr;
-        gap: 32px;
-        padding: 28px;
+        margin-top: 46vw;
+      }
+
+      .donobutton-1 {
+        width: 70vw;
       }
 
       .map-container {
@@ -861,7 +1011,7 @@
       }
 
       .planned-date {
-        justify-content: center;
+        margin-left: 15px;
       }
 
       .header-contents {
@@ -918,12 +1068,49 @@
       .founder-page {
         grid-template-columns: repeat(3, 1fr);
       }
+
+      .intro p {
+        padding-right: 0;
+      }
     }
 
     @media (max-width: 520px) {
-      .contact-us {
-        padding: 20px;
+
+      .dropdown-img {
+        width: 85%;
+        left: 7%;
+        position: relative;
       }
+
+      .last-img .donate-note {
+        left: 42vw;
+        top: 29.75vw;
+        font-size: 1.25vw;
+      }
+
+      .last-img .donate-button {
+        width: 35%;
+      }
+
+      .mission-section {
+        background-position-x: 20%;
+        min-height: 466px;
+      }
+
+      .mission-section div {
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+
+      .mission-section p {
+        font-size: 4vw;
+      }
+
+      .mission-section h3 {
+        font-size: 5vw;
+      }
+
+      .contact-us {}
 
       .main-banner-logo {
         width: 55%;
@@ -949,13 +1136,15 @@
       .planned-date {
         flex-direction: row;
         display: flex;
-        gap: 15px;
+        gap: 10px;
         scale: 1;
         transform-origin: left;
         margin: 9px 0;
         place-items: center;
         text-align: center;
+        font-size: 20px;
       }
+
 
       .header-contents {
         width: auto;
@@ -968,14 +1157,38 @@
       }
 
       .intro {
-        padding: 45px 140px;
+        padding: 50px 0px;
         text-align: center;
         justify-items: center;
         display: grid;
+        padding-bottom: 0;
+      }
+
+      .route-video-wrapper {
+        position: absolute;
+        overflow: hidden;
+        width: 100vw;
+        height: 314vw;
+        margin-top: -51px;
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 460px) {
+
+      .route-video-wrapper {
+        height: 452vw;
       }
     }
   </style>
   <link rel="stylesheet" href="Styles/countStyle.css">
+
+  <!-- Standard favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/JDP_Logo_cropped.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Images/JDP_Logo_cropped.png">
+
+  <!-- Apple Touch Icon (for iPhones/iPads) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="Images/JDP_Logo_cropped.png">
 </head>
 
 <body>
@@ -989,7 +1202,7 @@
   <header>
     <div class="header-contents">
       <div class="header-stack">
-        <img src="Images/banner-title.png" class="main-banner-logo" alt="banner title">
+        <img src="Images/banner-title.png" class="main-banner-logo" alt="banner title" draggable="false">
         <p class="header-text">We invite you to an enchanting parade, where passion, creativity, and community come
           together to shake the
           city
@@ -997,8 +1210,23 @@
         <div class="header-button-frame">
           <button class="donate-button" href="https://donorbox.org/founding-partner-launch" type="button"
             onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')">
-            <img src="Images/donation-banner-button.png" alt="Donate button">
+            <img class="donobutton-1" src="Images/donation-banner-button.png" alt="Donate button" draggable="false">
           </button>
+          <p class="donate-note">Securely processed by
+            <a href="https://donorbox.org/" target="_blank" rel="noopener noreferrer">
+              <img src="Images/donorbox.png" alt="donorbox logo" draggable="false" style="width: 4.8rem;
+                    border-left-width: 3px;
+                    border-left-style: solid;
+                    border-top-width: 3px;
+                    border-top-style: solid;
+                    border-right-width: 3px;
+                    border-right-style: solid;
+                    border-bottom-width: 3px;
+                    border-bottom-style: solid;
+                    border-color: white;
+                    border-radius: 5px;">
+            </a>
+          </p>
         </div>
       </div>
 
@@ -1018,6 +1246,7 @@
     </div>
   </header>
   <main class="orange">
+    <!-- countdown -->
     <div style="display: grid; place-items: center;">
       <div class="jamaican-flag">
         <!-- <video autoplay muted loop playsinline disablepictureinpicture>
@@ -1051,6 +1280,7 @@
         </div>
       </div>
     </div>
+    <!-- Mission Statement -->
     <div class="mission-section">
       <div>
         <h3>Mission Statement</h3>
@@ -1065,135 +1295,79 @@
     </div>
     <!-- Intro -->
     <div class="intro">
+      <div class="route-video-wrapper">
+        <video class="route-video" autoplay muted loop playsinline disablepictureinpicture>
+          <source src="Images/jrdp_route.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div class="map-container">
         <iframe class="map" width="820px" height="337px" frameborder="0" referrerpolicy="no-referrer-when-downgrade"
           src="map.html" allowfullscreen>
         </iframe>
-        <h1>About<br>the parade</h1>
+        <h1>Parade<br>Route</h1>
       </div>
-      <p>We invite you to an enchanting parade, where passion,
-        creativity, and community come together to shake the
-        city in a breathtaking celebratrion of culture and tradition.</p>
+      <h3 style="color: white;margin-bottom: -32px;font-style: italic;">Brooklyn Route Proposal</h3>
+      <p>Brooklyn remains a vibrant cultural epicenter for Jamaican Americans, especially in Flatbush, Crown Heights,
+        and East Flatbush. The route will honor this historical footprint.</p>
+      <p class="parade-route"><span style="font-weight: bold;font-style: italic;">
+          Start: </span>Church Avenue &amp; Flatbush Avenue.<br><span
+          style="font-weight: bold;font-style: italic;">Proceed North:</span>
+        Along Flatbush, Brooklyn's central artery.<br><span style="font-weight: bold;font-style: italic;">End:
+        </span>Parkside Avenue</p>
+      <p style="margin-bottom: 50px;">Note: The Parade route is subject to change.</p>
     </div>
 
-    <div class="scrolling-banner">
-      <div id="scroll-wrapper" style="transform: translateX(-355.25px);">
-        <div style="margin-top: 15px;"></div>
-        <span class="scroll-text">
-          <!--background-image: url('Images/scrolling-text.png');
-          <span class="bullet">•</span> The <span class="bullet">•</span> quick <span class="bullet">•</span>
-            brown
-            <span class="bullet">•</span> fox <span class="bullet">•</span> hops <span class="bullet">•</span>
-            over <span class="bullet">•</span> the <span class="bullet">•</span> fence <span class="bullet">•</span>
-          -->
-          <span style="color: white;" class="sbtext">
-
-            <strong>
-              CELEBRATING ROOTS, RHYTHM AND RESILIENCE
-              <span style="width:150px;display:inline-block"></span>
+    <div style="display: flex;flex-direction: column;text-align: center;width: 100vw;background-color: black;">
+      <div class="scrollCon">
+        <div id="scroll-wrapper" style="transform: translateX(-280px);">
+          <span class="scroll-text">
+            <span style="color: white;" class="sbtext">
               JAMAICA'S FIRST PARADE IN THE UNITED STATES
-            </strong>
-            <div style="margin-top: 15px;"></div>
+            </span>
           </span>
-          <!-- </span> <span class="scroll-text">
-          <span style="color: white; font-family: monospace;">
-            Java <span class="bullet">•</span> Python <span class="bullet">•</span> C <span class="bullet">•</span> C#
-            <span class="bullet">•</span> C++ <span class="bullet">•</span> JavaScript <span class="bullet">•</span>
-            HTML <span class="bullet">•</span> Scala <span class="bullet">•</span> PHP <span class="bullet">•</span>
-            VHDL <span class="bullet">•</span> MIPS <span class="bullet">•</span>
-          </span>  background-image: url('Images/scrolling-text.png');
-        </span> -->
+          <span style="width:150px;display:inline-block"></span>
+          <span class="scroll-text">
+            <span style="color: white;" class="sbtext">
+              CELEBRATING ROOTS, RHYTHM AND RESILIENCE
+            </span>
+          </span>
+          <span style="width:150px;display:inline-block"></span>
+          <span class="scroll-text">
+            <span style="color: white;" class="sbtext">
+              JAMAICA'S FIRST PARADE IN THE UNITED STATES
+            </span>
+          </span>
+          <span style="width:150px;display:inline-block"></span>
+          <span class="scroll-text">
+            <span style="color: white;" class="sbtext">
+              CELEBRATING ROOTS, RHYTHM AND RESILIENCE
+            </span>
+          </span>
+          <span style="width:150px;display:inline-block"></span>
+          <span class="scroll-text">
+            <span style="color: white;" class="sbtext">
+              JAMAICA'S FIRST PARADE IN THE UNITED STATES
+            </span>
+          </span>
+          <span style="width:150px;display:inline-block"></span>
+          <span class="scroll-text">
+            <span style="color: white;" class="sbtext">
+              CELEBRATING ROOTS, RHYTHM AND RESILIENCE
+            </span>
+          </span>
+          <span style="width:150px;display:inline-block"></span>
+          <span class="scroll-text">
+            <span style="color: white;" class="sbtext">
+              JAMAICA'S FIRST PARADE IN THE UNITED STATES
+            </span>
+          </span>
+          <span style="width:150px;display:inline-block"></span>
+        </div>
       </div>
     </div>
 
 
     <!-- Details -->
-
-    <!-- 
-      <div class="founder-card" id="founder-2">
-        <div class="founder-page">
-          <div class="founder-picture" style="
-      background-image: url('https://placehold.co/407');
-      background-position-x: center;
-      background-position-y: 53.5%;
-      width: 407px;
-      height: 535px;"></div>
-        </div>
-        <div class="founder-info">
-          <p class="role">Founder</p>
-          <h3 class="name">Founder Name</h3>
-          <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
-            humanitarian<br>and author whose
-            deep commitment to
-            cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
-            years
-            of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
-            his role
-            as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
-            mobilising<br>
-            global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
-            celebrate heritage,<br>unity and achievement.</p>
-          <div class="button">
-            <h3>Learn More</h3>
-          </div>
-        </div>
-      </div>
-      <div class="founder-card" id="founder-3" style="display: none;">
-        <div class="founder-page">
-          <div class="founder-picture" style="
-      background-image: url('https://placehold.co/407');
-      background-position-x: center;
-      background-position-y: 53.5%;
-      width: 407px;
-      height: 535px;"></div>
-        </div>
-        <div class="founder-info">
-          <p class="role">Founder</p>
-          <h3 class="name">Dr. Bill Tinglin</h3>
-          <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
-            humanitarian<br>and author whose
-            deep commitment to
-            cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
-            years
-            of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
-            his role
-            as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
-            mobilising<br>
-            global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
-            celebrate heritage,<br>unity and achievement.</p>
-          <div class="button">
-            <h3>Learn More</h3>
-          </div>
-        </div>
-      </div>
-      <div class="founder-card" id="founder-4" style="display: none;">
-        <div class="founder-page">
-          <div class="founder-picture" style="
-      background-image: url('https://placehold.co/407');
-      background-position-x: center;
-      background-position-y: 53.5%;
-      width: 407px;
-      height: 535px;"></div>
-        </div>
-        <div class="founder-info">
-          <p class="role">Founder</p>
-          <h3 class="name">Dr. Bill Tinglin</h3>
-          <p class="founder-info-body"><span class="indent"></span>Dr. Bill Tinglin is a Jamaican-American educator,
-            humanitarian<br>and author whose
-            deep commitment to
-            cultural pride and<br>community service has shaped his work. His Jamaican<br>upbringing, combined with his
-            years
-            of international advocacy<br>for education, tolerance and diaspora engagement, laid the<br>foundation for
-            his role
-            as Chairperson of the Jamaica Rising Day<br>Parade. In that capacity, he leverages his experience in
-            mobilising<br>
-            global audiences and uplifting Jamaican identity—bringing<br>together the diaspora in New York City to
-            celebrate heritage,<br>unity and achievement.</p>
-          <div class="button">
-            <h3>Learn More</h3>
-          </div>
-        </div>
-      </div> -->
 
     <div style="overflow: hidden;">
       <div class="bill-card" id="founder-1">
@@ -1226,7 +1400,7 @@
       </div>
       <div class="dropdown-prompt" id="open-dropdown" style="display: grid;">
         <div class="dropdown-button" id="open-dropdown-button">
-          <img src="Images/click-here.png" alt="" draggable="false">
+          <img class="dropdown-img" src="Images/click-here.png" alt="" draggable="false">
           <!-- <h3>Meet the Founders</h3> -->
         </div>
       </div>
@@ -1449,16 +1623,31 @@
       <div class="last-img">
         <button class="donate-button" type="button"
           onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')">
-          <img src="Images/donation-banner-button.png" style="width: 100%;" alt="Donate button">
+          <img src="Images/donation-banner-button.png" style="width: 100%;" alt="Donate button" draggable="false">
         </button>
+        <p class="donate-note">Securely processed by
+          <a href="https://donorbox.org/" target="_blank" rel="noopener noreferrer">
+            <img src="Images/donorbox.png" alt="donorbox logo" draggable="false" style="width: 4.8vw;
+                  border-left-width: 3px;
+                  border-left-style: solid;
+                  border-top-width: 3px;
+                  border-top-style: solid;
+                  border-right-width: 3px;
+                  border-right-style: solid;
+                  border-bottom-width: 3px;
+                  border-bottom-style: solid;
+                  border-color: white;
+                  border-radius: 5px;">
+          </a>
+        </p>
       </div>
-
-
     </div>
+  </main>
 
-    <!-- Contact Us -->
+  <!-- Contact Us -->
+  <footer>
     <div class="contact-us">
-      <div class="contact-form">
+      <form class="contact-form" action="../JPD-site/contact.php" method="post" novalidate>
         <div class="heading">
           <h2>Get in touch</h2>
           <p>We’d love to hear from you. Whether you have questions about the Jamaica Day
@@ -1466,48 +1655,98 @@
             soon as possible.
           </p>
         </div>
+
         <div class="name">
-          <p class="input-prompt">Name or Company</p>
-          <div class="input"></div>
+          <!-- label keeps your .input-prompt styling but is now accessible -->
+          <label class="input-prompt" for="cf-name">Name or Company</label>
+          <!-- was <div class="input"></div> -->
+          <input id="cf-name" name="name" class="input" type="text" autocomplete="name organization" required>
         </div>
+
         <div class="email">
-          <p class="input-prompt">Email Address</p>
-          <div class="input"></div>
+          <label class="input-prompt" for="cf-email">Email Address</label>
+          <!-- was <div class="input"></div> -->
+          <input id="cf-email" name="email" class="input" type="email" autocomplete="email" required>
         </div>
+
         <div class="email-body">
-          <p class="input-prompt">Please enter the details of your request.</p>
-          <div class="input"></div>
+          <p class="input-prompt" for="cf-message" style="margin-top: 18px;">Please enter the details of your request.
+          </p>
+          <!-- was <div class="input"></div> -->
+          <textarea id="cf-message" name="message" class="input" rows="6"
+            style="white-space: pre-wrap;overflow-wrap: break-word;word-break: break-word;" required></textarea>
+        </div>
+
+        <!-- was <a class="button" ...><h3>Send</h3></a>  -->
+        <button class="button" type="submit">
+          <h3>Send</h3>
+        </button>
+        <p class="form-status" aria-live="polite" style="font-size: 16px;"></p>
+      </form>
+      <div style="margin-right: 1%;">
+        <img src="Images/mail.png" alt="envelope icon" draggable="false" style="height: auto;width: 124px;">
+        <p style="font-size: 14px;">
+          490 east 28th street
+          <br>
+          BROOKLYN, NY, 11226
+        </p>
+        <div style="margin-top: 16px;">
+          <button style="background-color: #0000;border: 0;cursor: pointer;"
+            onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')">
+            <img src="Images/instagram.png" alt="instagram icon" draggable="false" style="height: auto;width: 32px;">
+          </button>
+          <button style="background-color: #0000;border: 0;cursor: pointer;"
+            onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')">
+            <img src="Images/facebook.png" alt="facebook icon" draggable="false" style="height: auto;width: 32px;">
+          </button>
         </div>
       </div>
-    </div>
-  </main>
-  <div class="header-overlay">
-    <div>
-
-    </div>
-  </div>
-  <footer>
-    <div class="footer-content-left">
-      <p>© 2025 Jamaica Rising Day Parade. All rights reserved.</p>
-    </div>
-    <div class="footer-content-right">
-      <p>Facebook | Instagram | Twitter</p>
     </div>
   </footer>
 
 </body>
 
 <script>
+  const form = document.querySelector('.contact-form');
+  const statusEl = form.querySelector('.form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    statusEl.textContent = 'Sending…';
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+
+    try {
+      const formData = new FormData(form);
+      const res = await fetch(form.action, { method: 'POST', body: formData });
+      const data = await res.json();
+      if (data.ok) {
+        statusEl.textContent = data.message || 'Sent!';
+        form.reset();
+      } else {
+        statusEl.textContent = data.error || 'Something went wrong.';
+      }
+    } catch {
+      statusEl.textContent = 'Network error.';
+    } finally {
+      btn.disabled = false;
+    }
+  });
+</script>
+
+
+<script>
   document.addEventListener("DOMContentLoaded", () => {
     const wrapper = document.getElementById("scroll-wrapper");
     let pos = 0;
-    const speed = .375;
+    const speed = 1;
 
     function animate() {
       pos -= speed;
-      if (Math.abs(pos) >= wrapper.scrollWidth / 2) {
+      if (Math.abs(pos) >= 1727) {
         pos = 0;
       }
+
       wrapper.style.transform = `translateX(${pos}px)`;
       requestAnimationFrame(animate);
     }
