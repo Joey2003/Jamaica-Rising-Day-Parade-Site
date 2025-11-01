@@ -70,7 +70,7 @@
     body {
       margin: 0;
       min-height: 100vh;
-      width: 100%;
+      width: 100vw;
       color: var(--color-text);
       font-family: 'Montserrat', sans-serif, Bebas Neue;
       font-size: 29px;
@@ -128,7 +128,7 @@
       inset-inline: 0;
       top: 0;
       min-height: 100vh;
-      width: 100vw;
+      width: 101%;
       z-index: 98;
       display: grid;
       align-items: center;
@@ -138,6 +138,7 @@
       background-image: url('Images/main-banner-image.png');
       background-position-x: center;
       background-position-y: 80%;
+      left: -1px;
     }
 
     .header-contents {
@@ -551,6 +552,8 @@
       border-right-width: 30px;
       border-right-style: solid;
       border-right-color: #fed100;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
     }
 
     .bill-background {
@@ -560,6 +563,7 @@
       width: 660px;
       background-image: url('Images/green-background.png');
       padding: 0 50px;
+      box-shadow: #000 0px 14px 22px -1px, #000 0px 2px 4px -1px;
     }
 
     .bill-card * {
@@ -692,21 +696,41 @@
     .nav {
       justify-content: space-between;
       display: flex;
-      padding-right: 20px;
+      padding-right: 50px;
       padding-left: 50px;
-      background-color: #000000bd;
-      color: #fff;
+      background-color: #ffffffbd;
+      color: #000;
       position: relative;
       line-height: 4rem;
       z-index: 99;
-      bottom: -64px;
       right: 0;
-      margin-top: -64px;
+      align-items: center;
     }
 
-    .nav span {
-      margin: 0 15px;
+    .nav a {
+      margin: 0 14px;
       cursor: pointer;
+      font-size: 20px;
+      height: 100%;
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    .nav a:link {
+      color: black;
+    }
+
+    .nav a:visited {
+      color: black;
+    }
+
+    .nav a:hover {
+      color: #03762d;
+    }
+
+    .nav a:active {
+      transform: scale(.95);
     }
 
     .map {
@@ -819,6 +843,10 @@
       cursor: pointer;
     }
 
+    .donate-button:hover {
+      transform: scale(.95);
+    }
+
 
 
     .donate-note {
@@ -923,6 +951,10 @@
     .contact-form button.button:focus {
       outline: 2px solid white;
       outline-offset: 2px;
+    }
+
+    .button:active {
+      transform: scale(.95);
     }
 
     /* ====== RESPONSIVE ====== */
@@ -1193,11 +1225,29 @@
 
 <body>
   <div class="nav">
-    <div class="button"></div>
-    <div>
-      <span>About</span> <span>Founders</span> <span>Agenda</span> <span class="last-nav">Contact
-        Us</span>
+
+    <div style="display: grid;grid-template-columns: 1fr 1fr;gap: 10px;">
+      <button href="https://donorbox.org/founding-partner-launch" type="button"
+        onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')"
+        style="width: 106px;background-color: #0000;border: 0px;cursor: pointer;padding: 18px 0px;/*! margin-right: 26px; */">
+        <img class="donobutton-1" src="Images/JDP_Logo_cropped.png" alt="Donate button" draggable="false"
+          style="width: inherit;">
+      </button><button href="https://donorbox.org/founding-partner-launch" type="button"
+        onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')"
+        style="width: 106px;background-color: #0000;border: 0px;cursor: pointer;padding: 18px 0px;/*! margin-right: 26px; */">
+        <img class="donobutton-1" src="Images/JDP_Logo_cropped.png" alt="Donate button" draggable="false"
+          style="width: inherit;">
+      </button>
     </div>
+    <div>
+      <a href="">About</a> <a href="">Founders</a> <a href="">Agenda</a> <a class="last-nav" href="">Contact
+        Us</a>
+    </div>
+    <button class="donate-button" href="https://donorbox.org/founding-partner-launch" type="button"
+      onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')" style="width: 250px;">
+      <img class="donobutton-1" src="Images/donation-banner-button.png" alt="Donate button" draggable="false"
+        style="width: inherit;">
+    </button>
   </div>
   <header>
     <div class="header-contents">
@@ -1370,6 +1420,34 @@
     <!-- Details -->
 
     <div style="overflow: hidden;">
+      <div class="bill-card" id="Una">
+        <div class="bill-background">
+          <div class="founder-picture" style="
+            background-image: url('Images/dr-bill.png');
+            background-position-x: center;
+            background-position-y: 53.5%;
+            width: 407px;
+            height: 535px;"></div>
+        </div>
+        <div class="founder-info">
+          <p class="role">Founder</p>
+          <h3 class="name">Dr. Bill Tinglin</h3>
+          <p class="founder-info-body">Dr. Bill Tinglin is a Jamaican-American educator,
+            humanitarian and author whose
+            deep commitment to
+            cultural pride and community service has shaped his work. His Jamaican upbringing, combined with his
+            years
+            of international advocacy for education, tolerance and diaspora engagement, laid the foundation for
+            his role
+            as Chairperson of the Jamaica Rising Day Parade. In that capacity, he leverages his experience in
+            mobilising
+            global audiences and uplifting Jamaican identity—bringing together the diaspora in New York City to
+            celebrate heritage, unity and achievement.</p>
+          <a class="button" href="https://billtingling.com/" target="_blank" rel="noopener noreferrer">
+            <h3>Learn More</h3>
+          </a>
+        </div>
+      </div>
       <div class="bill-card" id="founder-1">
         <div class="bill-background">
           <div class="founder-picture" style="
