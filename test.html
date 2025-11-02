@@ -562,7 +562,7 @@
       width: fit-content;
       width: 660px;
       background-image: url('Images/green-background.png');
-      padding: 0 50px;
+      padding: 50px 50px;
       box-shadow: #000 0px 14px 22px -1px, #000 0px 2px 4px -1px;
     }
 
@@ -620,6 +620,7 @@
       padding-right: 50px;
       right: 50px;
       position: relative;
+      justify-content: center;
     }
 
     .founder-card-name {
@@ -628,7 +629,7 @@
       color: black;
       width: fit-content;
       text-align: center;
-      font-size: 1.5vw;
+      font-size: 1.15vw;
       line-height: 0px;
     }
 
@@ -649,6 +650,7 @@
       background-color: #000000b0;
       opacity: 0;
       transition: opacity 0.3s ease;
+      overflow-y: auto;
     }
 
     .founder-bio:hover {
@@ -708,13 +710,12 @@
     }
 
     .nav a {
-      margin: 0 14px;
       cursor: pointer;
       font-size: 20px;
       height: 100%;
       display: inline-block;
       text-decoration: none;
-      padding: 10px;
+      padding: 24px;
     }
 
     .nav a:link {
@@ -957,7 +958,104 @@
       transform: scale(.95);
     }
 
+    #logo-and-hamburger {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+
+    .dropdown a {
+      text-align: left;
+    }
+
+    .dropdown a:link {
+      color: black;
+    }
+
+    .dropdown a:visited {
+      color: black;
+    }
+
+    .dropdown a:hover {
+      color: #03762d;
+    }
+
+    .dropdown a:active {
+      transform: scale(.95);
+    }
+
+    .menu-wrap {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000000c2;
+      z-index: 100;
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+
+    .menu-wrap.open {
+      opacity: 1;
+    }
+
+    .dropdown {
+      width: 520px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      padding: 28px 0 0 50px;
+      overflow: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
+      transform: translateX(-100%);
+      /* start off-canvas */
+      transition: transform .25s ease;
+    }
+
+    .menu-wrap.open .dropdown {
+      transform: translateX(0);
+    }
+
+    .dropdown a:hover,
+    .dropdown a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+
+    #menuToggleBtn {
+      width: 50px;
+      background-color: #0000;
+      border: 0px;
+      cursor: pointer;
+      padding: 0;
+      height: fit-content;
+    }
+
+    .hamburger-section {
+      display: flex;
+      flex-direction: column;
+      margin: 12% 0;
+    }
+
+    #main-menu-items {
+      display: none;
+    }
+
     /* ====== RESPONSIVE ====== */
+
+    @media (max-width:1260px) {
+
+      #nav-links {
+        display: none;
+      }
+
+      #main-menu-items {
+        display: flex;
+      }
+    }
+
     @media (max-width: 960px) {
 
       .route-video-wrapper {
@@ -1108,6 +1206,17 @@
 
     @media (max-width: 520px) {
 
+      #nav-donation-button {
+        display: none;
+      }
+
+      #logo-and-hamburger {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+      }
+
       .dropdown-img {
         width: 85%;
         left: 7%;
@@ -1224,31 +1333,87 @@
 </head>
 
 <body>
+  <div class="menu-wrap" id="menuOverlay" hidden>
+
+
+    <!-- Dropdown -->
+    <div id="mainMenu" class="dropdown" role="menu">
+
+      <button id="menuToggleBtn" onclick="hideMenu()" type="button" aria-haspopup="true" aria-expanded="false"
+        aria-controls="mainMenu">
+        <img class="donobutton-1" src="Images/hamburger.png" alt="Open menu" draggable="false" style="width: inherit;">
+      </button>
+
+      <div style="padding: 16%;font-size: 20px;display: flex;flex-direction: column;">
+        <div class="hamburger-section" id="main-menu-items">
+          <a href="/about" role="menuitem">About</a>
+          <a href="/founders" role="menuitem">Founders</a>
+          <a href="/agenda" role="menuitem">Agenda</a>
+          <a href="/contact" role="menuitem">Contact Us</a>
+        </div>
+
+        <div class="hamburger-section">
+          <a href="/policy" role="menuitem">Privacy Policy</a>
+          <a href="/toa" role="menuitem">Terms of Agreement</a>
+          <a href="/contact" role="menuitem">Contact Information</a>
+        </div>
+
+        <div class="hamburger-section">
+          <p style="font-size: 14px;font-weight: bold;">Email</p>
+          <a href="mailto:Info@Jamiacandayparade.org" role="menuitem">Info@Jamaicandayparade.org</a>
+        </div>
+
+        <div class="hamburger-section" style="align-items: start;filter: invert(100%);margin: 0;">
+          <div style="margin-top: 16px;">
+            <button style="background-color: #0000;border: 0;cursor: pointer;"
+              onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')">
+              <img src="Images/instagram.png" alt="instagram icon" draggable="false" style="height: auto;width: 32px;">
+            </button>
+            <button style="background-color: #0000;border: 0;cursor: pointer;"
+              onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')">
+              <img src="Images/facebook.png" alt="facebook icon" draggable="false" style="height: auto;width: 32px;">
+            </button>
+          </div>
+        </div>
+
+        <div class="hamburger-section" style="align-items: center;">
+          <button class="donate-button" href="https://donorbox.org/founding-partner-launch" type="button"
+            onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')" style="width: 100%;"
+            id="nav-donation-button">
+            <img class="donobutton-1" src="Images/donation-banner-button.png" alt="Donate button" draggable="false"
+              style="width: inherit;">
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
   <div class="nav">
 
-    <div style="display: grid;grid-template-columns: 1fr 1fr;gap: 10px;">
-      <button href="https://donorbox.org/founding-partner-launch" type="button"
-        onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')"
-        style="width: 106px;background-color: #0000;border: 0px;cursor: pointer;padding: 18px 0px;/*! margin-right: 26px; */">
-        <img class="donobutton-1" src="Images/JDP_Logo_cropped.png" alt="Donate button" draggable="false"
-          style="width: inherit;">
-      </button><button href="https://donorbox.org/founding-partner-launch" type="button"
-        onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')"
-        style="width: 106px;background-color: #0000;border: 0px;cursor: pointer;padding: 18px 0px;/*! margin-right: 26px; */">
-        <img class="donobutton-1" src="Images/JDP_Logo_cropped.png" alt="Donate button" draggable="false"
+    <div id="logo-and-hamburger">
+      <button type="button" id="hamburgerBtn"
+        style="width: 50px;background-color: #0000;border: 0px;cursor: pointer;padding: 0px 0px;height: fit-content;">
+        <img class="donobutton-1" src="Images/hamburger.png" alt="Donate button" draggable="false"
           style="width: inherit;">
       </button>
+      <a href="test.html" type="button"
+        style="width: 106px;background-color: #0000;border: 0px;cursor: pointer;padding: 24px 0 0;margin: -14px 0;height: fit-content;">
+        <img class="donobutton-1" src="Images/JDP_Logo_cropped.png" alt="Donate button" draggable="false"
+          style="width: inherit;">
+      </a>
     </div>
-    <div>
+    <div style="width: 562px;margin: 0 56px;/*! display: none; */" id="nav-links">
       <a href="">About</a> <a href="">Founders</a> <a href="">Agenda</a> <a class="last-nav" href="">Contact
         Us</a>
     </div>
     <button class="donate-button" href="https://donorbox.org/founding-partner-launch" type="button"
-      onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')" style="width: 250px;">
+      onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')" style="width: 250px;"
+      id="nav-donation-button">
       <img class="donobutton-1" src="Images/donation-banner-button.png" alt="Donate button" draggable="false"
         style="width: inherit;">
     </button>
   </div>
+
   <header>
     <div class="header-contents">
       <div class="header-stack">
@@ -1283,7 +1448,7 @@
 
       <span class="planned-date">
         <h3>Planned Date</h3>
-        <p>August 6, 2026</p>
+        <p>August 1, 2026</p>
       </span>
     </div>
     <div style="width: 100%;position: absolute;bottom: 0px;">
@@ -1423,27 +1588,23 @@
       <div class="bill-card" id="Una">
         <div class="bill-background">
           <div class="founder-picture" style="
-            background-image: url('Images/dr-bill.png');
+            background-image: url('Images/una.png');
             background-position-x: center;
             background-position-y: 53.5%;
             width: 407px;
             height: 535px;"></div>
         </div>
         <div class="founder-info">
-          <p class="role">Founder</p>
-          <h3 class="name">Dr. Bill Tinglin</h3>
-          <p class="founder-info-body">Dr. Bill Tinglin is a Jamaican-American educator,
-            humanitarian and author whose
-            deep commitment to
-            cultural pride and community service has shaped his work. His Jamaican upbringing, combined with his
-            years
-            of international advocacy for education, tolerance and diaspora engagement, laid the foundation for
-            his role
-            as Chairperson of the Jamaica Rising Day Parade. In that capacity, he leverages his experience in
-            mobilising
-            global audiences and uplifting Jamaican identity—bringing together the diaspora in New York City to
-            celebrate heritage, unity and achievement.</p>
-          <a class="button" href="https://billtingling.com/" target="_blank" rel="noopener noreferrer">
+          <p class="role">Founding Dignitary</p>
+          <h3 class="name">Dr. Una S.T. Clarke, OD</h3>
+          <p class="founder-info-body">Dr. Clarke is a Former New York City Council Member and stands as a trailblazer
+            whose vision and courage paved the way for
+            women
+            and leaders of color in public service. Her tireless advocacy for the Caribbean
+            community laid the foundation for this historic moment, making the Jamaica Rising
+            Day Parade possible and profoundly meaningful.</p>
+          <a class="button" href="https://www.unaclarkeassociates.com/biography.html" target="_blank"
+            rel="noopener noreferrer">
             <h3>Learn More</h3>
           </a>
         </div>
@@ -1458,7 +1619,7 @@
             height: 535px;"></div>
         </div>
         <div class="founder-info">
-          <p class="role">Founder</p>
+          <p class="role">Founder & Chairman</p>
           <h3 class="name">Dr. Bill Tinglin</h3>
           <p class="founder-info-body">Dr. Bill Tinglin is a Jamaican-American educator,
             humanitarian and author whose
@@ -1492,75 +1653,73 @@
       <div class="founder-book" id="founder-book" style="--index: 0">
         <div class="founder-page">
           <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Founder Name</p>
+            <p class="founder-card-name">Ashley Azor</p>
             <div class="founder-picture" style="
-            background-image: url('Images/dr-bill.png');
+            background-image: url('Images/Ashley.jpeg');
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
-                deep
-                commitment to cultural pride and community service has shaped his work.</p>
+              <p class="founder-bio">Ms. Azor is the Director of Fundraising & Strategic Partnerships. She guides the Parade’s fundraising vision with passion and precision, cultivating
+                sponsors, donors, and philanthropic alliances. Her leadership ensures lasting
+                partnerships that sustain the Parade’s mission and amplify its impact across
+                communities worldwide. </p>
             </div>
           </div>
           <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Founder Name</p>
+            <p class="founder-card-name">Donovan Longmore</p>
             <div class="founder-picture" style="
-            background-image: url('Images/dr-bill.png');
+            background-image: url('Images/Don.jpg');
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
-                deep
-                commitment to cultural pride and community service has shaped his work.</p>
+              <p class="founder-bio">Mr. Longmore is a seasoned entrepreneur, cultural ambassador, and
+                humanitarian with
+                over 37 years of dynamic leadership across marketing, entertainment, finance, and healthcare.</p>
             </div>
           </div>
           <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Founder Name</p>
+            <p class="founder-card-name">Ron Glick, Esq.</p>
             <div class="founder-picture" style="
-            background-image: url('Images/dr-bill.png');
+            background-image: url('Images/Ron.jpeg');
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
-                deep
-                commitment to cultural pride and community service has shaped his work.</p>
+              <p class="founder-bio">Mr. Glick is the Director of Finance & Legal Affairs. He safeguards transparency, compliance, and fiscal integrity across all
+                organizational operations. </p>
             </div>
           </div>
           <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Founder Name</p>
+            <p class="founder-card-name">Dr. Karren Dunkley</p>
             <div class="founder-picture" style="
-            background-image: url('Images/dr-bill.png');
+            background-image: url('Images/Dunkley.jpg');
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
-                deep
-                commitment to cultural pride and community service has shaped his work.</p>
+              <p class="founder-bio">Dr. Dunkley is a distinguished academic and cultural ambassador. She forges international
+                partnerships that strengthen the parade’s educational and diplomatic reach across
+                the diaspora. </p>
             </div>
           </div>
           <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Founder Name</p>
+            <p class="founder-card-name">Joey Normil</p>
             <div class="founder-picture" style="
-            background-image: url('Images/dr-bill.png');
+            background-image: url('Images/joey.PNG');
             background-position-x: center;
-            background-position-y: 53.5%;">
+            background-position-y: 0;
+            background-size: 130%;">
 
-              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
-                deep
-                commitment to cultural pride and community service has shaped his work.</p>
+              <p class="founder-bio">Mr. Normil is the Technology Coordinator. He is a highly passionate software developer with over eight years of practice, maintaining the Parade’s digital platforms and web infrastructure.</p>
             </div>
           </div>
           <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Founder Name</p>
+            <p class="founder-card-name">Dr. Robert Clarke, M.D.</p>
             <div class="founder-picture" style="
-            background-image: url('Images/dr-bill.png');
+            background-image: url('Images/Robert.jpeg');
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
-                deep
-                commitment to cultural pride and community service has shaped his work.</p>
+              <p class="founder-bio">Dr. Clarke is the Director of Medical Affairs. As a respected physician and humanitarian, Dr. Robert Clarke leads all medical readiness
+                initiatives and emergency response efforts for the parade. </p>
             </div>
           </div>
         </div>
@@ -1785,6 +1944,101 @@
 </body>
 
 <script>
+  (function () {
+    const openBtn = document.getElementById('hamburgerBtn');    // external opener
+    const overlay = document.getElementById('menuOverlay');     // the dark backdrop
+    const drawer = document.getElementById('mainMenu');        // the sliding panel
+    const closeBtn = document.getElementById('menuToggleBtn');   // internal closer
+
+    if (!overlay || !drawer) {
+      console.warn('[menu] Missing #menuOverlay or #mainMenu');
+      return;
+    }
+
+    // --- internals ---
+    function enableBodyLock() {
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('menu-open');
+    }
+    function disableBodyLock() {
+      document.body.style.overflow = '';
+      document.body.classList.remove('menu-open');
+    }
+
+    function reallyHide() {
+      overlay.hidden = true;
+      disableBodyLock();
+      overlay.removeAttribute('data-hiding');
+    }
+
+    function showMenu() {
+      overlay.hidden = false;
+      // force reflow so the transition applies after class add
+      void overlay.offsetHeight;
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden', 'false');
+      openBtn?.setAttribute('aria-expanded', 'true');
+      enableBodyLock();
+
+      // focus first item
+      const first = drawer.querySelector('[role="menuitem"], a, button');
+      first?.focus({ preventScroll: true });
+    }
+
+    function hideMenu() {
+      // If already hidden or in the middle of hiding, ignore
+      if (overlay.hidden || overlay.getAttribute('data-hiding') === '1') return;
+      overlay.setAttribute('data-hiding', '1');
+
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden', 'true');
+      openBtn?.setAttribute('aria-expanded', 'false');
+
+      // If there's a transition, wait for it; otherwise, fallback in 300ms
+      let done = false;
+      const onEnd = (e) => {
+        if (done) return;
+        // Only finalize when the opacity transition ends (avoid child transitions)
+        if (e.target === overlay && (e.propertyName === 'opacity' || e.propertyName === '')) {
+          done = true;
+          overlay.removeEventListener('transitionend', onEnd);
+          reallyHide();
+          openBtn?.focus({ preventScroll: true });
+        }
+      };
+      overlay.addEventListener('transitionend', onEnd);
+
+      // Fallback in case transitionend doesn't fire
+      setTimeout(() => {
+        if (!done) {
+          overlay.removeEventListener('transitionend', onEnd);
+          reallyHide();
+        }
+      }, 300);
+    }
+
+    // --- wire up events ---
+    openBtn?.addEventListener('click', showMenu);
+    closeBtn?.addEventListener('click', hideMenu);
+
+    // Click on the backdrop closes (but clicks inside the drawer do not)
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) hideMenu();
+    });
+
+    // Esc to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !overlay.hidden) hideMenu();
+    });
+
+    // Expose globally so inline HTML can call them
+    window.showMenu = showMenu;
+    window.hideMenu = hideMenu;
+  })();
+</script>
+
+
+<script>
   const form = document.querySelector('.contact-form');
   const statusEl = form.querySelector('.form-status');
 
@@ -1846,7 +2100,7 @@
       mm = String(today.getMonth() + 1).padStart(2, "0"),
       yyyy = today.getFullYear(),
       nextYear = yyyy + 1,
-      dayMonth = "08/06/",
+      dayMonth = "08/01/",
       birthday = dayMonth + yyyy;
 
     today = mm + "/" + dd + "/" + yyyy;
