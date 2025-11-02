@@ -1511,7 +1511,8 @@
     <!-- Intro -->
     <div class="intro">
       <div class="route-video-wrapper">
-        <video class="route-video" autoplay muted loop playsinline disablepictureinpicture>
+        <video class="route-video" autoplay muted loop webkit-playsinline playsinline disablepictureinpicture
+          preload="metadata">
           <source src="Images/jrdp_route.mp4" type="video/mp4" />
         </video>
       </div>
@@ -1659,7 +1660,8 @@
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Ms. Azor is the Director of Fundraising & Strategic Partnerships. She guides the Parade’s fundraising vision with passion and precision, cultivating
+              <p class="founder-bio">Ms. Azor is the Director of Fundraising & Strategic Partnerships. She guides the
+                Parade’s fundraising vision with passion and precision, cultivating
                 sponsors, donors, and philanthropic alliances. Her leadership ensures lasting
                 partnerships that sustain the Parade’s mission and amplify its impact across
                 communities worldwide. </p>
@@ -1684,7 +1686,8 @@
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Mr. Glick is the Director of Finance & Legal Affairs. He safeguards transparency, compliance, and fiscal integrity across all
+              <p class="founder-bio">Mr. Glick is the Director of Finance & Legal Affairs. He safeguards transparency,
+                compliance, and fiscal integrity across all
                 organizational operations. </p>
             </div>
           </div>
@@ -1695,7 +1698,8 @@
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Dr. Dunkley is a distinguished academic and cultural ambassador. She forges international
+              <p class="founder-bio">Dr. Dunkley is a distinguished academic and cultural ambassador. She forges
+                international
                 partnerships that strengthen the parade’s educational and diplomatic reach across
                 the diaspora. </p>
             </div>
@@ -1708,7 +1712,9 @@
             background-position-y: 0;
             background-size: 130%;">
 
-              <p class="founder-bio">Mr. Normil is the Technology Coordinator. He is a highly passionate software developer with over eight years of practice, maintaining the Parade’s digital platforms and web infrastructure.</p>
+              <p class="founder-bio">Mr. Normil is the Technology Coordinator. He is a highly passionate software
+                developer with over eight years of practice, maintaining the Parade’s digital platforms and web
+                infrastructure.</p>
             </div>
           </div>
           <div style="width: fit-content;height: fit-content;">
@@ -1718,7 +1724,8 @@
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Dr. Clarke is the Director of Medical Affairs. As a respected physician and humanitarian, Dr. Robert Clarke leads all medical readiness
+              <p class="founder-bio">Dr. Clarke is the Director of Medical Affairs. As a respected physician and
+                humanitarian, Dr. Robert Clarke leads all medical readiness
                 initiatives and emergency response efforts for the parade. </p>
             </div>
           </div>
@@ -2171,6 +2178,57 @@
 
   // Initialize arrow visibility
   updateArrows();
+</script>
+
+<script>
+  (function () {
+    const videos = document.querySelectorAll('.route-video');
+    if (!videos.length) return;
+
+    // iOS/Safari reliability: ensure attributes exist in HTML AND JS
+    videos.forEach(v => {
+      v.muted = true; v.setAttribute('muted', '');
+      v.playsInline = true; v.setAttribute('playsinline', ''); v.setAttribute('webkit-playsinline', '');
+    });
+
+    const play = v => v.play().catch(() => {/* iOS may block until a gesture */ });
+
+    // Respect reduced motion
+    const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)');
+    if (prefersReduced.matches) { videos.forEach(pause); return; }
+
+    // Observe visibility in viewport
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const v = entry.target;
+        // Require at least half visible to play
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+          if (v.paused) play(v);
+        }
+      });
+    }, { threshold: [0, 0.5, 0.75, 1] });
+
+    videos.forEach(v => observer.observe(v));
+
+    // Page/tab visibility: pause when hidden, resume if still in view
+    document.addEventListener('visibilitychange', () => {
+      videos.forEach(v => {
+        if (document.hidden) return pause(v);
+        const rect = v.getBoundingClientRect();
+        const halfVisible = rect.top < innerHeight * 0.5 && rect.bottom > innerHeight * 0.5;
+        if (halfVisible) play(v);
+      });
+    });
+
+    // One-time user gesture fallback (for rare autoplay blocks)
+    const unlock = () => {
+      videos.forEach(v => { if (v.paused) play(v); });
+      window.removeEventListener('touchstart', unlock, { once: true });
+      window.removeEventListener('click', unlock, { once: true });
+    };
+    window.addEventListener('touchstart', unlock, { once: true });
+    window.addEventListener('click', unlock, { once: true });
+  })();
 </script>
 
 </html>
