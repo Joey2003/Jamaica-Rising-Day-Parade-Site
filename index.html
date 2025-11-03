@@ -1057,6 +1057,10 @@
       transform: translateY(-100%);
     }
 
+    .footer-email {
+      font-size: clamp(1vw, 12px, 29px);
+    }
+
     .footer-email:link {
       color: white;
     }
@@ -1079,6 +1083,10 @@
       border-radius: 8px;
     }
 
+    #logo-wrapper {
+      width: 106px;
+    }
+
     /* ====== RESPONSIVE ====== */
 
     @media (max-width:1260px) {
@@ -1093,6 +1101,10 @@
     }
 
     @media (max-width: 960px) {
+
+      #logo-wrapper {
+        width: 86px;
+      }
 
       .route-video-wrapper {
         height: 284vh;
@@ -1241,6 +1253,10 @@
     }
 
     @media (max-width: 520px) {
+
+      #nav-donation-button {
+        display: none;
+      }
 
       #logo-and-hamburger {
         display: flex;
@@ -1428,14 +1444,15 @@
         <img class="donobutton-1" src="Images/hamburger.png" alt="Donate button" draggable="false"
           style="width: inherit;">
       </button>
-      <a href="#home" type="button"
-        style="width: 106px;background-color: #0000;border: 0px;cursor: pointer;padding: 24px 0 0;margin: -14px 0;height: fit-content;">
+      <a href="#home" id="logo-wrapper" type="button"
+        style="background-color: #0000;border: 0px;cursor: pointer;padding: 24px 0 0;margin: -14px 0;height: fit-content;">
         <img class="donobutton-1" src="Images/JDP_Logo_cropped.png" alt="Donate button" draggable="false"
           style="width: inherit;">
       </a>
     </div>
     <div style="width: 578px;margin: 0 56px;/*! display: none; */" id="nav-links">
-      <a class="nav-link" href="#mission-scroll"> About</a> <a class="nav-link" href="#scrollCon">Founders</a> <a class="nav-link" href="">Agenda</a> <a class="nav-link" class="last-nav" href="#contact-scroll">Contact
+      <a class="nav-link" href="#mission-scroll"> About</a> <a class="nav-link" href="#scrollCon">Founders</a> <a
+        class="nav-link" href="">Agenda</a> <a class="nav-link" class="last-nav" href="#contact-scroll">Contact
         Us</a>
     </div>
     <button class="donate-button" href="https://donorbox.org/founding-partner-launch" type="button"
@@ -1732,7 +1749,8 @@
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Dr. Dunkley is a distinguished academic and cultural ambassador. She forges
+              <p class="founder-bio">Dr. Dunkley is the Deputy Chair of Global Affairs. She is a distinguished academic
+                and cultural ambassador who forges
                 international
                 partnerships that strengthen the parade’s educational and diplomatic reach across
                 the diaspora. </p>
@@ -1752,6 +1770,32 @@
             </div>
           </div>
           <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Qixian Lin</p>
+            <div class="founder-picture" style="
+            background-image: url('Images/QIBA.png');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Qixian Lin is the Director of Social Media & Digital Strategy, a visual storyteller
+                dedicated to creating impactful media
+                that inspires connection in communities. He designs digital campaigns that amplify the Parade’s message
+                worldwide.</p>
+            </div>
+          </div>
+        </div>
+        <div class="founder-page">
+          <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Jordi Lakeem Foster</p>
+            <div class="founder-picture" style="
+            background-image: url('Images/jordi.jpg');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Mr. Foster is the Creative Director. He shapes the Parade’s visual identity through
+                art direction and branding.</p>
+            </div>
+          </div>
+          <div style="width: fit-content;height: fit-content;">
             <p class="founder-card-name">Dr. Robert Clarke, M.D.</p>
             <div class="founder-picture" style="
             background-image: url('Images/Robert.jpeg');
@@ -1760,57 +1804,30 @@
 
               <p class="founder-bio">Dr. Clarke is the Director of Medical Affairs. As a respected physician and
                 humanitarian, Dr. Robert Clarke leads all medical readiness
-                initiatives and emergency response efforts for the parade. </p>
+                initiatives and emergency response efforts for the parade.</p>
             </div>
           </div>
-        </div>
-        <div class="founder-page">
           <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Founder Name</p>
+            <p class="founder-card-name">Dr. Lawman Lynch</p>
+            <div class="founder-picture" style="
+            background-image: url('Images/blank-profile.png');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Dr. Lynch is the Deputy Chair of operations and logistics. She strategicly and
+                precisely ensures operational excellence by guiding every
+                logistical detail to create a safe, seamless experience. </p>
+            </div>
+          </div>
+          <div style="width: fit-content;height: fit-content;">
+            <p class="founder-card-name">Dr. Ione Pierce</p>
             <div class="founder-picture" style="
             background-image: url('Images/dr-bill.png');
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
-                deep
-                commitment to cultural pride and community service has shaped his work.</p>
-            </div>
-          </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Founder Name</p>
-            <div class="founder-picture" style="
-            background-image: url('Images/dr-bill.png');
-            background-position-x: center;
-            background-position-y: 53.5%;">
-
-              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
-                deep
-                commitment to cultural pride and community service has shaped his work.</p>
-            </div>
-          </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Founder Name</p>
-            <div class="founder-picture" style="
-            background-image: url('Images/dr-bill.png');
-            background-position-x: center;
-            background-position-y: 53.5%;">
-
-              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
-                deep
-                commitment to cultural pride and community service has shaped his work.</p>
-            </div>
-          </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Founder Name</p>
-            <div class="founder-picture" style="
-            background-image: url('Images/dr-bill.png');
-            background-position-x: center;
-            background-position-y: 53.5%;">
-
-              <p class="founder-bio">Dr. Bill Tinglin is a Jamaican-American educator, humanitarian and author whose
-                deep
-                commitment to cultural pride and community service has shaped his work.</p>
+              <p class="founder-bio">Connector and innovator. Dr. Pierce expands community outreach and strengthens 
+global partnerships that sustain the parade’s long-term impact.</p>
             </div>
           </div>
           <div style="width: fit-content;height: fit-content;">
@@ -2283,7 +2300,7 @@
   window.addEventListener('wheel', (e) => {
     if (e.deltaY > 50) {
       nav.classList.add('scrolled');
-    } else if (e.deltaY < -50) { 
+    } else if (e.deltaY < -50) {
       nav.classList.remove('scrolled');
     }
   }, { passive: true });
@@ -2296,4 +2313,5 @@
     window.location.replace('../JPD-Site/index.html');
   }
 </script>
+
 </html>
