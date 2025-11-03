@@ -50,6 +50,7 @@
 
     }
 
+
     .main-banner-logo {
       height: auto;
       margin: 10px 0;
@@ -58,6 +59,10 @@
 
     .cd-margin {
       margin-bottom: -20px;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     html {
@@ -700,13 +705,16 @@
       display: flex;
       padding-right: 50px;
       padding-left: 50px;
-      background-color: #ffffffbd;
+      /* background-color: #ffffffbd; */
       color: #000;
-      position: relative;
       line-height: 4rem;
       z-index: 99;
       right: 0;
       align-items: center;
+      position: fixed;
+      width: calc(100% - 100px);
+      transition: transform .25s ease;
+      background-image: linear-gradient(to right, transparent, white 0%, #fff 10%, #ffffffbd 30%, #fff 40%, #fff 50%, #fff 60%, #ffffffbd 70%, #fff 90%, white);
     }
 
     .nav a {
@@ -716,6 +724,8 @@
       display: inline-block;
       text-decoration: none;
       padding: 24px;
+      font-weight: bold;
+      font-family: poppins, sans-serif;
     }
 
     .nav a:link {
@@ -1004,7 +1014,7 @@
       display: flex;
       flex-direction: column;
       background-color: white;
-      padding: 28px 0 0 50px;
+      padding: 42px 0 0 56px;
       overflow: auto;
       overscroll-behavior: contain;
       -webkit-overflow-scrolling: touch;
@@ -1041,6 +1051,32 @@
 
     #main-menu-items {
       display: none;
+    }
+
+    .nav.scrolled {
+      transform: translateY(-100%);
+    }
+
+    .footer-email:link {
+      color: white;
+    }
+
+    .footer-email:hover {
+      color: #207749;
+    }
+
+    .footer-email:visited {
+      color: #207749;
+    }
+
+    .social-button:hover {
+      background-color: #207749;
+      border-radius: 8px;
+    }
+
+    .menu-social-button:hover {
+      background-color: #b3417c;
+      border-radius: 8px;
     }
 
     /* ====== RESPONSIVE ====== */
@@ -1206,10 +1242,6 @@
 
     @media (max-width: 520px) {
 
-      #nav-donation-button {
-        display: none;
-      }
-
       #logo-and-hamburger {
         display: flex;
         align-items: center;
@@ -1340,38 +1372,38 @@
     <div id="mainMenu" class="dropdown" role="menu">
 
       <button id="menuToggleBtn" onclick="hideMenu()" type="button" aria-haspopup="true" aria-expanded="false"
-        aria-controls="mainMenu">
-        <img class="donobutton-1" src="Images/hamburger.png" alt="Open menu" draggable="false" style="width: inherit;">
+        aria-controls="mainMenu" style="width: 34px;">
+        <img class="donobutton-1" src="Images/x-button.png" alt="Open menu" draggable="false" style="width: inherit;">
       </button>
 
       <div style="padding: 16%;font-size: 20px;display: flex;flex-direction: column;">
         <div class="hamburger-section" id="main-menu-items">
-          <a href="/about" role="menuitem">About</a>
-          <a href="/founders" role="menuitem">Founders</a>
+          <a href="#mission-scroll" role="menuitem">About</a>
+          <a href="#scrollCon" role="menuitem">Founders</a>
           <a href="/agenda" role="menuitem">Agenda</a>
-          <a href="/contact" role="menuitem">Contact Us</a>
+          <a href="#contact-scroll" role="menuitem">Contact Us</a>
         </div>
 
         <div class="hamburger-section">
           <a href="/policy" role="menuitem">Privacy Policy</a>
           <a href="/toa" role="menuitem">Terms of Agreement</a>
-          <a href="/contact" role="menuitem">Contact Information</a>
         </div>
 
         <div class="hamburger-section">
           <p style="font-size: 14px;font-weight: bold;">Email</p>
           <a href="mailto:Info@Jamiacandayparade.org" role="menuitem">Info@Jamaicandayparade.org</a>
         </div>
-
         <div class="hamburger-section" style="align-items: start;filter: invert(100%);margin: 0;">
           <div style="margin-top: 16px;">
             <button style="background-color: #0000;border: 0;cursor: pointer;"
-              onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')">
-              <img src="Images/instagram.png" alt="instagram icon" draggable="false" style="height: auto;width: 32px;">
+              onclick="window.open('https://www.instagram.com/jamaican_rising_day_parade?igsh=MW45ZWk2bjlrNHFs&utm_source=qr', '_blank')">
+              <img class="menu-social-button" src="Images/instagram.png" alt="instagram icon" draggable="false"
+                style="height: auto;width: 32px;">
             </button>
             <button style="background-color: #0000;border: 0;cursor: pointer;"
-              onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')">
-              <img src="Images/facebook.png" alt="facebook icon" draggable="false" style="height: auto;width: 32px;">
+              onclick="window.open('https://www.facebook.com/people/Jamaica-Rising-Day-Parade/61581875054215/', '_blank')">
+              <img class="menu-social-button" src="Images/facebook.png" alt="facebook icon" draggable="false"
+                style="height: auto;width: 32px;">
             </button>
           </div>
         </div>
@@ -1396,14 +1428,14 @@
         <img class="donobutton-1" src="Images/hamburger.png" alt="Donate button" draggable="false"
           style="width: inherit;">
       </button>
-      <a href="test.html" type="button"
+      <a href="#home" type="button"
         style="width: 106px;background-color: #0000;border: 0px;cursor: pointer;padding: 24px 0 0;margin: -14px 0;height: fit-content;">
         <img class="donobutton-1" src="Images/JDP_Logo_cropped.png" alt="Donate button" draggable="false"
           style="width: inherit;">
       </a>
     </div>
-    <div style="width: 562px;margin: 0 56px;/*! display: none; */" id="nav-links">
-      <a href="">About</a> <a href="">Founders</a> <a href="">Agenda</a> <a class="last-nav" href="">Contact
+    <div style="width: 578px;margin: 0 56px;/*! display: none; */" id="nav-links">
+      <a class="nav-link" href="#mission-scroll"> About</a> <a class="nav-link" href="#scrollCon">Founders</a> <a class="nav-link" href="">Agenda</a> <a class="nav-link" class="last-nav" href="#contact-scroll">Contact
         Us</a>
     </div>
     <button class="donate-button" href="https://donorbox.org/founding-partner-launch" type="button"
@@ -1414,7 +1446,7 @@
     </button>
   </div>
 
-  <header>
+  <header id="home">
     <div class="header-contents">
       <div class="header-stack">
         <img src="Images/banner-title.png" class="main-banner-logo" alt="banner title" draggable="false">
@@ -1496,18 +1528,20 @@
       </div>
     </div>
     <!-- Mission Statement -->
-    <div class="mission-section">
-      <div>
-        <h3>Mission Statement</h3>
-        <p>
-          To establish the Jamaica Rising Parade as an annual, internationally recognized cultural celebration that
-          honors
-          Jamaica's rich history, amplifies its artistic and civic contributions, unites the diaspora, fosters youth
-          engagement, and educates the broader public through vibrant expressions of music, dance, food, fashion, and
-          national pride.
-        </p>
+    <section id="mission-scroll">
+      <div class="mission-section">
+        <div>
+          <h3>Mission Statement</h3>
+          <p>
+            To establish the Jamaica Rising Parade as an annual, internationally recognized cultural celebration that
+            honors
+            Jamaica's rich history, amplifies its artistic and civic contributions, unites the diaspora, fosters youth
+            engagement, and educates the broader public through vibrant expressions of music, dance, food, fashion, and
+            national pride.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
     <!-- Intro -->
     <div class="intro">
       <div class="route-video-wrapper">
@@ -1526,15 +1560,15 @@
       <p>Brooklyn remains a vibrant cultural epicenter for Jamaican Americans, especially in Flatbush, Crown Heights,
         and East Flatbush. The route will honor this historical footprint.</p>
       <p class="parade-route"><span style="font-weight: bold;font-style: italic;">
-          Start: </span>Church Avenue &amp; Flatbush Avenue.<br><span
+          Start: </span>Nostrand Avenue &amp; Flatbush Avenue.<br><span
           style="font-weight: bold;font-style: italic;">Proceed North:</span>
         Along Flatbush, Brooklyn's central artery.<br><span style="font-weight: bold;font-style: italic;">End:
-        </span>Parkside Avenue</p>
+        </span>Prospect Park at Empire Blvd.</p>
       <p style="margin-bottom: 50px;">Note: The Parade route is subject to change.</p>
     </div>
 
     <div style="display: flex;flex-direction: column;text-align: center;width: 100vw;background-color: black;">
-      <div class="scrollCon">
+      <div id="scrollCon" class="scrollCon">
         <div id="scroll-wrapper" style="transform: translateX(-280px);">
           <span class="scroll-text">
             <span style="color: white;" class="sbtext">
@@ -1638,7 +1672,7 @@
           </a>
         </div>
       </div>
-      <div class="dropdown-prompt" id="open-dropdown" style="display: grid;">
+      <div class="dropdown-prompt" id="open-dropdown" style="display: none;">
         <div class="dropdown-button" id="open-dropdown-button">
           <img class="dropdown-img" src="Images/click-here.png" alt="" draggable="false">
           <!-- <h3>Meet the Founders</h3> -->
@@ -1646,7 +1680,7 @@
       </div>
     </div>
 
-    <div class="founder-card" id="founder-grid" style="display: none;">
+    <div class="founder-card" id="founder-grid">
       <img src="Images/left-chevron.png" alt="left arrow" id="left-arrow"
         style="position: absolute; left: 1.646%; cursor: pointer; z-index: 99; width: 40px; height: auto; display: none;">
       <img src="Images/right-chevron.png" alt="right arrow" id="right-arrow"
@@ -1889,7 +1923,7 @@
   </main>
 
   <!-- Contact Us -->
-  <footer>
+  <footer id="contact-scroll">
     <div class="contact-us">
       <form class="contact-form" action="../JPD-site/contact.php" method="post" novalidate>
         <div class="heading">
@@ -1928,21 +1962,24 @@
         <p class="form-status" aria-live="polite" style="font-size: 16px;"></p>
       </form>
       <div style="margin-right: 1%;">
-        <img src="Images/mail.png" alt="envelope icon" draggable="false" style="height: auto;width: 124px;">
-        <p style="font-size: 14px;">
-          490 east 28th street
-          <br>
-          BROOKLYN, NY, 11226
-        </p>
+
+        <p style="font-size: 14px;">NEW YORK, NY</p>
         <div style="margin-top: 16px;">
           <button style="background-color: #0000;border: 0;cursor: pointer;"
-            onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')">
-            <img src="Images/instagram.png" alt="instagram icon" draggable="false" style="height: auto;width: 32px;">
+            onclick="window.open('https://www.instagram.com/jamaican_rising_day_parade?igsh=MW45ZWk2bjlrNHFs&utm_source=qr', '_blank')">
+            <img class="social-button" src="Images/instagram.png" alt="instagram icon" draggable="false"
+              style="height: auto;width: 32px;">
           </button>
           <button style="background-color: #0000;border: 0;cursor: pointer;"
-            onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')">
-            <img src="Images/facebook.png" alt="facebook icon" draggable="false" style="height: auto;width: 32px;">
+            onclick="window.open('https://www.facebook.com/people/Jamaica-Rising-Day-Parade/61581875054215/', '_blank')">
+            <img class="social-button" src="Images/facebook.png" alt="facebook icon" draggable="false"
+              style="height: auto;width: 32px;">
           </button>
+        </div>
+        <div style="display: flex;flex-direction: column;margin: 18% 0;" class="email-link">
+          <p style="font-size: 14px;font-weight: bold;">Email</p>
+          <a class="footer-email" href="mailto:Info@Jamiacandayparade.org"
+            role="menuitem">Info@Jamaicandayparade.org</a>
         </div>
       </div>
     </div>
@@ -2031,6 +2068,10 @@
     // Click on the backdrop closes (but clicks inside the drawer do not)
     overlay.addEventListener('click', (e) => {
       if (e.target === overlay) hideMenu();
+    });
+
+    document.querySelector('#contact-information').addEventListener('click', (e) => {
+      hideMenu();
     });
 
     // Esc to close
@@ -2230,5 +2271,29 @@
     window.addEventListener('click', unlock, { once: true });
   })();
 </script>
+<script>
+  const nav = document.querySelector('.nav');
+  let navClicked = false;
+  let scrolled = false;
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.add('scrolled');
+    });
+  });
+  window.addEventListener('wheel', (e) => {
+    if (e.deltaY > 50) {
+      nav.classList.add('scrolled');
+    } else if (e.deltaY < -50) { 
+      nav.classList.remove('scrolled');
+    }
+  }, { passive: true });
 
+</script>
+<script>
+  const n = performance.getEntriesByType('navigation')[0];
+  if (n && n.type === 'reload') {
+    // Replace so Back doesn’t return to the reloader page
+    window.location.replace('../JPD-Site/index.html');
+  }
+</script>
 </html>
