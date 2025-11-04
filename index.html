@@ -316,10 +316,13 @@
     }
 
     .agenda {
+      background-color: #151716;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
+      width: 100vw;
+      color: white;
+      padding: 30px 0;
     }
 
     .frame {
@@ -351,6 +354,11 @@
       margin-bottom: 15px;
       border-top-width: 2px;
       border-top-style: solid;
+    }
+
+    .agenda-description {
+      margin-top: 5px;
+      font-size: 16px;
     }
 
     .about {
@@ -447,12 +455,6 @@
       text-align: left;
     }
 
-    /* simple first-line “indent” helper used in your HTML */
-    .indent {
-      display: inline-block;
-      width: 1.25em;
-    }
-
     /* Left column — donate */
     .button-section {
       margin-top: 24px;
@@ -542,8 +544,13 @@
     .time {
       font-weight: bold;
       font-size: 18px;
-      color: rgba(0, 0, 0, 0.835);
+      color: #fed100;
       width: fit-content;
+    }
+
+    .agenda-title {
+      font-weight: bold;
+      font-size: 20px;
     }
 
     .bill-card {
@@ -1396,13 +1403,13 @@
         <div class="hamburger-section" id="main-menu-items">
           <a href="#mission-scroll" role="menuitem">About</a>
           <a href="#scrollCon" role="menuitem">Founders</a>
-          <a href="/agenda" role="menuitem">Agenda</a>
+          <a href="#agenda" role="menuitem">Agenda</a>
           <a href="#contact-scroll" role="menuitem">Contact Us</a>
         </div>
 
         <div class="hamburger-section">
-          <a href="/policy" role="menuitem">Privacy Policy</a>
-          <a href="/toa" role="menuitem">Terms of Agreement</a>
+          <a href="../JPD-Site/privacy-policy.html#home" role="menuitem">Privacy Policy</a>
+          <a href="../JPD-Site/toa.html#home" role="menuitem">Terms of Agreement</a>
         </div>
 
         <div class="hamburger-section">
@@ -1426,14 +1433,17 @@
 
         <div class="hamburger-section" style="align-items: center;">
           <button class="donate-button" href="https://donorbox.org/founding-partner-launch" type="button"
-            onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')" style="width: 100%;"
-            id="nav-donation-button">
+            onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')" style="width: 100%;">
             <img class="donobutton-1" src="Images/donation-banner-button.png" alt="Donate button" draggable="false"
               style="width: inherit;">
           </button>
         </div>
 
       </div>
+      <p style="text-align: left;font-size: 12px;margin: -16%;margin-left: 16%;">
+        Designed by <a href="mailto:linqixianps1604309@gmail.com" target="_blank" rel="noopener noreferrer">Qixian Lin</a>.<br>
+        Developed by <a href="https://normiljoey4.wixsite.com/joey-normil" target="_blank" rel="noopener noreferrer">Joey Normil</a>.
+      </p>
     </div>
   </div>
   <div class="nav">
@@ -1452,7 +1462,7 @@
     </div>
     <div style="width: 578px;margin: 0 56px;/*! display: none; */" id="nav-links">
       <a class="nav-link" href="#mission-scroll"> About</a> <a class="nav-link" href="#scrollCon">Founders</a> <a
-        class="nav-link" href="">Agenda</a> <a class="nav-link" class="last-nav" href="#contact-scroll">Contact
+        class="nav-link" href="#agenda">Agenda</a> <a class="nav-link" class="last-nav" href="#contact-scroll">Contact
         Us</a>
     </div>
     <button class="donate-button" href="https://donorbox.org/founding-partner-launch" type="button"
@@ -1872,8 +1882,8 @@
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Partners with law enforcement agencies to maintain order and safety during all 
-parade activities.</p>
+              <p class="founder-bio">Partners with law enforcement agencies to maintain order and safety during all
+                parade activities.</p>
             </div>
           </div>
           <div style="width: fit-content;height: fit-content;">
@@ -1883,7 +1893,8 @@ parade activities.</p>
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Coordinates with precinct officers to facilitate, route access, and public engagement.</p>
+              <p class="founder-bio">Coordinates with precinct officers to facilitate, route access, and public
+                engagement.</p>
             </div>
           </div>
           <div style="width: fit-content;height: fit-content;">
@@ -1903,9 +1914,9 @@ parade activities.</p>
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">A seasoned financial expert and trusted advisor, overseeing all accounting 
-operations, fiscal reporting, and audit compliance. Ensuring transparency, accuracy, 
-and sound financial stewardship across every phase of the Parade’s development.</p>
+              <p class="founder-bio">A seasoned financial expert and trusted advisor, overseeing all accounting
+                operations, fiscal reporting, and audit compliance. Ensuring transparency, accuracy,
+                and sound financial stewardship across every phase of the Parade’s development.</p>
             </div>
           </div>
           <div style="width: fit-content;height: fit-content;">
@@ -1915,8 +1926,8 @@ and sound financial stewardship across every phase of the Parade’s development
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Leads educational programs that celebrate Jamaican culture, history, and youth 
-empowerment. </p>
+              <p class="founder-bio">Leads educational programs that celebrate Jamaican culture, history, and youth
+                empowerment. </p>
             </div>
           </div>
         </div>
@@ -1939,9 +1950,9 @@ empowerment. </p>
             background-position-y: 53.5%;">
 
               <p class="founder-bio">Based in Jamaica, Ms. Seaga leads the Parade’s communications and sponsorship
-outreach with creativity and purpose. She fosters meaningful partnerships, amplifies
-and strengthens connections to communities at home and abroad.
-</p>
+                outreach with creativity and purpose. She fosters meaningful partnerships, amplifies
+                and strengthens connections to communities at home and abroad.
+              </p>
             </div>
           </div>
           <div style="width: fit-content;height: fit-content;">
@@ -1952,7 +1963,7 @@ and strengthens connections to communities at home and abroad.
             background-position-y: 53.5%;">
 
               <p class="founder-bio">Caribbean media icon connecting culture, entertainment, and community
-engagement.</p>
+                engagement.</p>
             </div>
           </div>
           <div style="width: fit-content;height: fit-content;">
@@ -1983,9 +1994,9 @@ engagement.</p>
             background-position-y: 53.5%;">
 
               <p class="founder-bio">A dynamic creative force, Ms. Marcellin oversees the production and curation of the
-Parade’s concerts, performances, and signature events. Her artistic direction brings
-together culture, rhythm, and celebration, capturing the vibrant spirit of Jamaica on
-every stage.</p>
+                Parade’s concerts, performances, and signature events. Her artistic direction brings
+                together culture, rhythm, and celebration, capturing the vibrant spirit of Jamaica on
+                every stage.</p>
             </div>
           </div>
         </div>
@@ -2041,10 +2052,10 @@ every stage.</p>
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Recruits, trains, and manages volunteer teams across all divisions. 
+              <p class="founder-bio">Recruits, trains, and manages volunteer teams across all divisions.
               </p>
             </div>
-            
+
           </div>
           <div style="width: fit-content;height: fit-content;">
             <p class="founder-card-name">Dr. R. Raf</p>
@@ -2053,11 +2064,12 @@ every stage.</p>
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Oversees visual production, ensuring consistency in all print and digital materials. 
+              <p class="founder-bio">Oversees visual production, ensuring consistency in all print and digital
+                materials.
               </p>
             </div>
           </div>
-          
+
         </div>
 
       </div>
@@ -2070,51 +2082,104 @@ every stage.</p>
     </div>
 
 
-    <!-- Agenda
-    <div class="agenda">
+    <!-- Agenda -->
+    <div id="agenda" class="agenda">
       <div class="frame">
         <div class="title">
-          <h3 class="star">★</h3>
-          <h2>Event Agenda</h2>
+          <h3 class="star" style="color: #fed100;">★</h3>
+          <h2 style="color: white;">Parade Agenda</h2>
         </div>
         <section class="agenda-item">
-          <p class="time">5:30 PM</p>
+          <p class="time">8:00 AM</p>
           <div class="frame">
-            <p>Arrival</p>
-            <p>We invite you to an enchanting parade, where passion, creativity, and community come together to shake
-              the city
-              in a breathtaking celebratrion of culture and tradition.</p>
+            <p class="agenda-title">Parade Assembly & Line-Up</p>
+            <p class="agenda-description">
+              • Participants, marching bands, cultural groups, and floats assemble at Flatbush Junction.<br>
+              • Route marshals conduct safety checks and coordinate line-up.<br>
+              • Media outlets conduct early interviews.<br>
+              • Vendors and community partners set up along the Prospect Park perimeter.
+            </p>
           </div>
         </section>
         <section class="agenda-item">
-          <p class="time">7:00 PM</p>
+          <p class="time">10:00 AM</p>
           <div class="frame">
-            <p>Something</p>
-            <p>We invite you to an enchanting parade, where passion, creativity, and community come together to shake
-              the city
-              in a breathtaking celebratrion of culture and tradition.</p>
+            <p class="agenda-title">Official Opening Ceremony</p>
+            <p class="agenda-description">
+              • National Anthems: United States and Jamaica<br>
+              • Welcome Remarks: Dr. Bill Tinglin, Founder & Chairman, Jamaica Rising Day Parade<br>
+              • Invocation: Local clergy representatives<br>
+              • Greetings:<br>
+              <span class="indent">- The Hon. Consul General of Jamaica – New York<br></span>
+              <span class="indent">- Representative, Office of the Brooklyn Borough President<br></span>
+              <span class="indent">- Elected officials & community leaders<br></span>
+              • Ribbon-Cutting: Launch of the inaugural Jamaica Rising Day Parade
+            </p>
           </div>
         </section>
         <section class="agenda-item">
-          <p class="time">7:30 PM</p>
+          <p class="time">10:30 AM</p>
           <div class="frame">
-            <p>Another Thing</p>
-            <p>We invite you to an enchanting parade, where passion, creativity, and community come together to shake
-              the city
-              in a breathtaking celebratrion of culture and tradition.</p>
+            <p class="agenda-title">Parade Kick-Off</p>
+            <p class="agenda-description">
+              • Parade begins moving north along Flatbush Avenue toward Empire Boulevard.
+              • Featured units:<br>
+              <span class="indent">- Jamaican uniformed services<br></span>
+              <span class="indent">- School marching bands<br></span>
+              <span class="indent">- Cultural dancers & costumed performers<br></span>
+              <span class="indent">- Community organizations & diaspora associations<br></span>
+              <span class="indent">- Floats celebrating Jamaica’s history, heroes, and culture</span>
+            </p>
           </div>
         </section>
         <section class="agenda-item">
-          <p class="time">8:30 PM</p>
+          <p class="time">12:30 PM</p>
           <div class="frame">
-            <p>Wrap Up</p>
-            <p>We invite you to an enchanting parade, where passion, creativity, and community come together to shake
-              the city
-              in a breathtaking celebratrion of culture and tradition.</p>
+            <p class="agenda-title">Parade Arrival & Cultural Showcase (Prospect Park – Empire Boulevard Entrance)</p>
+            <p class="agenda-description">
+              • Master of Ceremonies: [TBD Media Personality]<br>
+              • Welcome Back Segment: Dr. Karren Dunkley<br>
+              • Cultural Performances: Reggae, gospel, mento, and drumming ensembles<br>
+              • Guest Performers: [Artist to be announced]<br>
+              • Recognition Awards: Honoring community builders, educators, and sponsors<br>
+            </p>
+          </div>
+        </section>
+        <section class="agenda-item">
+          <p class="time">2:30 PM</p>
+          <div class="frame">
+            <p class="agenda-title">Food Village & Family Zone</p>
+            <p class="agenda-description">
+              • Authentic Jamaican cuisine and local vendors<br>
+              • Children’s cultural workshops, games, and art booths<br>
+              • Community information tents (education, health, tourism, and investment)<br>
+            </p>
+          </div>
+        </section>
+        <section class="agenda-item">
+          <p class="time">5:00 PM</p>
+          <div class="frame">
+            <p class="agenda-title">Jamaica Rising Evening Festival (Prospect Park Main Stage)</p>
+            <p class="agenda-description">
+              • Headliner Performances by leading Jamaican & diaspora artists<br>
+              • Special presentations celebrating Jamaica’s independence heritage<br>
+              • Closing remarks and presentation of the Jamaica Rising Torch of Unity
+            </p>
+          </div>
+        </section>
+        <section class="agenda-item">
+          <p class="time">8:00 PM</p>
+          <div class="frame">
+            <p class="agenda-title">Closing Ceremony</p>
+            <p class="agenda-description">
+              • Vote of Thanks – Dr. Bill Tinglin<br>
+              • Final Benediction<br>
+              • Fireworks display over Prospect Park
+            </p>
           </div>
         </section>
       </div>
-    </div> -->
+    </div>
 
     <!-- About -->
     <div class="about">
@@ -2510,12 +2575,6 @@ every stage.</p>
   }, { passive: true });
 
 </script>
-<script>
-  const n = performance.getEntriesByType('navigation')[0];
-  if (n && n.type === 'reload') {
-    // Replace so Back doesn’t return to the reloader page
-    window.location.replace('../JPD-Site/index.html');
-  }
-</script>
+
 
 </html>
