@@ -17,6 +17,7 @@
   display: flex;
   flex-direction: column;
   place-content: center;
+  gap: 20px;
 
 }
 
@@ -28,7 +29,7 @@
 
 li {
   display: inline-grid;
-  font-size: 1.5em;
+  font-size: .25em;
   list-style-type: none;
   padding: .1em;
   text-transform: uppercase;
@@ -42,7 +43,7 @@ li {
 
 li span {
   display: block;
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: bold;
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
@@ -81,7 +82,7 @@ ul {
 @media (max-width: 520px) {
 
   li div {
-    font-size: 30.25%;
+    font-size: 180%;
   }
 }
 
