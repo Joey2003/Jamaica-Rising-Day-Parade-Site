@@ -128,7 +128,7 @@ header {
   background-image: url('../Images/main-banner-image.png');
   background-position-x: center;
   background-position-y: 80%;
-  left: -1px;
+  left: -2px;
 }
 
 .header-contents {
@@ -563,24 +563,18 @@ We style them to look like fields. */
 
 .bill-card {
   display: flex;
-  flex-direction: row;
-  place-content: center;
+  flex-direction: column;
   position: relative;
-  width: 100vw;
-  justify-content: space-between;
+  width: 24vw;
   background-color: #151716;
-  border-right-width: 30px;
-  border-right-style: solid;
-  border-right-color: #fed100;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
+  align-items: center;
+  margin: 0 2vw;
 }
 
 .bill-background {
   display: grid;
   place-items: center;
   width: fit-content;
-  width: 660px;
   background-image: url('../Images/green-background.png');
   padding: 50px 50px;
   box-shadow: #000 0px 14px 22px -1px, #000 0px 2px 4px -1px;
@@ -609,15 +603,17 @@ We style them to look like fields. */
 }
 
 .founder-page {
-  display: flex;
+  display: grid;
   place-content: center;
-  gap: 1.82vw;
+  row-gap: 1.82vw;
   padding: calc(137.5px / 2) 0;
   position: relative;
   width: 100%;
   flex: 0 0 100%;
   transform: translateX(calc(var(--index) * -100%));
   transition: transform 0.3s ease;
+  grid-template-columns: repeat(4, 13vw);
+  place-items: center;
 }
 
 .founder-book {
@@ -629,18 +625,18 @@ We style them to look like fields. */
 .founder-picture {
   background-size: cover;
   background-repeat: no-repeat;
-  height: 17vw;
-  width: 13vw;
+  height: 11vw;
+  aspect-ratio: 9 / 13;
 }
 
 .founder-info {
   display: flex;
   flex-direction: column;
-  padding: 100px;
+  padding: 20px 0;
   padding-right: 50px;
-  right: 50px;
   position: relative;
   justify-content: center;
+  width: 66%;
 }
 
 .founder-card-name {
@@ -649,7 +645,7 @@ We style them to look like fields. */
   color: black;
   width: fit-content;
   text-align: center;
-  font-size: 1.15vw;
+  font-size: .75vw;
   line-height: 0px;
 }
 
@@ -665,7 +661,7 @@ We style them to look like fields. */
   height: calc(100% - calc(var(--pad)) * 2);
   width: calc(100% - calc(var(--pad)) * 2);
   padding: var(--pad);
-  font-size: 1vw;
+  font-size: .5vw;
 
   background-color: #000000b0;
   opacity: 0;
@@ -860,7 +856,7 @@ We style them to look like fields. */
 
 
 .founder-card>img {
-  margin-top: 20vh;
+  margin-top: 14%;
 }
 
 .donate-button {
@@ -1241,9 +1237,6 @@ We style them to look like fields. */
     display: grid;
   }
 
-  .bill-background {
-    width: 100%;
-  }
 
   .bill-card {
     flex-direction: column;
@@ -1256,12 +1249,7 @@ We style them to look like fields. */
     right: unset;
   }
 
-  .founder-page {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    place-items: center;
-  }
+
 
   .founder-page>div {
     margin: 0 0px 140px;
@@ -1273,9 +1261,6 @@ We style them to look like fields. */
     margin-top: 30vh;
   }
 
-  .founder-page {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
   .intro p {
     padding-right: 0;

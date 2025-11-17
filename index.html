@@ -291,72 +291,55 @@
 
     <!-- Details -->
 
-    <div style="overflow: hidden;">
-      <div class="bill-card" id="Una">
-        <div class="bill-background">
-          <div class="founder-picture" style="
+    <div style="
+    width: 100vw;
+    justify-content: center;
+    display: flex;
+    background-color: #151716;
+    padding: 1vw;
+">
+      <div style="overflow: hidden;display: flex;">
+        <div class="bill-card" id="Una">
+          <div class="bill-background">
+            <div class="founder-picture" style="
             background-image: url('Images/una.png');
             background-position-x: center;
             background-position-y: 53.5%;
             width: 407px;
             height: 535px;"></div>
+          </div>
+          <div class="founder-info">
+            <p class="role">Founding Dignitary</p>
+            <h3 class="name">Dr. Una S.T. Clarke, OD</h3>
+
+
+          </div>
         </div>
-        <div class="founder-info">
-          <p class="role">Founding Dignitary</p>
-          <h3 class="name">Dr. Una S.T. Clarke, OD</h3>
-          <p class="founder-info-body">Dr. Clarke is a Former New York City Council Member and stands as a trailblazer
-            whose vision and courage paved the way for
-            women
-            and leaders of color in public service. Her tireless advocacy for the Caribbean
-            community laid the foundation for this historic moment, making the Jamaica Rising
-            Day Parade possible and profoundly meaningful.</p>
-          <a class="button" href="https://www.unaclarkeassociates.com/biography.html" target="_blank"
-            rel="noopener noreferrer">
-            <h3>Learn More</h3>
-          </a>
-        </div>
-      </div>
-      <div class="bill-card" id="founder-1">
-        <div class="bill-background">
-          <div class="founder-picture" style="
+        <div class="bill-card" id="founder-1">
+          <div class="bill-background">
+            <div class="founder-picture" style="
             background-image: url('Images/dr-bill.png');
             background-position-x: center;
             background-position-y: 53.5%;
             width: 407px;
             height: 535px;"></div>
+          </div>
+          <div class="founder-info">
+            <p class="role">Founder &amp; Chairman</p>
+            <h3 class="name">Dr. Bill Tinglin</h3>
+
+
+          </div>
         </div>
-        <div class="founder-info">
-          <p class="role">Founder & Chairman</p>
-          <h3 class="name">Dr. Bill Tinglin</h3>
-          <p class="founder-info-body">Dr. Bill Tinglin is a Jamaican-American educator,
-            humanitarian and author whose
-            deep commitment to
-            cultural pride and community service has shaped his work. His Jamaican upbringing, combined with his
-            years
-            of international advocacy for education, tolerance and diaspora engagement, laid the foundation for
-            his role
-            as Chairperson of the Jamaica Rising Day Parade. In that capacity, he leverages his experience in
-            mobilising
-            global audiences and uplifting Jamaican identity—bringing together the diaspora in New York City to
-            celebrate heritage, unity and achievement.</p>
-          <a class="button" href="https://billtingling.com/" target="_blank" rel="noopener noreferrer">
-            <h3>Learn More</h3>
-          </a>
-        </div>
-      </div>
-      <div class="dropdown-prompt" id="open-dropdown" style="display: none;">
-        <div class="dropdown-button" id="open-dropdown-button">
-          <img class="dropdown-img" src="Images/click-here.png" alt="" draggable="false">
-          <!-- <h3>Meet the Founders</h3> -->
-        </div>
+
       </div>
     </div>
 
     <div class="founder-card" id="founder-grid">
       <img src="Images/left-chevron.png" alt="left arrow" id="left-arrow"
-        style="position: absolute; left: 1.646%; cursor: pointer; z-index: 98; width: 40px; height: auto; display: none;">
+        style="position: absolute; left: 23.646%; cursor: pointer; z-index: 98; width: 40px; height: auto; display: none;">
       <img src="Images/right-chevron.png" alt="right arrow" id="right-arrow"
-        style="position: absolute; right: 1.646%; cursor: pointer; z-index: 98; width: 40px; height: auto;">
+        style="position: absolute; right: 23.646%; cursor: pointer; z-index: 98; width: 40px; height: auto;">
       <div class="founder-book" id="founder-book" style="--index: 0">
         <div class="founder-page">
           <div style="width: fit-content;height: fit-content;">
@@ -730,12 +713,6 @@
           </div>
         </div>
       </div>
-      <div class="dropdown-prompt" id="collapse-dropdown">
-        <div class="dropdown-button" id="collapse-dropdown-button">
-          <img id="collapse-open-button" src="Images/ch-collapse.png" alt="" draggable="false">
-          <!-- <h3>Meet the Founders</h3> -->
-        </div>
-      </div>
     </div>
 
 
@@ -868,7 +845,7 @@
   <!-- Contact Us -->
   <footer id="contact-scroll">
     <div class="contact-us">
-      <form class="contact-form" action="../../contact.php" method="post" novalidate>
+      <form class="contact-form" action="../../contact.php" method="post" novalidate="">
         <div class="heading">
           <h2>Get in touch</h2>
           <p>We’d love to hear from you. Whether you have questions about the Jamaica Day
@@ -881,21 +858,20 @@
           <!-- label keeps your .input-prompt styling but is now accessible -->
           <label class="input-prompt" for="cf-name">Name or Company</label>
           <!-- was <div class="input"></div> -->
-          <input id="cf-name" name="name" class="input" type="text" autocomplete="name organization" required>
+          <input id="cf-name" name="name" class="input" type="text" autocomplete="name organization" required="">
         </div>
 
         <div class="email">
           <label class="input-prompt" for="cf-email">Email Address</label>
           <!-- was <div class="input"></div> -->
-          <input id="cf-email" name="email" class="input" type="email" autocomplete="email" required>
+          <input id="cf-email" name="email" class="input" type="email" autocomplete="email" required="">
         </div>
 
         <div class="email-body">
           <p class="input-prompt" for="cf-message" style="margin-top: 18px;">Please enter the details of your request.
           </p>
           <!-- was <div class="input"></div> -->
-          <textarea id="cf-message" name="message" class="input" rows="6"
-            style="white-space: pre-wrap;overflow-wrap: break-word;word-break: break-word;" required></textarea>
+          <textarea id="cf-message" name="message" class="input" rows="6" style="white-space: pre-wrap;overflow-wrap: break-word;word-break: break-word;" required=""></textarea>
         </div>
 
         <!-- was <a class="button" ...><h3>Send</h3></a>  -->
@@ -906,23 +882,25 @@
       </form>
       <div style="margin-right: 1%;">
 
-        <p style="font-size: 14px;">NEW YORK, NY</p>
+        <p style="font-size: 14px;font-weight: bold;">New York, NY</p>
         <div style="margin-top: 16px;">
-          <button style="background-color: #0000;border: 0;cursor: pointer;"
-            onclick="window.open('https://www.instagram.com/jrdparade?igsh=MW45ZWk2bjlrNHFs&utm_source=qr', '_blank')">
-            <img class="social-button" src="Images/instagram.png" alt="instagram icon" draggable="false"
-              style="height: auto;width: 32px;">
+          <button style="background-color: #0000;border: 0;cursor: pointer;" onclick="window.open('https://www.instagram.com/jrdparade?igsh=MW45ZWk2bjlrNHFs&amp;utm_source=qr', '_blank')">
+            <img class="social-button" src="Images/instagram.png" alt="instagram icon" draggable="false" style="height: auto;width: 32px;">
           </button>
-          <button style="background-color: #0000;border: 0;cursor: pointer;"
-            onclick="window.open('https://www.facebook.com/people/Jamaica-Rising-Day-Parade/61581875054215/', '_blank')">
-            <img class="social-button" src="Images/facebook.png" alt="facebook icon" draggable="false"
-              style="height: auto;width: 32px;">
+          <button style="background-color: #0000;border: 0;cursor: pointer;" onclick="window.open('https://www.facebook.com/people/Jamaica-Rising-Day-Parade/61581875054215/', '_blank')">
+            <img class="social-button" src="Images/facebook.png" alt="facebook icon" draggable="false" style="height: auto;width: 32px;">
           </button>
         </div>
-        <div style="display: flex;flex-direction: column;margin: 18% 0;" class="email-link">
+        <div style="display: flex;flex-direction: column;margin: 4% 0;" class="email-link">
           <p style="font-size: 14px;font-weight: bold;">Email</p>
-          <a class="footer-email" href="mailto:Info@Jamiacandayparade.org"
-            role="menuitem">Info@Jamaicandayparade.org</a>
+          <a class="footer-email" href="mailto:Info@Jamiacandayparade.org" role="menuitem">Info@Jamaicandayparade.org</a>
+        </div>
+    <div class="hamburger-section"><p style="font-size: 14px;font-weight: bold;">Other</p>
+    
+    <a href="../privacy-policy.html#home" role="menuitem">FAQ</a>
+    <a href="../privacy-policy.html#home" role="menuitem">Donate</a>
+          <a href="../privacy-policy.html#home" role="menuitem">Privacy Policy</a>
+          <a href="../toa.html#home" role="menuitem">Terms of Agreement</a>
         </div>
       </div>
     </div>
@@ -1019,16 +997,6 @@
           //seconds
         }, 0)
     }());
-  </script>
-  <script>
-    document.getElementById("open-dropdown-button").addEventListener("click", function () {
-      document.getElementById("founder-grid").style.display = "block";
-      document.getElementById("open-dropdown").style.display = "none";
-    });
-    document.getElementById("collapse-dropdown-button").addEventListener("click", function () {
-      document.getElementById("founder-grid").style.display = "none";
-      document.getElementById("open-dropdown").style.display = "grid";
-    });
   </script>
   <script>
     const founderBook = document.getElementById("founder-book");
