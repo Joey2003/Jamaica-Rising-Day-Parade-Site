@@ -206,10 +206,10 @@
       </form>
       <div style="margin-right: 1%;">
 
-        <p style="font-size: 14px;">NEW YORK, NY</p>
+        <p style="font-size: 14px;font-weight: bold;">New York, NY</p>
         <div style="margin-top: 16px;">
           <button style="background-color: #0000;border: 0;cursor: pointer;"
-            onclick="window.open('https://www.instagram.com/jrdparade?igsh=MW45ZWk2bjlrNHFs&utm_source=qr', '_blank')">
+            onclick="window.open('https://www.instagram.com/jrdparade?igsh=MW45ZWk2bjlrNHFs&amp;utm_source=qr', '_blank')">
             <img class="social-button" src="Images/instagram.png" alt="instagram icon" draggable="false"
               style="height: auto;width: 32px;">
           </button>
@@ -219,16 +219,24 @@
               style="height: auto;width: 32px;">
           </button>
         </div>
-        <div style="display: flex;flex-direction: column;margin: 18% 0;" class="email-link">
+        <div style="display: flex;flex-direction: column;margin: 4% 0;" class="email-link">
           <p style="font-size: 14px;font-weight: bold;">Email</p>
           <a class="footer-email" href="mailto:Info@Jamiacandayparade.org"
             role="menuitem">Info@Jamaicandayparade.org</a>
+        </div>
+        <div class="hamburger-section">
+          <p style="font-size: 14px;font-weight: bold;">Other</p>
+
+          <a href="../privacy-policy.html#home" role="menuitem">FAQ</a>
+          <a href="../privacy-policy.html#home" role="menuitem">Donate</a>
+          <a href="../privacy-policy.html#home" role="menuitem">Privacy Policy</a>
+          <a href="../toa.html#home" role="menuitem">Terms of Agreement</a>
         </div>
       </div>
     </div>
     <div style="text-align: center;" class="copyright">© 2025 Jamaica Rising Day Parade Inc.</div>
   </footer>
-  
+
   <script>
     const form = document.querySelector('.contact-form');
     const statusEl = form.querySelector('.form-status');

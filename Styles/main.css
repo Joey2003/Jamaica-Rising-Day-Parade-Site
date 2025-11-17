@@ -527,11 +527,6 @@ main {
   margin-left: 4px;
 }
 
-/* Right column — contact form look */
-.contact-form .name,
-.contact-form .email,
-.contact-form .email-body {}
-
 .input-prompt {
   margin: 0 0 6px;
   font-size: 14px;
@@ -636,7 +631,7 @@ We style them to look like fields. */
   padding-right: 50px;
   position: relative;
   justify-content: center;
-  width: 66%;
+  width: fit-content;
 }
 
 .founder-card-name {
@@ -672,8 +667,6 @@ We style them to look like fields. */
 .founder-bio:hover {
   opacity: 1;
 }
-
-.name {}
 
 .planned-date {
   flex-direction: row;
@@ -784,7 +777,7 @@ We style them to look like fields. */
 .mission-section p {
   padding-left: 10px;
   color: white;
-  font-size: 1.55vw;
+  font-size: .95vw;
 }
 
 .mission-section h3 {
@@ -935,14 +928,15 @@ We style them to look like fields. */
 .intro p {
   padding-right: 41%;
   text-shadow:
-    0 1px 2px rgba(0,0,0,.6),
-    0 2px 8px rgba(0,0,0,.45);
+    0 1px 2px rgba(0, 0, 0, .6),
+    0 2px 8px rgba(0, 0, 0, .45);
 }
 
-.intro h1, .intro h3 {
+.intro h1,
+.intro h3 {
   text-shadow:
-    0 1px 2px rgba(0,0,0,.6),
-    0 2px 8px rgba(0,0,0,.45);
+    0 1px 2px rgba(0, 0, 0, .6),
+    0 2px 8px rgba(0, 0, 0, .45);
 }
 
 .mission-section {
@@ -1125,7 +1119,7 @@ We style them to look like fields. */
   #logo-wrapper {
     width: 86px;
   }
- 
+
 
   .last-img .donate-button {
     right: -1%;
