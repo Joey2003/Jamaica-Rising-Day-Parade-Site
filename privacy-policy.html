@@ -243,34 +243,6 @@
     </div>
     <div style="text-align: center;" class="copyright">© 2025 Jamaica Rising Day Parade Inc.</div>
   </footer>
-  
-  <script>
-    const form = document.querySelector('.contact-form');
-    const statusEl = form.querySelector('.form-status');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      statusEl.textContent = 'Sending…';
-      const btn = form.querySelector('button[type="submit"]');
-      btn.disabled = true;
-
-      try {
-        const formData = new FormData(form);
-        const res = await fetch(form.action, { method: 'POST', body: formData });
-        const data = await res.json();
-        if (data.ok) {
-          statusEl.textContent = data.message || 'Sent!';
-          form.reset();
-        } else {
-          statusEl.textContent = data.error || 'Something went wrong.';
-        }
-      } catch {
-        statusEl.textContent = 'Network error.';
-      } finally {
-        btn.disabled = false;
-      }
-    });
-  </script>
   <script src="Scripts/navHide.js"></script>
   <script src="Scripts/menu-dropdown.js"></script>
 </body>
