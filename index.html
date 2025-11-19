@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -573,7 +574,7 @@
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Dr. Lynch is the Deputy Chair of operations and logistics. She strategicly and
+              <p class="founder-bio">Dr. Lynch is the Deputy Chair of operations and logistics. He strategicly and
                 precisely ensures operational excellence by guiding every
                 logistical detail to create a safe, seamless experience. </p>
             </div>
@@ -868,42 +869,7 @@
   <!-- Contact Us -->
   <footer id="contact-scroll">
     <div class="contact-us">
-      <form class="contact-form" action="../../contact.php" method="post" novalidate>
-        <div class="heading">
-          <h2>Get in touch</h2>
-          <p>We’d love to hear from you. Whether you have questions about the Jamaica Day
-            Parade, vendor opportunities, volunteering, or accessibility, please reach out — our team will respond as
-            soon as possible.
-          </p>
-        </div>
-
-        <div class="name">
-          <!-- label keeps your .input-prompt styling but is now accessible -->
-          <label class="input-prompt" for="cf-name">Name or Company</label>
-          <!-- was <div class="input"></div> -->
-          <input id="cf-name" name="name" class="input" type="text" autocomplete="name organization" required>
-        </div>
-
-        <div class="email">
-          <label class="input-prompt" for="cf-email">Email Address</label>
-          <!-- was <div class="input"></div> -->
-          <input id="cf-email" name="email" class="input" type="email" autocomplete="email" required>
-        </div>
-
-        <div class="email-body">
-          <p class="input-prompt" for="cf-message" style="margin-top: 18px;">Please enter the details of your request.
-          </p>
-          <!-- was <div class="input"></div> -->
-          <textarea id="cf-message" name="message" class="input" rows="6"
-            style="white-space: pre-wrap;overflow-wrap: break-word;word-break: break-word;" required></textarea>
-        </div>
-
-        <!-- was <a class="button" ...><h3>Send</h3></a>  -->
-        <button class="button" type="submit">
-          <h3>Send</h3>
-        </button>
-        <p class="form-status" aria-live="polite" style="font-size: 16px;"></p>
-      </form>
+      <?php echo "$display_block"; ?>
       <div style="margin-right: 1%;">
 
         <p style="font-size: 14px;">NEW YORK, NY</p>
@@ -931,33 +897,6 @@
   <script src="Scripts/menu-dropdown.js"></script>
   <script src="Scripts/navHide.js"></script>
   <script>
-    const form = document.querySelector('.contact-form');
-    const statusEl = form.querySelector('.form-status');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      statusEl.textContent = 'Sending…';
-      const btn = form.querySelector('button[type="submit"]');
-      btn.disabled = true;
-
-      try {
-        const formData = new FormData(form);
-        const res = await fetch(form.action, { method: 'POST', body: formData });
-        const data = await res.json();
-        if (data.ok) {
-          statusEl.textContent = data.message || 'Sent!';
-          form.reset();
-        } else {
-          statusEl.textContent = data.error || 'Something went wrong.';
-        }
-      } catch {
-        statusEl.textContent = 'Network error.';
-      } finally {
-        btn.disabled = false;
-      }
-    });
-  </script>
-  <script>
     document.addEventListener("DOMContentLoaded", () => {
       const wrapper = document.getElementById("scroll-wrapper");
       let pos = 0;
@@ -978,7 +917,7 @@
   </script>
   <!-- Countdown script -->
   <script>
-    (function () {
+    (function() {
       const second = 1000,
         minute = second * 60,
         hour = minute * 60,
@@ -999,7 +938,7 @@
       //end
 
       const countDown = new Date(birthday).getTime(),
-        x = setInterval(function () {
+        x = setInterval(function() {
 
           const now = new Date().getTime(),
             distance = countDown - now;
@@ -1021,11 +960,11 @@
     }());
   </script>
   <script>
-    document.getElementById("open-dropdown-button").addEventListener("click", function () {
+    document.getElementById("open-dropdown-button").addEventListener("click", function() {
       document.getElementById("founder-grid").style.display = "block";
       document.getElementById("open-dropdown").style.display = "none";
     });
-    document.getElementById("collapse-dropdown-button").addEventListener("click", function () {
+    document.getElementById("collapse-dropdown-button").addEventListener("click", function() {
       document.getElementById("founder-grid").style.display = "none";
       document.getElementById("open-dropdown").style.display = "grid";
     });
@@ -1062,21 +1001,22 @@
     updateArrows();
   </script>
   <script>
-    (function () {
+    (function() {
       const videos = document.querySelectorAll('.route-video');
       if (!videos.length) return;
 
       // iOS/Safari reliability: ensure attributes exist in HTML AND JS
       videos.forEach(v => {
-        v.muted = true; v.setAttribute('muted', '');
-        v.playsInline = true; v.setAttribute('playsinline', ''); v.setAttribute('webkit-playsinline', '');
+        v.muted = true;
+        v.setAttribute('muted', '');
+        v.playsInline = true;
+        v.setAttribute('playsinline', '');
+        v.setAttribute('webkit-playsinline', '');
       });
 
-      const play = v => v.play().catch(() => {/* iOS may block until a gesture */ });
-
-      // Respect reduced motion
-      const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)');
-      if (prefersReduced.matches) { videos.forEach(pause); return; }
+      const play = v => v.play().catch(() => {
+        /* iOS may block until a gesture */
+      });
 
       // Observe visibility in viewport
       const observer = new IntersectionObserver((entries) => {
@@ -1087,7 +1027,9 @@
             if (v.paused) play(v);
           }
         });
-      }, { threshold: [0, 0.5, 0.75, 1] });
+      }, {
+        threshold: [0, 0.5, 0.75, 1]
+      });
 
       videos.forEach(v => observer.observe(v));
 
@@ -1103,12 +1045,22 @@
 
       // One-time user gesture fallback (for rare autoplay blocks)
       const unlock = () => {
-        videos.forEach(v => { if (v.paused) play(v); });
-        window.removeEventListener('touchstart', unlock, { once: true });
-        window.removeEventListener('click', unlock, { once: true });
+        videos.forEach(v => {
+          if (v.paused) play(v);
+        });
+        window.removeEventListener('touchstart', unlock, {
+          once: true
+        });
+        window.removeEventListener('click', unlock, {
+          once: true
+        });
       };
-      window.addEventListener('touchstart', unlock, { once: true });
-      window.addEventListener('click', unlock, { once: true });
+      window.addEventListener('touchstart', unlock, {
+        once: true
+      });
+      window.addEventListener('click', unlock, {
+        once: true
+      });
     })();
   </script>
 
