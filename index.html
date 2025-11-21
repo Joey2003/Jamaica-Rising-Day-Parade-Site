@@ -291,74 +291,68 @@
 
     <!-- Details -->
 
-    <div style="
-    width: 100vw;
-    justify-content: center;
-    display: flex;
-    background-color: #151716;
-    padding: 1vw;
-">
-      <div style="overflow: hidden;display: flex;">
-        <div class="bill-card" id="Una">
-          <div class="bill-background">
-            <div class="founder-picture" style="
+    <div class="founding-dignitaries" style="overflow: hidden;width: 100vw;background-color: #151716;padding: 2vw 0;">
+      <div class="bill-card" id="Una">
+        <div class="bill-background">
+          <div class="dignitary-picture" style="
             background-image: url('Images/una.png');
             background-position-x: center;
-            background-position-y: 53.5%;
-            width: 407px;
-            height: 535px;"></div>
-          </div>
-          <div class="founder-info">
-            <p class="role">Founding Dignitary</p>
-            <h3 class="name">Dr. Una S.T. Clarke, OD</h3>
-
-
-          </div>
+            background-position-y: 53.5%;"></div>
         </div>
-        <div class="bill-card" id="founder-1">
-          <div class="bill-background">
-            <div class="founder-picture" style="
+        <div class="founder-info">
+          <p class="role">Founding Dignitary</p>
+          <h3 class="name">Dr. Una S.T. Clarke, OD</h3>
+
+
+        </div>
+      </div>
+      <div class="bill-card" id="founder-1">
+        <div class="bill-background">
+          <div class="dignitary-picture" style="
             background-image: url('Images/dr-bill.png');
             background-position-x: center;
-            background-position-y: 53.5%;
-            width: 407px;
-            height: 535px;"></div>
-          </div>
-          <div class="founder-info">
-            <p class="role">Founder &amp; Chairman</p>
-            <h3 class="name">Dr. Bill Tinglin</h3>
-
-
-          </div>
+            background-position-y: 53.5%;"></div>
         </div>
+        <div class="founder-info">
+          <p class="role">Founder &amp; Chairman</p>
+          <h3 class="name">Dr. Bill Tinglin</h3>
 
+
+        </div>
       </div>
+
     </div>
 
-    <div class="founder-card" id="founder-grid">
+    <div class="founder-card" id="founder-grid" style="/*! display: none; */">
       <img src="Images/left-chevron.png" alt="left arrow" id="left-arrow"
-        style="position: absolute; left: 23.646%; cursor: pointer; z-index: 98; width: 40px; height: auto; display: none;">
+        style="position: absolute; left: 1.646%; cursor: pointer; z-index: 98; width: 40px; height: auto; display: none;">
       <img src="Images/right-chevron.png" alt="right arrow" id="right-arrow"
-        style="position: absolute; right: 23.646%; cursor: pointer; z-index: 98; width: 40px; height: auto;">
-      <div class="founder-book" id="founder-book" style="--index: 0">
-
+        style="position: absolute; right: 1.646%; cursor: pointer; z-index: 98; width: 40px; height: auto; display: block;">
+      <div class="founder-book" id="founder-book" style="--index: 0;">
         <div class="founder-page">
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Ashley Azor</p>
+          <div style="height: fit-content;" class="founder-card-info">
             <div class="founder-picture" style="
             background-image: url('Images/Ashley.jpeg');
             background-position-x: center;
-            background-position-y: 53.5%;">
+            background-position-y: 53.5%;
+            /*! width: 8vw; */
+            /*! height: auto; */
+">
 
-              <p class="founder-bio">Ms. Azor is the Director of Fundraising & Strategic Partnerships. She guides the
+
+
+              <p class="founder-bio">Ms. Azor is the Director of Fundraising &amp; Strategic Partnerships. She guides
+                the
                 Parade’s fundraising vision with passion and precision, cultivating
                 sponsors, donors, and philanthropic alliances. Her leadership ensures lasting
                 partnerships that sustain the Parade’s mission and amplify its impact across
                 communities worldwide. </p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Ashley Azor</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Donovan Longmore</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/Don.jpg');
             background-position-x: center;
@@ -368,21 +362,26 @@
                 humanitarian with
                 over 37 years of dynamic leadership across marketing, entertainment, finance, and healthcare.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Donovan Longmore</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Ron Glick, Esq.</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/Ron.jpeg');
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Mr. Glick is the Director of Finance & Legal Affairs. He safeguards transparency,
+              <p class="founder-bio">Mr. Glick is the Director of Finance &amp; Legal Affairs. He safeguards
+                transparency,
                 compliance, and fiscal integrity across all
                 organizational operations. </p>
             </div>
+            <p class="founder-card-role" style="top: auto;">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Ron Glick, Esq.</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Dr. Karren Dunkley</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/Dunkley.jpg');
             background-position-x: center;
@@ -394,9 +393,11 @@
                 partnerships that strengthen the parade’s educational and diplomatic reach across
                 the diaspora. </p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Dr. Karren Dunkley</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Joey Normil</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/joey.PNG');
             background-position-x: center;
@@ -407,47 +408,27 @@
                 developer with over eight years of practice, maintaining the Parade’s digital platforms and web
                 infrastructure.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Joey Normil</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Qixian Lin</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/QIBA.png');
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Mr. Lin is the Director of Social Media & Digital Strategy, a visual storyteller
+              <p class="founder-bio">Qixian Lin is the Director of Social Media &amp; Digital Strategy, a visual
+                storyteller
                 dedicated to creating impactful media
                 that inspires connection in communities. He designs digital campaigns that amplify the Parade’s message
                 worldwide.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Qixian Lin</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Dr. R. Raf</p>
-            <div class="founder-picture" style="
-            background-image: url('Images/blank-profile.png');
-            background-position-x: center;
-            background-position-y: 53.5%;">
+          <div style="height: fit-content;" class="founder-card-info">
 
-              <p class="founder-bio">Oversees visual production, ensuring consistency in all print and digital
-                materials.
-              </p>
-            </div>
-          </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Ray James</p>
-            <div class="founder-picture" style="
-            background-image: url('Images/blank-profile.png');
-            background-position-x: center;
-            background-position-y: 53.5%;">
-
-              <p class="founder-bio">Captures the story of Jamaica Rising through compelling visuals and film.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="founder-page">
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Jordi Lakeem Foster</p>
             <div class="founder-picture" style="
             background-image: url('Images/jordi.jpg');
             background-position-x: center;
@@ -456,9 +437,11 @@
               <p class="founder-bio">Mr. Foster is the Creative Director. He shapes the Parade’s visual identity through
                 art direction and branding.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Jordi Lakeem Foster</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Dr. Robert Clarke, M.D.</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/Robert.jpeg');
             background-position-x: center;
@@ -468,9 +451,11 @@
                 humanitarian, Dr. Robert Clarke leads all medical readiness
                 initiatives and emergency response efforts for the parade.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Dr. Robert Clarke, M.D.</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Dr. Rupert Francis</p>
+          <div class="founder-card-info" style="height: fit-content;">
+
             <div class="founder-picture" style="
             background-image: url('Images/Rupert.webp');
             background-position-x: center;
@@ -480,9 +465,11 @@
                 executive. He champions global collaboration and builds strategic partnerships that
                 unite and empower Jamaican communities worldwide.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Dr. Rupert Francis</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Dr. Roy Davidson</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/b-roy.jpg');
             background-position-x: center;
@@ -491,9 +478,11 @@
               <p class="founder-bio">Provides strategic guidance to the Chairman and Board, shaping growth and
                 organizational direction.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Dr. Roy Davidson</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Mia Hill</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/mia.jpg');
             background-position-x: 58%;
@@ -503,9 +492,11 @@
                 professionalism. Mia ensures seamless communication across all departments,
                 orchestrating logistics and execution to deliver an exceptional parade experience.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Mia Hill</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Dr. Ionie Pierce</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/Ionie.jpg');
             background-position-x: center;
@@ -514,33 +505,14 @@
               <p class="founder-bio">Connector and innovator. Dr. Pierce expands community outreach and strengthens
                 global partnerships that sustain the parade’s long-term impact.</p>
             </div>
-          </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Tracy Andrew</p>
-            <div class="founder-picture" style="
-            background-image: url('Images/blank-profile.png');
-            background-position-x: center;
-            background-position-y: 53.5%;">
-
-              <p class="founder-bio">Supports logistics, scheduling, and coordination of volunteer operations.</p>
-            </div>
-          </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Tamara Newman</p>
-            <div class="founder-picture" style="
-            background-image: url('Images/blank-profile.png');
-            background-position-x: center;
-            background-position-y: 53.5%;">
-
-              <p class="founder-bio">Recruits, trains, and manages volunteer teams across all divisions.
-              </p>
-            </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Dr. Ionie Pierce</p>
           </div>
         </div>
 
         <div class="founder-page">
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">William Tinglin </p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/william.jpg');
             background-position-x: center;
@@ -549,9 +521,23 @@
               <p class="founder-bio">Leads educational programs that celebrate Jamaican culture, history, and youth
                 empowerment. </p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">William Tinglin </p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Bobby Clarke</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
+            <div class="founder-picture" style="
+            background-image: url('Images/bishop.jpg');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Provides moral guidance and spiritual vision for the Parade’s mission.</p>
+            </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Bishop Dr. Cicel Riley </p>
+          </div>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/Bobby.jpg');
             background-position-x: center;
@@ -560,9 +546,11 @@
               <p class="founder-bio">Caribbean media icon connecting culture, entertainment, and community
                 engagement.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Bobby Clarke</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Sheldon Lewis</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/Sheldon.jpg');
             background-position-x: right;
@@ -570,9 +558,11 @@
 
               <p class="founder-bio">Manages artist relations, cultural ambassadors, and featured performers.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Sheldon Lewis</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Deanna Washington</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/deanna.jpg');
             background-position-x: center;
@@ -581,9 +571,11 @@
               <p class="founder-bio">Trusted advisor providing insight on governance, leadership, and development
                 strategy.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Deanna Washington</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Claudette D. Powell</p>
+          <div class="founder-card-info" style="height: fit-content;">
+
             <div class="founder-picture" style="
             background-image: url('Images/claudette.jpg');
             background-position-x: center;
@@ -594,58 +586,25 @@
                 Director, and Dr. Karren Dunkley, Deputy Director. Claudette also chairs the Jamaica Diaspora Health
                 Sector in North Eastern USA and is an active member of the Jamaica Nurses Group of New York.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Claudette D. Powell</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Dr. Lawman Lynch</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/lynch.jpg');
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Dr. Lynch is the Deputy Chair of operations and logistics. She strategicly and
+              <p class="founder-bio">Dr. Lynch is the Deputy Chair of operations and logistics. He strategicly and
                 precisely ensures operational excellence by guiding every
                 logistical detail to create a safe, seamless experience. </p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Dr. Lawman Lynch</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Natasha Marcellin</p>
-            <div class="founder-picture" style="
-            background-image: url('Images/blank-profile.png');
-            background-position-x: center;
-            background-position-y: 53.5%;">
+          <div style="height: fit-content;" class="founder-card-info">
 
-              <p class="founder-bio">A dynamic creative force, Ms. Marcellin oversees the production and curation of the
-                Parade’s concerts, performances, and signature events. Her artistic direction brings
-                together culture, rhythm, and celebration, capturing the vibrant spirit of Jamaica on
-                every stage.</p>
-            </div>
-          </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Dr. Beverly Nichols</p>
-            <div class="founder-picture" style="
-            background-image: url('Images/blank-profile.png');
-            background-position-x: center;
-            background-position-y: 53.5%;">
-
-              <p class="founder-bio">Respected scholar guiding the parade’s cultural and educational programs with
-                authenticity and excellence. </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="founder-page">
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Bishop Dr. Cicel Riley </p>
-            <div class="founder-picture" style="
-            background-image: url('Images/bishop.jpg');
-            background-position-x: center;
-            background-position-y: 53.5%;">
-
-              <p class="founder-bio">Provides moral guidance and spiritual vision for the Parade’s mission.</p>
-            </div>
-          </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Chief Ruel Stephenson</p>
             <div class="founder-picture" style="
             background-image: url('Images/blank-profile.png');
             background-position-x: center;
@@ -654,9 +613,11 @@
               <p class="founder-bio">Partners with law enforcement agencies to maintain order and safety during all
                 parade activities.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Chief Ruel Stephenson</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Inspector Mike Telfer</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/blank-profile.png');
             background-position-x: center;
@@ -665,9 +626,11 @@
               <p class="founder-bio">Coordinates with precinct officers to facilitate, route access, and public
                 engagement.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Inspector Mike Telfer</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Arthur Edwards, Esq.</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/blank-profile.png');
             background-position-x: center;
@@ -675,9 +638,11 @@
 
               <p class="founder-bio">Provides oversight on compliance, policy, and organizational governance.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Arthur Edwards, Esq.</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Gilbert Ellis</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/blank-profile.png');
             background-position-x: center;
@@ -687,9 +652,11 @@
                 operations, fiscal reporting, and audit compliance. Ensuring transparency, accuracy,
                 and sound financial stewardship across every phase of the Parade’s development.</p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Gilbert Ellis</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Mike Washington</p>
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/blank-profile.png');
             background-position-x: center;
@@ -697,9 +664,14 @@
 
               <p class="founder-bio">Coordinates guest relations, lodging, and VIP hospitality services. </p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Mike Washington</p>
           </div>
-          <div style="width: fit-content;height: fit-content;">
-            <p class="founder-card-name">Angel Seaga</p>
+        </div>
+
+        <div class="founder-page">
+          <div style="height: fit-content;" class="founder-card-info">
+
             <div class="founder-picture" style="
             background-image: url('Images/blank-profile.png');
             background-position-x: center;
@@ -710,9 +682,92 @@
                 and strengthens connections to communities at home and abroad.
               </p>
             </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Angel Seaga</p>
+          </div>
+          <div style="height: fit-content;" class="founder-card-info">
+
+            <div class="founder-picture" style="
+            background-image: url('Images/blank-profile.png');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Captures the story of Jamaica Rising through compelling visuals and film.</p>
+            </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Ray James</p>
+          </div>
+          <div style="height: fit-content;" class="founder-card-info">
+
+            <div class="founder-picture" style="
+            background-image: url('Images/blank-profile.png');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">A dynamic creative force, Ms. Marcellin oversees the production and curation of the
+                Parade’s concerts, performances, and signature events. Her artistic direction brings
+                together culture, rhythm, and celebration, capturing the vibrant spirit of Jamaica on
+                every stage.</p>
+            </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Natasha Marcellin</p>
+          </div>
+          <div style="height: fit-content;" class="founder-card-info">
+
+            <div class="founder-picture" style="
+            background-image: url('Images/blank-profile.png');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Respected scholar guiding the parade’s cultural and educational programs with
+                authenticity and excellence. </p>
+            </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Dr. Beverly Nichols</p>
+          </div>
+          <div style="height: fit-content;" class="founder-card-info">
+
+            <div class="founder-picture" style="
+            background-image: url('Images/blank-profile.png');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Supports logistics, scheduling, and coordination of volunteer operations.</p>
+            </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Tracy Andrew</p>
+          </div>
+          <div style="height: fit-content;" class="founder-card-info">
+
+            <div class="founder-picture" style="
+            background-image: url('Images/blank-profile.png');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Recruits, trains, and manages volunteer teams across all divisions.
+              </p>
+            </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Tamara Newman</p>
+          </div>
+          <div style="height: fit-content;" class="founder-card-info">
+
+            <div class="founder-picture" style="
+            background-image: url('Images/blank-profile.png');
+            background-position-x: center;
+            background-position-y: 53.5%;">
+
+              <p class="founder-bio">Oversees visual production, ensuring consistency in all print and digital
+                materials.
+              </p>
+            </div>
+            <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
+            <p class="founder-card-name" style="top: 2vw;">Dr. R. Raf</p>
           </div>
         </div>
+
       </div>
+
     </div>
 
 
@@ -845,48 +900,13 @@
   <!-- Contact Us -->
   <footer id="contact-scroll">
     <div class="contact-us">
-      <form class="contact-form" action="../../contact.php" method="post" novalidate="">
-        <div class="heading">
-          <h2>Get in touch</h2>
-          <p>We’d love to hear from you. Whether you have questions about the Jamaica Day
-            Parade, vendor opportunities, volunteering, or accessibility, please reach out — our team will respond as
-            soon as possible.
-          </p>
-        </div>
-
-        <div class="name">
-          <!-- label keeps your .input-prompt styling but is now accessible -->
-          <label class="input-prompt" for="cf-name">Name or Company</label>
-          <!-- was <div class="input"></div> -->
-          <input id="cf-name" name="name" class="input" type="text" autocomplete="name organization" required="">
-        </div>
-
-        <div class="email">
-          <label class="input-prompt" for="cf-email">Email Address</label>
-          <!-- was <div class="input"></div> -->
-          <input id="cf-email" name="email" class="input" type="email" autocomplete="email" required="">
-        </div>
-
-        <div class="email-body">
-          <p class="input-prompt" for="cf-message" style="margin-top: 18px;">Please enter the details of your request.
-          </p>
-          <!-- was <div class="input"></div> -->
-          <textarea id="cf-message" name="message" class="input" rows="6"
-            style="white-space: pre-wrap;overflow-wrap: break-word;word-break: break-word;" required=""></textarea>
-        </div>
-
-        <!-- was <a class="button" ...><h3>Send</h3></a>  -->
-        <button class="button" type="submit">
-          <h3>Send</h3>
-        </button>
-        <p class="form-status" aria-live="polite" style="font-size: 16px;"></p>
-      </form>
+      <?php echo "$display_block"; ?>
       <div style="margin-right: 1%;">
 
-        <p style="font-size: 14px;font-weight: bold;">New York, NY</p>
+        <p style="font-size: 14px;">NEW YORK, NY</p>
         <div style="margin-top: 16px;">
           <button style="background-color: #0000;border: 0;cursor: pointer;"
-            onclick="window.open('https://www.instagram.com/jrdparade?igsh=MW45ZWk2bjlrNHFs&amp;utm_source=qr', '_blank')">
+            onclick="window.open('https://www.instagram.com/jrdparade?igsh=MW45ZWk2bjlrNHFs&utm_source=qr', '_blank')">
             <img class="social-button" src="Images/instagram.png" alt="instagram icon" draggable="false"
               style="height: auto;width: 32px;">
           </button>
@@ -896,18 +916,16 @@
               style="height: auto;width: 32px;">
           </button>
         </div>
-        <div style="display: flex;flex-direction: column;margin: 4% 0;" class="email-link">
+        <div style="display: flex;flex-direction: column;margin: 5% 0;" class="email-link">
           <p style="font-size: 14px;font-weight: bold;">Email</p>
-          <a class="footer-email" href="mailto:Info@Jamiacandayparade.org"
-            role="menuitem">Info@Jamaicandayparade.org</a>
+          <a class="footer-link" href="mailto:Info@Jamiacandayparade.org" role="menuitem">Info@Jamaicandayparade.org</a>
         </div>
-        <div class="hamburger-section">
+        <div style="display: flex;flex-direction: column;">
           <p style="font-size: 14px;font-weight: bold;">Other</p>
-
-          <a href="../privacy-policy.html#home" role="menuitem">FAQ</a>
-          <a href="../privacy-policy.html#home" role="menuitem">Donate</a>
-          <a href="../privacy-policy.html#home" role="menuitem">Privacy Policy</a>
-          <a href="../toa.html#home" role="menuitem">Terms of Agreement</a>
+          <a class="footer-link" href="../privacy-policy.html#home" role="menuitem">FAQ</a>
+          <a class="footer-link" href="../toa.html#home" role="menuitem">Donate</a>
+          <a class="footer-link" href="../privacy-policy.html#home" role="menuitem">Privacy Policy</a>
+          <a class="footer-link" href="../toa.html#home" role="menuitem">Terms of Agreement</a>
         </div>
       </div>
     </div>
@@ -915,33 +933,6 @@
   </footer>
   <script src="Scripts/menu-dropdown.js"></script>
   <script src="Scripts/navHide.js"></script>
-  <script>
-    const form = document.querySelector('.contact-form');
-    const statusEl = form.querySelector('.form-status');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      statusEl.textContent = 'Sending…';
-      const btn = form.querySelector('button[type="submit"]');
-      btn.disabled = true;
-
-      try {
-        const formData = new FormData(form);
-        const res = await fetch(form.action, { method: 'POST', body: formData });
-        const data = await res.json();
-        if (data.ok) {
-          statusEl.textContent = data.message || 'Sent!';
-          form.reset();
-        } else {
-          statusEl.textContent = data.error || 'Something went wrong.';
-        }
-      } catch {
-        statusEl.textContent = 'Network error.';
-      } finally {
-        btn.disabled = false;
-      }
-    });
-  </script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const wrapper = document.getElementById("scroll-wrapper");
@@ -1006,36 +997,16 @@
     }());
   </script>
   <script>
-    const founderBook = document.getElementById("founder-book");
-    const leftArrow = document.getElementById("left-arrow");
-    const rightArrow = document.getElementById("right-arrow");
-    let index = 0;
-    const totalPages = founderBook.children.length;
-
-    function updateArrows() {
-      leftArrow.style.display = index === 0 ? "none" : "block";
-      rightArrow.style.display = index === totalPages - 1 ? "none" : "block";
-    }
-
-    leftArrow.addEventListener("click", () => {
-      if (index > 0) {
-        index--;
-        founderBook.style.setProperty("--index", index);
-        updateArrows();
-      }
+    document.getElementById("open-dropdown-button").addEventListener("click", function () {
+      document.getElementById("founder-grid").style.display = "block";
+      document.getElementById("open-dropdown").style.display = "none";
     });
-
-    rightArrow.addEventListener("click", () => {
-      if (index < totalPages - 1) {
-        index++;
-        founderBook.style.setProperty("--index", index);
-        updateArrows();
-      }
+    document.getElementById("collapse-dropdown-button").addEventListener("click", function () {
+      document.getElementById("founder-grid").style.display = "none";
+      document.getElementById("open-dropdown").style.display = "grid";
     });
-
-    // Initialize arrow visibility
-    updateArrows();
   </script>
+
   <script>
     (function () {
       const videos = document.querySelectorAll('.route-video');
@@ -1043,15 +1014,16 @@
 
       // iOS/Safari reliability: ensure attributes exist in HTML AND JS
       videos.forEach(v => {
-        v.muted = true; v.setAttribute('muted', '');
-        v.playsInline = true; v.setAttribute('playsinline', ''); v.setAttribute('webkit-playsinline', '');
+        v.muted = true;
+        v.setAttribute('muted', '');
+        v.playsInline = true;
+        v.setAttribute('playsinline', '');
+        v.setAttribute('webkit-playsinline', '');
       });
 
-      const play = v => v.play().catch(() => {/* iOS may block until a gesture */ });
-
-      // Respect reduced motion
-      const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)');
-      if (prefersReduced.matches) { videos.forEach(pause); return; }
+      const play = v => v.play().catch(() => {
+        /* iOS may block until a gesture */
+      });
 
       // Observe visibility in viewport
       const observer = new IntersectionObserver((entries) => {
@@ -1062,7 +1034,9 @@
             if (v.paused) play(v);
           }
         });
-      }, { threshold: [0, 0.5, 0.75, 1] });
+      }, {
+        threshold: [0, 0.5, 0.75, 1]
+      });
 
       videos.forEach(v => observer.observe(v));
 
@@ -1078,14 +1052,183 @@
 
       // One-time user gesture fallback (for rare autoplay blocks)
       const unlock = () => {
-        videos.forEach(v => { if (v.paused) play(v); });
-        window.removeEventListener('touchstart', unlock, { once: true });
-        window.removeEventListener('click', unlock, { once: true });
+        videos.forEach(v => {
+          if (v.paused) play(v);
+        });
+        window.removeEventListener('touchstart', unlock, {
+          once: true
+        });
+        window.removeEventListener('click', unlock, {
+          once: true
+        });
       };
-      window.addEventListener('touchstart', unlock, { once: true });
-      window.addEventListener('click', unlock, { once: true });
+      window.addEventListener('touchstart', unlock, {
+        once: true
+      });
+      window.addEventListener('click', unlock, {
+        once: true
+      });
     })();
   </script>
+
+  <script>
+    let founderCards = [];
+    let founderPages = [];
+    let currentLayout = null; // "small" | "medium" | "large"
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // grab cards once
+      founderCards = Array.from(
+        document.querySelectorAll('#founder-book .founder-card-info')
+      );
+
+      // grab existing pages once
+      founderPages = Array.from(
+        document.querySelectorAll('#founder-book .founder-page')
+      );
+
+      applyLayout();
+    });
+
+    window.addEventListener('resize', () => {
+      applyLayout();
+    });
+
+    function applyLayout() {
+      const vw = window.innerWidth; // CSS pixels
+
+      let layout;
+      let pagesNeeded;
+      let cardsPerPage;
+
+      if (vw <= 520) {
+        layout = 'small';
+        pagesNeeded = 6;
+        cardsPerPage = 6;
+      } else if (vw <= 960) {
+        layout = 'medium';
+        pagesNeeded = 4;
+        cardsPerPage = 8;
+      } else {
+        layout = 'large';
+        pagesNeeded = 3; // your "default: 3 pages"
+        cardsPerPage = 12; // or whatever you want on desktop
+      }
+
+      // avoid extra work if we’re still in the same layout band
+      if (layout === currentLayout) return;
+      currentLayout = layout;
+
+      ensurePages(pagesNeeded);
+      moveCards(cardsPerPage);
+    }
+
+    function ensurePages(targetCount) {
+      const book = document.getElementById('founder-book');
+
+      // refresh pages list (in case new ones were added earlier)
+      founderPages = Array.from(
+        document.querySelectorAll('#founder-book .founder-page')
+      );
+
+      while (founderPages.length < targetCount) {
+        const newPage = document.createElement('div');
+        newPage.classList.add('founder-page');
+        book.appendChild(newPage);
+        founderPages.push(newPage);
+      }
+
+      // (optional) hide extra pages if we have more than needed
+      founderPages.forEach((page, index) => {
+        page.style.display = index < targetCount ? '' : 'none';
+      });
+    }
+
+    function moveCards(cardsPerPage) {
+      // clear page contents
+      founderPages.forEach(page => {
+        page.innerHTML = '';
+      });
+
+      // distribute cards across visible pages
+      founderCards.forEach((card, index) => {
+        const pageIndex = Math.floor(index / cardsPerPage);
+        if (pageIndex < founderPages.length) {
+          founderPages[pageIndex].appendChild(card);
+        }
+      });
+    }
+  </script>
+  <script>
+    const founderBook = document.getElementById("founder-book");
+    const leftArrow = document.getElementById("left-arrow");
+    const rightArrow = document.getElementById("right-arrow");
+
+    let index = 0;
+
+    function getTotalPages() {
+      return Array.from(founderBook.querySelectorAll(".founder-page"))
+        .filter(el => getComputedStyle(el).display !== "none")
+        .length;
+    }
+
+
+    function applyIndex() {
+      founderBook.style.setProperty("--index", index);
+    }
+
+    function updateArrows() {
+      const totalPages = getTotalPages();
+
+      // no pages – hide both arrows
+      if (totalPages === 0) {
+        leftArrow.style.display = "none";
+        rightArrow.style.display = "none";
+        return;
+      }
+
+      // make sure index is in range
+      if (index > totalPages - 1) {
+        index = totalPages - 1;
+        applyIndex();
+      }
+
+      leftArrow.style.display = index === 0 ? "none" : "block";
+      rightArrow.style.display = index === totalPages - 1 ? "none" : "block";
+    }
+
+    leftArrow.addEventListener("click", () => {
+      const totalPages = getTotalPages();
+      if (index > 0) {
+        index--;
+        applyIndex();
+        updateArrows();
+      }
+    });
+
+    rightArrow.addEventListener("click", () => {
+      const totalPages = getTotalPages();
+      if (index < totalPages - 1) {
+        index++;
+        applyIndex();
+        updateArrows();
+      }
+    });
+
+    // Initialize after DOM is ready
+    document.addEventListener("DOMContentLoaded", () => {
+      applyIndex();
+      updateArrows();
+    });
+
+    // On resize, pages may be added/removed by your layout script
+    window.addEventListener("resize", () => {
+      index = 0;
+      applyIndex();
+      updateArrows();
+    });
+  </script>
+
 
 </body>
 

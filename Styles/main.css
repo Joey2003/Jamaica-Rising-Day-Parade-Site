@@ -380,6 +380,8 @@ main {
 
 .role {
   text-transform: uppercase;
+  text-align: center;
+  font-size: 1.25vw;
 }
 
 .last-img {
@@ -393,7 +395,7 @@ main {
 }
 
 .contact-form {
-  width: 38.5%;
+  width: 48.5%;
   margin-left: 1%;
 }
 
@@ -405,7 +407,10 @@ main {
   scale: 0.65;
   transform-origin: left;
   display: block;
-  margin-top: 18px;
+  margin-top: 1vw;
+  font-size: .85vw;
+  font-weight: bold;
+  padding: .5vw .75vw;
 }
 
 .indent {
@@ -528,9 +533,10 @@ main {
 }
 
 .input-prompt {
-  margin: 0 0 6px;
+  margin: 1vw 0;
   font-size: 14px;
   color: white;
+  text-wrap: nowrap;
 }
 
 /* The comp shows simple grey boxes — your HTML uses <div class="input">.
@@ -560,10 +566,11 @@ We style them to look like fields. */
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 24vw;
-  background-color: #151716;
+  width: fit-content;
+  /* background-color: #151716; */
   align-items: center;
-  margin: 0 2vw;
+  /* margin: 0 2vw; */
+  padding: 0;
 }
 
 .bill-background {
@@ -571,7 +578,7 @@ We style them to look like fields. */
   place-items: center;
   width: fit-content;
   background-image: url('../Images/green-background.png');
-  padding: 50px 50px;
+  padding: 3vw;
   box-shadow: #000 0px 14px 22px -1px, #000 0px 2px 4px -1px;
 }
 
@@ -600,16 +607,27 @@ We style them to look like fields. */
 .founder-page {
   display: grid;
   place-content: center;
-  row-gap: 1.82vw;
+  row-gap: 3vw;
   padding: calc(137.5px / 2) 0;
   position: relative;
   width: 100%;
   flex: 0 0 100%;
   transform: translateX(calc(var(--index) * -100%));
   transition: transform 0.3s ease;
-  grid-template-columns: repeat(4, 13vw);
+  grid-template-columns: repeat(6, 14vw);
   place-items: center;
 }
+
+.founder-card-info {
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  justify-items: center;
+  position: relative;
+  width: 50%;
+}
+
+
 
 .founder-book {
   display: flex;
@@ -620,28 +638,57 @@ We style them to look like fields. */
 .founder-picture {
   background-size: cover;
   background-repeat: no-repeat;
-  height: 11vw;
+  height: 17vw;
   aspect-ratio: 9 / 13;
 }
 
 .founder-info {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  /* flex-direction: column; */
   padding: 20px 0;
-  padding-right: 50px;
+  /* padding-right: 50px; */
   position: relative;
-  justify-content: center;
-  width: fit-content;
+  justify-items: center;
+  width: inherit;
+}
+
+.founding-dignitaries {
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.dignitary-picture {
+  background-size: cover;
+  background-repeat: no-repeat;
+  aspect-ratio: 9 / 13;
+  height: 30vw;
 }
 
 .founder-card-name {
   position: relative;
-  top: -0.85vw;
+  top: 1.25vw;
   color: black;
   width: fit-content;
   text-align: center;
-  font-size: .75vw;
-  line-height: 0px;
+  font-size: clamp(1vw, 5px, 29px);
+  line-height: 6px;
+  font-weight: bold;
+  margin-top: -1.5vw;
+}
+
+.founder-card-role {
+  color: black;
+  width: 90%;
+  text-align: center;
+  font-size: clamp(.75vw, 5px, 29px);
+  line-height: 1vw;
+  top: 0.15vw;
+  position: relative;
+  margin-top: .25vw;
+}
+
+.name {
+  font-size: 1.95vw;
 }
 
 .founder-info-body {
@@ -656,7 +703,7 @@ We style them to look like fields. */
   height: calc(100% - calc(var(--pad)) * 2);
   width: calc(100% - calc(var(--pad)) * 2);
   padding: var(--pad);
-  font-size: .5vw;
+  font-size: .85vw;
 
   background-color: #000000b0;
   opacity: 0;
@@ -681,10 +728,18 @@ We style them to look like fields. */
   color: white;
 }
 
+.email-body {
+  display: flex;
+  column-gap: 1vw;
+  justify-content: end;
+}
+
 .email-body .input {
   /* message box is taller */
   height: 170px;
 }
+
+
 
 /* Make the fake inputs look clickable on hover/focus (optional) */
 .input:hover {
@@ -777,7 +832,7 @@ We style them to look like fields. */
 .mission-section p {
   padding-left: 10px;
   color: white;
-  font-size: .95vw;
+  font-size: 1.55vw;
 }
 
 .mission-section h3 {
@@ -901,7 +956,7 @@ We style them to look like fields. */
   background: #1110;
   color: #fff;
   font-family: monospace;
-  padding: 10px 0;
+  /* padding: 10px 0; */
   position: relative;
   -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
   mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
@@ -985,6 +1040,8 @@ We style them to look like fields. */
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  overflow: hidden;
+
 }
 
 .dropdown a {
@@ -1071,20 +1128,20 @@ We style them to look like fields. */
   transform: translateY(-100%);
 }
 
-.footer-email {
+.footer-link {
   font-size: clamp(1vw, 12px, 29px);
 }
 
-.footer-email:link {
-  color: white;
+.footer-link:link {
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.footer-email:hover {
+.footer-link:hover {
   color: #207749;
 }
 
-.footer-email:visited {
-  color: #207749;
+.footer-link:visited {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .social-button:hover {
@@ -1237,13 +1294,19 @@ We style them to look like fields. */
     align-items: center;
   }
 
+  .dignitary-picture {
+    height: 50vw;
+  }
+
   .founder-info {
-    padding: 50px;
-    padding-bottom: 100px;
+    padding: 16px;
+    padding-bottom: 0;
     right: unset;
   }
 
-
+  .founder-page {
+    grid-template-columns: repeat(4, 22vw);
+  }
 
   .founder-page>div {
     margin: 0 0px 140px;
@@ -1255,6 +1318,13 @@ We style them to look like fields. */
     margin-top: 30vh;
   }
 
+  .route-video-wrapper {
+    position: absolute;
+    overflow: hidden;
+    width: 100vw;
+    height: 314vw;
+    margin-top: -51px;
+  }
 
   .intro p {
     padding-right: 0;
@@ -1363,6 +1433,19 @@ We style them to look like fields. */
 
   .donobutton-1 {
     width: 70vw;
+  }
+
+  .dignitary-picture {
+    height: 66vw;
+  }
+
+  .founding-dignitaries {
+    display: grid;
+    justify-content: center;
+  }
+
+  .founder-page {
+    grid-template-columns: repeat(3, 28vw);
   }
 
   .founder-page>div {
