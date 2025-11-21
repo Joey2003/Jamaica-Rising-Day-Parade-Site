@@ -301,7 +301,9 @@
         </div>
         <div class="founder-info">
           <p class="role">Founding Dignitary</p>
-          <h3 class="name">Dr. Una S.T. Clarke, OD</h3>
+          <a class="dignitary-name-wrapper">
+            <h3 class="name">Dr. Una S.T. Clarke, OD</h3>
+          </a>
 
 
         </div>
@@ -315,7 +317,9 @@
         </div>
         <div class="founder-info">
           <p class="role">Founder &amp; Chairman</p>
-          <h3 class="name">Dr. Bill Tinglin</h3>
+          <a class="dignitary-name-wrapper">
+            <h3 class="name">Dr. Bill Tinglin</h3>
+          </a>
 
 
         </div>
@@ -324,10 +328,8 @@
     </div>
 
     <div class="founder-card" id="founder-grid" style="/*! display: none; */">
-      <img src="Images/left-chevron.png" alt="left arrow" id="left-arrow"
-        style="position: absolute; left: 1.646%; cursor: pointer; z-index: 98; width: 40px; height: auto; display: none;">
-      <img src="Images/right-chevron.png" alt="right arrow" id="right-arrow"
-        style="position: absolute; right: 1.646%; cursor: pointer; z-index: 98; width: 40px; height: auto; display: block;">
+      <img src="Images/left-chevron.png" alt="left arrow" id="left-arrow" style="position: absolute; left: 1.646%; cursor: pointer; z-index: 98; width: 40px; height: auto; display: none;">
+      <img src="Images/right-chevron.png" alt="right arrow" id="right-arrow" style="position: absolute; right: 1.646%; cursor: pointer; z-index: 98; width: 40px; height: auto; display: block;">
       <div class="founder-book" id="founder-book" style="--index: 0;">
         <div class="founder-page">
           <div style="height: fit-content;" class="founder-card-info">
@@ -341,8 +343,7 @@
 
 
 
-              <p class="founder-bio">Ms. Azor is the Director of Fundraising &amp; Strategic Partnerships. She guides
-                the
+              <p class="founder-bio">Ms. Azor is the Director of Fundraising &amp; Strategic Partnerships. She guides the
                 Parade’s fundraising vision with passion and precision, cultivating
                 sponsors, donors, and philanthropic alliances. Her leadership ensures lasting
                 partnerships that sustain the Parade’s mission and amplify its impact across
@@ -372,8 +373,7 @@
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Mr. Glick is the Director of Finance &amp; Legal Affairs. He safeguards
-                transparency,
+              <p class="founder-bio">Mr. Glick is the Director of Finance &amp; Legal Affairs. He safeguards transparency,
                 compliance, and fiscal integrity across all
                 organizational operations. </p>
             </div>
@@ -418,8 +418,7 @@
             background-position-x: center;
             background-position-y: 53.5%;">
 
-              <p class="founder-bio">Qixian Lin is the Director of Social Media &amp; Digital Strategy, a visual
-                storyteller
+              <p class="founder-bio">Qixian Lin is the Director of Social Media &amp; Digital Strategy, a visual storyteller
                 dedicated to creating impactful media
                 that inspires connection in communities. He designs digital campaigns that amplify the Parade’s message
                 worldwide.</p>
@@ -452,7 +451,7 @@
                 initiatives and emergency response efforts for the parade.</p>
             </div>
             <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
-            <p class="founder-card-name" style="top: 2vw;line-height: 20px;">Dr. Robert Clarke, M.D.</p>
+            <p class="founder-card-name" style="top: 2vw;line-height: 1vw;">Dr. Robert Clarke, M.D.</p>
           </div>
           <div class="founder-card-info" style="height: fit-content;">
 
@@ -614,7 +613,7 @@
                 parade activities.</p>
             </div>
             <p class="founder-card-role">Director of Fundraising &amp; Strategic Partnerships</p>
-            <p class="founder-card-name" style="top: 2vw;line-height: 20px;">Chief Ruel Stephenson</p>
+            <p class="founder-card-name" style="top: 2vw;line-height: 1vw;">Chief Ruel Stephenson</p>
           </div>
           <div style="height: fit-content;" class="founder-card-info">
 
@@ -918,12 +917,13 @@
         </div>
         <div style="display: flex;flex-direction: column;margin: 5% 0;" class="email-link">
           <p style="font-size: 14px;font-weight: bold;">Email</p>
-          <a class="footer-link" href="mailto:Info@Jamiacandayparade.org" role="menuitem">Info@Jamaicandayparade.org</a>
+          <a class="footer-link" href="mailto:Info@Jamiacandayparade.org"
+            role="menuitem">Info@Jamaicandayparade.org</a>
         </div>
         <div style="display: flex;flex-direction: column;">
           <p style="font-size: 14px;font-weight: bold;">Other</p>
           <a class="footer-link" href="../privacy-policy.html#home" role="menuitem">FAQ</a>
-          <a class="footer-link" href="../toa.html#home" role="menuitem">Donate</a>
+          <a class="footer-link" onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')" role="menuitem">Donate</a>
           <a class="footer-link" href="../privacy-policy.html#home" role="menuitem">Privacy Policy</a>
           <a class="footer-link" href="../toa.html#home" role="menuitem">Terms of Agreement</a>
         </div>
@@ -954,7 +954,7 @@
   </script>
   <!-- Countdown script -->
   <script>
-    (function () {
+    (function() {
       const second = 1000,
         minute = second * 60,
         hour = minute * 60,
@@ -975,7 +975,7 @@
       //end
 
       const countDown = new Date(birthday).getTime(),
-        x = setInterval(function () {
+        x = setInterval(function() {
 
           const now = new Date().getTime(),
             distance = countDown - now;
@@ -997,18 +997,18 @@
     }());
   </script>
   <script>
-    document.getElementById("open-dropdown-button").addEventListener("click", function () {
+    document.getElementById("open-dropdown-button").addEventListener("click", function() {
       document.getElementById("founder-grid").style.display = "block";
       document.getElementById("open-dropdown").style.display = "none";
     });
-    document.getElementById("collapse-dropdown-button").addEventListener("click", function () {
+    document.getElementById("collapse-dropdown-button").addEventListener("click", function() {
       document.getElementById("founder-grid").style.display = "none";
       document.getElementById("open-dropdown").style.display = "grid";
     });
   </script>
 
   <script>
-    (function () {
+    (function() {
       const videos = document.querySelectorAll('.route-video');
       if (!videos.length) return;
 
