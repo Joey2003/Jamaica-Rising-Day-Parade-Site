@@ -33,7 +33,7 @@
 
       <button id="menuToggleBtn" onclick="hideMenu()" type="button" aria-haspopup="true" aria-expanded="false"
         aria-controls="mainMenu" style="width: 34px;">
-        <img class="donobutton-1" src="Images/x-button.png" alt="Open menu" draggable="false" style="width: inherit;">
+        <img src="Images/x-button.png" alt="Open menu" draggable="false" style="width: inherit;">
       </button>
 
       <div style="padding: 16% 0;font-size: 20px;display: flex;flex-direction: column;">
@@ -51,7 +51,7 @@
         </div>
 
         <div class="hamburger-section">
-          <a href="../privacy-policy.html#home" role="menuitem">Privacy Policy</a>
+          <a href="../privacy-policy.php#home" role="menuitem">Privacy Policy</a>
           <a href="#home" role="menuitem">Terms of Agreement</a>
         </div>
 
@@ -95,15 +95,11 @@
   <div class="nav hider">
 
     <div id="logo-and-hamburger">
-      <button type="button" id="hamburgerBtn"
-        style="width: 50px;background-color: #0000;border: 0px;cursor: pointer;padding: 0px 0px;height: fit-content;">
-        <img class="donobutton-1" src="Images/hamburger.png" alt="Donate button" draggable="false"
-          style="width: inherit;">
+      <button type="button" id="hamburgerBtn" style="width: 50px;background-color: #0000;border: 0px;cursor: pointer;padding: 0px 0px;height: fit-content;" aria-expanded="false">
+        <img src="Images/hamburger.png" alt="Donate button" draggable="false" style="width: inherit;">
       </button>
-      <a href="../#home" id="logo-wrapper" type="button"
-        style="background-color: #0000;border: 0px;cursor: pointer;padding: 24px 0 0;margin: -14px 0;height: fit-content;">
-        <img class="donobutton-1" src="Images/JDP_Logo_cropped.png" alt="Donate button" draggable="false"
-          style="width: inherit;">
+      <a href="../#home" id="logo-wrapper" type="button" style="background-color: #0000;border: 0px;cursor: pointer;padding: 24px 0 0;margin: -14px 0;height: fit-content;box-shadow: unset;">
+        <img src="Images/JDP_Logo_cropped.png" alt="Donate button" draggable="false" style="width: inherit;">
       </a>
     </div>
     <div style="width: fit-content;margin: 0 56px;/*! display: none; */" id="nav-links">
@@ -111,11 +107,8 @@
       <!-- <a class="nav-link" href="../#agenda">Agenda</a>  -->
       <a class="nav-link" href="../#contact-scroll">Contact Us</a>
     </div>
-    <button class="donate-button" href="https://donorbox.org/founding-partner-launch" type="button"
-      onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')" style="width: 250px;"
-      id="nav-donation-button">
-      <img class="donobutton-1" src="Images/donation-banner-button.png" alt="Donate button" draggable="false"
-        style="width: inherit;">
+    <button class="donate-button" href="https://donorbox.org/founding-partner-launch" type="button" onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')" style="width: 250px;" id="nav-donation-button">
+      <img class="donobutton-1" src="Images/donation-banner-button.png" alt="Donate button" draggable="false" style="width: inherit;">
     </button>
   </div>
 
@@ -168,48 +161,13 @@
   <!-- Contact Us -->
   <footer id="contact-scroll">
     <div class="contact-us">
-      <form class="contact-form" action="../../contact.php" method="post" novalidate="">
-        <div class="heading">
-          <h2>Get in touch</h2>
-          <p>We’d love to hear from you. Whether you have questions about the Jamaica Day
-            Parade, vendor opportunities, volunteering, or accessibility, please reach out — our team will respond as
-            soon as possible.
-          </p>
-        </div>
-
-        <div class="name">
-          <!-- label keeps your .input-prompt styling but is now accessible -->
-          <label class="input-prompt" for="cf-name">Name or Company</label>
-          <!-- was <div class="input"></div> -->
-          <input id="cf-name" name="name" class="input" type="text" autocomplete="name organization" required="">
-        </div>
-
-        <div class="email">
-          <label class="input-prompt" for="cf-email">Email Address</label>
-          <!-- was <div class="input"></div> -->
-          <input id="cf-email" name="email" class="input" type="email" autocomplete="email" required="">
-        </div>
-
-        <div class="email-body">
-          <p class="input-prompt" for="cf-message" style="margin-top: 18px;">Please enter the details of your request.
-          </p>
-          <!-- was <div class="input"></div> -->
-          <textarea id="cf-message" name="message" class="input" rows="6"
-            style="white-space: pre-wrap;overflow-wrap: break-word;word-break: break-word;" required=""></textarea>
-        </div>
-
-        <!-- was <a class="button" ...><h3>Send</h3></a>  -->
-        <button class="button" type="submit">
-          <h3>Send</h3>
-        </button>
-        <p class="form-status" aria-live="polite" style="font-size: 16px;"></p>
-      </form>
+      <?php echo "$display_block"; ?>
       <div style="margin-right: 1%;">
 
-        <p style="font-size: 14px;font-weight: bold;">New York, NY</p>
+        <p style="font-size: 14px;">NEW YORK, NY</p>
         <div style="margin-top: 16px;">
           <button style="background-color: #0000;border: 0;cursor: pointer;"
-            onclick="window.open('https://www.instagram.com/jrdparade?igsh=MW45ZWk2bjlrNHFs&amp;utm_source=qr', '_blank')">
+            onclick="window.open('https://www.instagram.com/jrdparade?igsh=MW45ZWk2bjlrNHFs&utm_source=qr', '_blank')">
             <img class="social-button" src="Images/instagram.png" alt="instagram icon" draggable="false"
               style="height: auto;width: 32px;">
           </button>
@@ -219,18 +177,17 @@
               style="height: auto;width: 32px;">
           </button>
         </div>
-        <div style="display: flex;flex-direction: column;margin: 4% 0;" class="email-link">
+        <div style="display: flex;flex-direction: column;margin: 5% 0;" class="email-link">
           <p style="font-size: 14px;font-weight: bold;">Email</p>
-          <a class="footer-email" href="mailto:Info@Jamiacandayparade.org"
+          <a class="footer-link" href="mailto:Info@Jamiacandayparade.org"
             role="menuitem">Info@Jamaicandayparade.org</a>
         </div>
-        <div class="hamburger-section">
+        <div style="display: flex;flex-direction: column;">
           <p style="font-size: 14px;font-weight: bold;">Other</p>
-
-          <a href="../privacy-policy.html#home" role="menuitem">FAQ</a>
-          <a href="../privacy-policy.html#home" role="menuitem">Donate</a>
-          <a href="../privacy-policy.html#home" role="menuitem">Privacy Policy</a>
-          <a href="../toa.html#home" role="menuitem">Terms of Agreement</a>
+          <a class="footer-link" href="../FAQ.php#home" role="menuitem">FAQ</a>
+          <a class="footer-link" onclick="window.open('https://donorbox.org/founding-partner-launch', '_blank')" role="menuitem">Donate</a>
+          <a class="footer-link" href="../privacy-policy.php#home" role="menuitem">Privacy Policy</a>
+          <a class="footer-link" href="../toa.php#home" role="menuitem">Terms of Agreement</a>
         </div>
       </div>
     </div>
