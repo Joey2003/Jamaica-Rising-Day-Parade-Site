@@ -657,7 +657,7 @@ We style them to look like fields. */
   background-size: cover;
   background-repeat: no-repeat;
   aspect-ratio: 9 / 13;
-  height: 30vw;
+  height: 20vw;
 }
 
 .founder-card-name {
@@ -943,7 +943,7 @@ We style them to look like fields. */
 	text-transform: uppercase;
 	text-align: right;
 	justify-self: end;
-	font-size: 1.25vw;
+	font-size: 1.25vw; 
 	padding: .25vw;
 	text-decoration: underline;
 	color: #fed100;
